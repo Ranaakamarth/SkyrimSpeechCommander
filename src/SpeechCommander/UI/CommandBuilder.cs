@@ -914,27 +914,60 @@ namespace SpeechCommander.UI
                     }
                     if (!same)
                     {
+
+
+                        prof.UpdateGrammar();
+
+                        var changes = new List<UpdateOperation>();
+                        changes.Add(new UpdateOperation() 
+                        { 
+                            UpdateType = UpdateOperationType.DisableGrammar, 
+                            Grammar = this.currentProfile.Grammar 
+                        });
+                        changes.Add(new UpdateOperation() 
+                        { 
+                            UpdateType = UpdateOperationType.AddGrammar,
+                            Grammar = prof.Grammar, 
+                            AssociatedActions = prof.Actions 
+                        });
+
                         if (this.dialogProfile != null)
                         {
-                            this.engine.RemoveGrammar(this.dialogProfile.Grammar, this.dialogProfile.Actions);
+                            changes.Add(new UpdateOperation()
+                            {
+                                UpdateType = UpdateOperationType.RemoveGrammar,
+                                Grammar = this.dialogProfile.Grammar,
+                                AssociatedActions = this.dialogProfile.Actions
+                            });
+                            //this.engine.RemoveGrammar(this.dialogProfile.Grammar, this.dialogProfile.Actions);
                         }
 
+                        this.engine.ExecuteGrammarChanges(changes);
+
                         this.dialogProfile = prof;
-                        this.dialogProfile.UpdateGrammar();
-                        this.currentProfile.Grammar.Enabled = false;
-                        this.engine.AddGrammar(this.dialogProfile.Grammar, this.dialogProfile.Actions);
                         Console.WriteLine("Dialogue Mode Initializing");
                     }
                 }
-                else
+                else if (this.dialogProfile != null)
                 {
                     Console.WriteLine("End Dialogue");
-                    if (this.dialogProfile != null)
+
+                    var changes = new List<UpdateOperation>();
+                    changes.Add(new UpdateOperation()
                     {
-                        this.engine.RemoveGrammar(this.dialogProfile.Grammar, this.dialogProfile.Actions);
-                    }
+                        UpdateType = UpdateOperationType.EnableGrammar,
+                        Grammar = this.currentProfile.Grammar
+                    });
+                    changes.Add(new UpdateOperation()
+                    {
+                        UpdateType = UpdateOperationType.RemoveGrammar,
+                        Grammar = this.dialogProfile.Grammar,
+                        AssociatedActions = this.dialogProfile.Actions
+                    });
+
+                    this.engine.ExecuteGrammarChanges(changes);
+
                     this.dialogProfile = null;
-                    this.currentProfile.Grammar.Enabled = true;
                 }
             }
         }
