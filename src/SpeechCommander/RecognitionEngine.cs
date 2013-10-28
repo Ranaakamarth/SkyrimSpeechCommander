@@ -41,15 +41,19 @@ namespace SpeechCommander
             engine = new sp.SpeechRecognitionEngine();
             engine.SetInputToDefaultAudioDevice();
             engine.SpeechRecognized += engine_SpeechRecognized;
+            engine.RecognizerUpdateReached += engine_RecognizerUpdateReached;
 
             engine.LoadGrammar(new sp.DictationGrammar());
         }
 
         public RecognitionEngine(Profile profile)
         {
+            this.actions = new List<Action>();
+
             engine = new sp.SpeechRecognitionEngine();
             engine.SetInputToDefaultAudioDevice();
             engine.SpeechRecognized += engine_SpeechRecognized;
+            engine.RecognizerUpdateReached += engine_RecognizerUpdateReached;
 
             LoadProfile(profile);
         }
@@ -103,22 +107,38 @@ namespace SpeechCommander
 
         public void AddGrammar(sp.Grammar grammar, IEnumerable<Action> associatedActions)
         {
-            if (this.actions == null)
-                this.actions = new List<Action>();
-            this.engine.LoadGrammar(grammar);
-            this.engine.RequestRecognizerUpdate();
+            //this.engine.LoadGrammar(grammar);
+            if (this.Running)
+                this.engine.RequestRecognizerUpdate(new Tuple<bool, sp.Grammar>(true, grammar));
+            else
+                this.engine.LoadGrammar(grammar);
             this.actions.AddRange(associatedActions);
-            Console.WriteLine();
         }
 
         public void RemoveGrammar(sp.Grammar grammar, IEnumerable<Action> associatedActions)
         {
-          if (this.engine.Grammars.Contains(grammar))
-            this.engine.UnloadGrammar(grammar);
+            this.engine.RequestRecognizerUpdate(new Tuple<bool, sp.Grammar>(false, grammar));
             foreach (Action action in associatedActions)
             {
                 this.actions.Remove(action);
             }
+        }
+
+        void engine_RecognizerUpdateReached(object sender, sp.RecognizerUpdateReachedEventArgs e)
+        {
+            
+            var changes = e.UserToken as Tuple<bool, sp.Grammar>;
+            if (changes.Item1)
+            {
+                this.engine.LoadGrammar(changes.Item2);
+            }
+            else
+            {
+                if (this.engine.Grammars.Contains(changes.Item2))
+                    this.engine.UnloadGrammar(changes.Item2);
+            }
+
+            Console.WriteLine("Recognizer Updated");
         }
     }
 }

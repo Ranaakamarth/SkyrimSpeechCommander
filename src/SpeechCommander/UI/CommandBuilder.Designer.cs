@@ -83,6 +83,8 @@
             this.nud_KeystrokeHeld = new System.Windows.Forms.NumericUpDown();
             this.gb_TextInput = new System.Windows.Forms.GroupBox();
             this.tb_TextInput = new System.Windows.Forms.TextBox();
+            this.gb_ModifierKey = new System.Windows.Forms.GroupBox();
+            this.cb_ModifierKey = new System.Windows.Forms.ComboBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.cb_KeystrokeKey = new System.Windows.Forms.ComboBox();
             this.gb_KeystrokeRepeat = new System.Windows.Forms.GroupBox();
@@ -94,8 +96,6 @@
             this.bttn_DialogueFilePath = new System.Windows.Forms.Button();
             this.tb_DialogueFilePath = new System.Windows.Forms.TextBox();
             this.cb_Dialogue = new System.Windows.Forms.CheckBox();
-            this.gb_ModifierKey = new System.Windows.Forms.GroupBox();
-            this.cb_ModifierKey = new System.Windows.Forms.ComboBox();
             this.gb_ProfileName.SuspendLayout();
             this.gb_Actions.SuspendLayout();
             this.gb_RenameAction.SuspendLayout();
@@ -120,6 +120,7 @@
             this.gb_KeystrokeHeld.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_KeystrokeHeld)).BeginInit();
             this.gb_TextInput.SuspendLayout();
+            this.gb_ModifierKey.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.gb_KeystrokeRepeat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_KeystrokeRepeat)).BeginInit();
@@ -127,7 +128,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_Timeout)).BeginInit();
             this.gb_Dialogue.SuspendLayout();
             this.gb_DialogueFile.SuspendLayout();
-            this.gb_ModifierKey.SuspendLayout();
             this.SuspendLayout();
             // 
             // lb_Actions
@@ -759,6 +759,37 @@
             this.tb_TextInput.TabIndex = 0;
             this.tb_TextInput.TextChanged += new System.EventHandler(this.tb_TextInput_TextChanged);
             // 
+            // gb_ModifierKey
+            // 
+            this.gb_ModifierKey.Controls.Add(this.cb_ModifierKey);
+            this.gb_ModifierKey.Location = new System.Drawing.Point(6, 71);
+            this.gb_ModifierKey.Name = "gb_ModifierKey";
+            this.gb_ModifierKey.Size = new System.Drawing.Size(205, 46);
+            this.gb_ModifierKey.TabIndex = 0;
+            this.gb_ModifierKey.TabStop = false;
+            this.gb_ModifierKey.Text = "Modifier Key";
+            // 
+            // cb_ModifierKey
+            // 
+            this.cb_ModifierKey.FormattingEnabled = true;
+            this.cb_ModifierKey.Items.AddRange(new object[] {
+            "",
+            "SHIFT",
+            "CONTROL",
+            "LWIN",
+            "RWIN",
+            "LSHIFT",
+            "RSHIFT",
+            "LCONTROL",
+            "RCONTROL",
+            "LMENU",
+            "RMENU"});
+            this.cb_ModifierKey.Location = new System.Drawing.Point(6, 19);
+            this.cb_ModifierKey.Name = "cb_ModifierKey";
+            this.cb_ModifierKey.Size = new System.Drawing.Size(193, 21);
+            this.cb_ModifierKey.TabIndex = 0;
+            this.cb_ModifierKey.SelectedIndexChanged += new System.EventHandler(this.cb_ModifierKey_SelectedIndexChanged);
+            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.cb_KeystrokeKey);
@@ -1058,40 +1089,9 @@
             this.cb_Dialogue.Name = "cb_Dialogue";
             this.cb_Dialogue.Size = new System.Drawing.Size(161, 17);
             this.cb_Dialogue.TabIndex = 0;
-            this.cb_Dialogue.Text = "Recgonize Dialogue Options";
+            this.cb_Dialogue.Text = "Recognize Dialogue Options";
             this.cb_Dialogue.UseVisualStyleBackColor = true;
             this.cb_Dialogue.CheckedChanged += new System.EventHandler(this.cb_Dialogue_CheckedChanged);
-            // 
-            // gb_ModifierKey
-            // 
-            this.gb_ModifierKey.Controls.Add(this.cb_ModifierKey);
-            this.gb_ModifierKey.Location = new System.Drawing.Point(6, 71);
-            this.gb_ModifierKey.Name = "gb_ModifierKey";
-            this.gb_ModifierKey.Size = new System.Drawing.Size(205, 46);
-            this.gb_ModifierKey.TabIndex = 0;
-            this.gb_ModifierKey.TabStop = false;
-            this.gb_ModifierKey.Text = "Modifier Key";
-            // 
-            // cb_ModifierKey
-            // 
-            this.cb_ModifierKey.FormattingEnabled = true;
-            this.cb_ModifierKey.Items.AddRange(new object[] {
-            "",
-            "SHIFT",
-            "CONTROL",
-            "LWIN",
-            "RWIN",
-            "LSHIFT",
-            "RSHIFT",
-            "LCONTROL",
-            "RCONTROL",
-            "LMENU",
-            "RMENU"});
-            this.cb_ModifierKey.Location = new System.Drawing.Point(6, 19);
-            this.cb_ModifierKey.Name = "cb_ModifierKey";
-            this.cb_ModifierKey.Size = new System.Drawing.Size(193, 21);
-            this.cb_ModifierKey.TabIndex = 0;
-            this.cb_ModifierKey.SelectedIndexChanged += new System.EventHandler(this.cb_ModifierKey_SelectedIndexChanged);
             // 
             // CommandBuilder
             // 
@@ -1146,6 +1146,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_KeystrokeHeld)).EndInit();
             this.gb_TextInput.ResumeLayout(false);
             this.gb_TextInput.PerformLayout();
+            this.gb_ModifierKey.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.gb_KeystrokeRepeat.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nud_KeystrokeRepeat)).EndInit();
@@ -1155,7 +1156,6 @@
             this.gb_Dialogue.PerformLayout();
             this.gb_DialogueFile.ResumeLayout(false);
             this.gb_DialogueFile.PerformLayout();
-            this.gb_ModifierKey.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

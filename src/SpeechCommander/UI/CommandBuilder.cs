@@ -78,7 +78,8 @@ namespace SpeechCommander.UI
 
             dialogueWatcher = new System.IO.FileSystemWatcher();
             dialogueWatcher.NotifyFilter = System.IO.NotifyFilters.LastWrite;
-            dialogueWatcher.Changed += new System.IO.FileSystemEventHandler(dialogueWatcher_Changed);
+            dialogueWatcher.Changed += dialogueWatcher_Changed;
+            this.dialogueWatcher.Filter = "*.diag";
 
             LoadProfile();
 
@@ -99,16 +100,6 @@ namespace SpeechCommander.UI
             this.tb_DialogueFilePath.Text = this.currentProfile.CurrentDialogPath;
             this.cb_Dialogue.Checked = this.currentProfile.EngageNpcDialogue;
             this.tb_DialogueFilePath.Text = this.currentProfile.CurrentDialogPath;
-            try
-            {
-                this.dialogueWatcher.Path = System.IO.Path.GetDirectoryName(this.currentProfile.CurrentDialogPath);
-            }
-            catch (ArgumentException)
-            {
-               // this.dialogueWatcher.Path = null;
-                //this.tb_DialogueFilePath.Text = string.Empty;
-            }
-            this.dialogueWatcher.Filter = "*.diag";
 
             LoadActionList();
         }
@@ -406,6 +397,16 @@ namespace SpeechCommander.UI
         private void tb_DialogueFilePath_TextChanged(object sender, EventArgs e)
         {
             this.currentProfile.CurrentDialogPath = this.tb_DialogueFilePath.Text;
+
+            try
+            {
+                this.dialogueWatcher.Path = System.IO.Path.GetDirectoryName(this.currentProfile.CurrentDialogPath);
+            }
+            catch (ArgumentException)
+            {
+                // this.dialogueWatcher.Path = null;
+                //this.tb_DialogueFilePath.Text = string.Empty;
+            }
         }
         #endregion
 
@@ -713,7 +714,16 @@ namespace SpeechCommander.UI
         private void tsmi_Start_Click(object sender, EventArgs e)
         {
             if (this.currentProfile.EngageNpcDialogue)
-                this.dialogueWatcher.EnableRaisingEvents = true;
+            {
+                try
+                {
+                    this.dialogueWatcher.EnableRaisingEvents = true;
+                }
+                catch (ArgumentException ex)
+                {
+                    Console.WriteLine(String.Format("The dialogue file path,'{0}', is invalid!", this.dialogueWatcher.Path));
+                }
+            }
 
             this.tb_RecognizedWord.BackColor = Color.LightGreen;
             if (engine != null)
@@ -913,7 +923,7 @@ namespace SpeechCommander.UI
                         this.dialogProfile.UpdateGrammar();
                         this.currentProfile.Grammar.Enabled = false;
                         this.engine.AddGrammar(this.dialogProfile.Grammar, this.dialogProfile.Actions);
-                        Console.WriteLine("Dialogue Mode Initialized");
+                        Console.WriteLine("Dialogue Mode Initializing");
                     }
                 }
                 else
