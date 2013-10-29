@@ -163,12 +163,16 @@ class DialogueMenu extends MovieClip
 			// Select last topic entry if valid
 			TopicList.SetSelectedTopic(arguments[arguments.length - 1]);
 		}
+		if (!bAllowProgress)
+		{
 				skse.plugins.cfm.saveFile(
             "Data\\Interface\\CurrentDialogue.diag",
             options);
 			skse.plugins.cfm.saveFile("Data\\Interface\\DialogueState.diag", 
 								 TopicList.selectedIndex.toString());
-		skse.Log("SpeechCommander: Wrote Open Dialogue");
+//		skse.Log("SpeechCommander: Wrote Open Dialogue");
+//		skse.Log(eMenuState + " " + bAllowProgress + " " + bFadedIn);
+		}
 		TopicList.InvalidateData();
 	}
 
@@ -251,7 +255,7 @@ class DialogueMenu extends MovieClip
             "Data\\Interface\\CurrentDialogue.diag",
             "");	
 			
-		skse.Log("SpeechCommander: Wrote Close Dialogue");
+//		skse.Log("SpeechCommander: Wrote Close Dialogue");
 			}
 			
 
@@ -260,6 +264,7 @@ class DialogueMenu extends MovieClip
 		if (aEvent.scrollChanged == true) {
 			aEvent.target._parent.gotoAndPlay("moveUp");
 		}
+//		skse.Log("Up");
 		skse.plugins.cfm.saveFile("Data\\Interface\\DialogueState.diag", 
 								 TopicList.selectedIndex.toString());
 	}
@@ -269,6 +274,7 @@ class DialogueMenu extends MovieClip
 		if (aEvent.scrollChanged == true) {
 			aEvent.target._parent.gotoAndPlay("moveDown");
 		}
+//		skse.Log("Down");
 		skse.plugins.cfm.saveFile("Data\\Interface\\DialogueState.diag", 
 								 TopicList.selectedIndex.toString());
 	}
@@ -295,8 +301,9 @@ class DialogueMenu extends MovieClip
 		TopicListHolder.TextCopy_mc.textField._y = 6.25 - textFieldyOffset;
 		GameDelegate.call("TopicClicked", [TopicList.selectedEntry.topicIndex]);
 		
-						skse.plugins.cfm.saveFile("Data\\Interface\\DialogueState.diag", 
-								 TopicList.selectedIndex.toString());
+//		skse.Log("SelectionClick");
+//						skse.plugins.cfm.saveFile("Data\\Interface\\DialogueState.diag", 
+//								 TopicList.selectedIndex.toString());
 	}
 
 	function onFadeOutCompletion(): Void

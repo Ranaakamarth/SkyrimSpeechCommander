@@ -449,11 +449,7 @@ namespace SpeechCommander.UI
 
         private void bttn_RenameAction_Click(object sender, EventArgs e)
         {
-            if (this.CurrentAction != null && tb_RenameAction.Text != string.Empty && !currentProfile.Actions.Any(act => act.ActionName == tb_RenameAction.Text))
-            {
-                this.CurrentAction.ActionName = tb_RenameAction.Text;
-                LoadActionList();
-            }
+
         }
 
         private void bttn_RemoveAction_Click(object sender, EventArgs e)
@@ -795,6 +791,7 @@ namespace SpeechCommander.UI
         {
             string filename = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(this.currentProfile.CurrentDialogPath), FILE_DIALOGUESTATE);
 
+            int position = 0; 
             bool readSuccess = true;
             do
             {
@@ -804,10 +801,9 @@ namespace SpeechCommander.UI
                     using (System.IO.StreamReader rdr = new System.IO.StreamReader(filename))
                     {
                         readSuccess = true;
-                        int position = 0;
+
                         string line = rdr.ReadLine();
-                        if (int.TryParse(line, out position))
-                            this.DialoguePosition = position;
+                        int.TryParse(line, out position);
                     }
                 }
                 catch (System.IO.IOException)
@@ -818,21 +814,24 @@ namespace SpeechCommander.UI
             }
             while (!readSuccess);
 
-            Console.WriteLine("Modified Position! " + this.DialoguePosition);
-            for (int index = 0; index < this.dialogProfile.Actions.Count - 1; index++) // -1 to ignore goodbye
+            if (position != this.DialoguePosition)
             {
-                lock (this.dialogProfile.Actions[index].Commands)
+                this.DialoguePosition = position;
+                Console.WriteLine("Modified Position! " + this.DialoguePosition);
+                for (int index = 0; index < this.dialogProfile.Actions.Count - 1; index++) // -1 to ignore goodbye
                 {
-                    Command cmd = this.dialogProfile.Actions[index].Commands[0];
+                    lock (this.dialogProfile.Actions[index].Commands)
+                    {
+                        Command cmd = this.dialogProfile.Actions[index].Commands[0];
 
-                    if (this.DialoguePosition > index)
-                        cmd.Key = WindowsInput.VirtualKeyCode.VK_W;
-                    else
-                        cmd.Key = WindowsInput.VirtualKeyCode.VK_S;
-                    cmd.Repeat = Math.Abs(this.DialoguePosition - index);
+                        if (this.DialoguePosition > index)
+                            cmd.Key = WindowsInput.VirtualKeyCode.VK_W;
+                        else
+                            cmd.Key = WindowsInput.VirtualKeyCode.VK_S;
+                        cmd.Repeat = Math.Abs(this.DialoguePosition - index);
+                    }
                 }
             }
-
         }
 
         void UpdateDialogueOptions()
