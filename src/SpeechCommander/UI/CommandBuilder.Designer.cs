@@ -89,16 +89,40 @@
             this.bttn_AddAction = new System.Windows.Forms.Button();
             this.tp_Profile = new System.Windows.Forms.TabPage();
             this.gb_Dialogue = new System.Windows.Forms.GroupBox();
-            this.gb_DialogueFile = new System.Windows.Forms.GroupBox();
-            this.bttn_DialogueFilePath = new System.Windows.Forms.Button();
-            this.tb_DialogueFilePath = new System.Windows.Forms.TextBox();
-            this.cb_Dialogue = new System.Windows.Forms.CheckBox();
+            this.gb_DialogueFolder = new System.Windows.Forms.GroupBox();
+            this.bttn_DialogueFolderPath = new System.Windows.Forms.Button();
+            this.tb_DialogueFolderPath = new System.Windows.Forms.TextBox();
+            this.cb_DialogueEnabled = new System.Windows.Forms.CheckBox();
             this.gb_Timeout = new System.Windows.Forms.GroupBox();
             this.nud_Timeout = new System.Windows.Forms.NumericUpDown();
             this.gb_Confidence = new System.Windows.Forms.GroupBox();
             this.nud_Confidence = new System.Windows.Forms.NumericUpDown();
             this.gb_ProfileName = new System.Windows.Forms.GroupBox();
             this.tb_ProfileName = new System.Windows.Forms.TextBox();
+            this.gb_DialogueCommand = new System.Windows.Forms.GroupBox();
+            this.cb_DialogueCommand = new System.Windows.Forms.ComboBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.gb_DialogueGoodbye = new System.Windows.Forms.GroupBox();
+            this.gb_DialogueGoodbyeRename = new System.Windows.Forms.GroupBox();
+            this.tb_DialogueGoodbyeRename = new System.Windows.Forms.TextBox();
+            this.bttn_DialogueGoodbyeRename = new System.Windows.Forms.Button();
+            this.bttn_DialogueGoodbyeRemove = new System.Windows.Forms.Button();
+            this.lb_DialogueGoodbyeList = new System.Windows.Forms.ListBox();
+            this.gb_DialogueGoodbyeAdd = new System.Windows.Forms.GroupBox();
+            this.tb_DialogueGoodbyeAdd = new System.Windows.Forms.TextBox();
+            this.bttn_DialogueGoodbyeAdd = new System.Windows.Forms.Button();
+            this.gb_DialogueCommandPaused = new System.Windows.Forms.GroupBox();
+            this.nud_DialogueCommandPaused = new System.Windows.Forms.NumericUpDown();
+            this.gb_DialogueCommandHeld = new System.Windows.Forms.GroupBox();
+            this.nud_DialogueCommandHeld = new System.Windows.Forms.NumericUpDown();
+            this.gb_DialogueCommandModifierKey = new System.Windows.Forms.GroupBox();
+            this.cb_DialogueCommandModifierKey = new System.Windows.Forms.ComboBox();
+            this.gb_DialogueCommandKey = new System.Windows.Forms.GroupBox();
+            this.cb_DialogueCommandKey = new System.Windows.Forms.ComboBox();
+            this.gb_DialogueNavigation = new System.Windows.Forms.GroupBox();
             this.ms_MainMenuStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tp_Actions.SuspendLayout();
@@ -128,12 +152,26 @@
             this.gb_AddAction.SuspendLayout();
             this.tp_Profile.SuspendLayout();
             this.gb_Dialogue.SuspendLayout();
-            this.gb_DialogueFile.SuspendLayout();
+            this.gb_DialogueFolder.SuspendLayout();
             this.gb_Timeout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Timeout)).BeginInit();
             this.gb_Confidence.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Confidence)).BeginInit();
             this.gb_ProfileName.SuspendLayout();
+            this.gb_DialogueCommand.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            this.gb_DialogueGoodbye.SuspendLayout();
+            this.gb_DialogueGoodbyeRename.SuspendLayout();
+            this.gb_DialogueGoodbyeAdd.SuspendLayout();
+            this.gb_DialogueCommandPaused.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_DialogueCommandPaused)).BeginInit();
+            this.gb_DialogueCommandHeld.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_DialogueCommandHeld)).BeginInit();
+            this.gb_DialogueCommandModifierKey.SuspendLayout();
+            this.gb_DialogueCommandKey.SuspendLayout();
+            this.gb_DialogueNavigation.SuspendLayout();
             this.SuspendLayout();
             // 
             // ms_MainMenuStrip
@@ -144,7 +182,7 @@
             this.tsmi_Testing});
             this.ms_MainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.ms_MainMenuStrip.Name = "ms_MainMenuStrip";
-            this.ms_MainMenuStrip.Size = new System.Drawing.Size(964, 24);
+            this.ms_MainMenuStrip.Size = new System.Drawing.Size(982, 24);
             this.ms_MainMenuStrip.TabIndex = 7;
             this.ms_MainMenuStrip.Text = "menuStrip1";
             // 
@@ -161,21 +199,21 @@
             // tsmi_New
             // 
             this.tsmi_New.Name = "tsmi_New";
-            this.tsmi_New.Size = new System.Drawing.Size(152, 22);
+            this.tsmi_New.Size = new System.Drawing.Size(112, 22);
             this.tsmi_New.Text = "New...";
             this.tsmi_New.Click += new System.EventHandler(this.tsmi_New_Click);
             // 
             // tsmi_Open
             // 
             this.tsmi_Open.Name = "tsmi_Open";
-            this.tsmi_Open.Size = new System.Drawing.Size(152, 22);
+            this.tsmi_Open.Size = new System.Drawing.Size(112, 22);
             this.tsmi_Open.Text = "Open...";
             this.tsmi_Open.Click += new System.EventHandler(this.tsmi_Open_Click);
             // 
             // tsmi_Save
             // 
             this.tsmi_Save.Name = "tsmi_Save";
-            this.tsmi_Save.Size = new System.Drawing.Size(152, 22);
+            this.tsmi_Save.Size = new System.Drawing.Size(112, 22);
             this.tsmi_Save.Text = "Save...";
             this.tsmi_Save.Click += new System.EventHandler(this.tsmi_Save_Click);
             // 
@@ -220,7 +258,7 @@
             // tb_RecognizedWord
             // 
             this.tb_RecognizedWord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_RecognizedWord.Location = new System.Drawing.Point(523, 2);
+            this.tb_RecognizedWord.Location = new System.Drawing.Point(541, 2);
             this.tb_RecognizedWord.Name = "tb_RecognizedWord";
             this.tb_RecognizedWord.ReadOnly = true;
             this.tb_RecognizedWord.Size = new System.Drawing.Size(429, 20);
@@ -235,7 +273,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(964, 554);
+            this.tabControl1.Size = new System.Drawing.Size(982, 554);
             this.tabControl1.TabIndex = 8;
             // 
             // tp_Actions
@@ -249,7 +287,7 @@
             this.tp_Actions.Location = new System.Drawing.Point(4, 22);
             this.tp_Actions.Name = "tp_Actions";
             this.tp_Actions.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_Actions.Size = new System.Drawing.Size(956, 528);
+            this.tp_Actions.Size = new System.Drawing.Size(974, 528);
             this.tp_Actions.TabIndex = 0;
             this.tp_Actions.Text = "Actions";
             // 
@@ -264,7 +302,7 @@
             this.gb_Keystroke.Controls.Add(this.gb_KeystrokeRepeat);
             this.gb_Keystroke.Location = new System.Drawing.Point(731, 6);
             this.gb_Keystroke.Name = "gb_Keystroke";
-            this.gb_Keystroke.Size = new System.Drawing.Size(217, 385);
+            this.gb_Keystroke.Size = new System.Drawing.Size(235, 385);
             this.gb_Keystroke.TabIndex = 15;
             this.gb_Keystroke.TabStop = false;
             this.gb_Keystroke.Text = "Keystroke";
@@ -282,16 +320,20 @@
             // 
             // gb_KeystrokePaused
             // 
+            this.gb_KeystrokePaused.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gb_KeystrokePaused.Controls.Add(this.nud_KeystrokePaused);
             this.gb_KeystrokePaused.Location = new System.Drawing.Point(6, 283);
             this.gb_KeystrokePaused.Name = "gb_KeystrokePaused";
-            this.gb_KeystrokePaused.Size = new System.Drawing.Size(205, 45);
+            this.gb_KeystrokePaused.Size = new System.Drawing.Size(223, 45);
             this.gb_KeystrokePaused.TabIndex = 3;
             this.gb_KeystrokePaused.TabStop = false;
             this.gb_KeystrokePaused.Text = "Paused Duration (milliseconds)";
             // 
             // nud_KeystrokePaused
             // 
+            this.nud_KeystrokePaused.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nud_KeystrokePaused.Location = new System.Drawing.Point(6, 19);
             this.nud_KeystrokePaused.Maximum = new decimal(new int[] {
             100000,
@@ -304,7 +346,7 @@
             0,
             0});
             this.nud_KeystrokePaused.Name = "nud_KeystrokePaused";
-            this.nud_KeystrokePaused.Size = new System.Drawing.Size(193, 20);
+            this.nud_KeystrokePaused.Size = new System.Drawing.Size(211, 20);
             this.nud_KeystrokePaused.TabIndex = 0;
             this.nud_KeystrokePaused.Value = new decimal(new int[] {
             25,
@@ -315,16 +357,20 @@
             // 
             // gb_KeystrokeHeld
             // 
+            this.gb_KeystrokeHeld.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gb_KeystrokeHeld.Controls.Add(this.nud_KeystrokeHeld);
             this.gb_KeystrokeHeld.Location = new System.Drawing.Point(6, 230);
             this.gb_KeystrokeHeld.Name = "gb_KeystrokeHeld";
-            this.gb_KeystrokeHeld.Size = new System.Drawing.Size(205, 45);
+            this.gb_KeystrokeHeld.Size = new System.Drawing.Size(223, 45);
             this.gb_KeystrokeHeld.TabIndex = 2;
             this.gb_KeystrokeHeld.TabStop = false;
             this.gb_KeystrokeHeld.Text = "Held Duration (milliseconds)";
             // 
             // nud_KeystrokeHeld
             // 
+            this.nud_KeystrokeHeld.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nud_KeystrokeHeld.Location = new System.Drawing.Point(6, 19);
             this.nud_KeystrokeHeld.Maximum = new decimal(new int[] {
             100000,
@@ -337,7 +383,7 @@
             0,
             0});
             this.nud_KeystrokeHeld.Name = "nud_KeystrokeHeld";
-            this.nud_KeystrokeHeld.Size = new System.Drawing.Size(193, 20);
+            this.nud_KeystrokeHeld.Size = new System.Drawing.Size(211, 20);
             this.nud_KeystrokeHeld.TabIndex = 0;
             this.nud_KeystrokeHeld.Value = new decimal(new int[] {
             50,
@@ -348,34 +394,42 @@
             // 
             // gb_TextInput
             // 
+            this.gb_TextInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gb_TextInput.Controls.Add(this.tb_TextInput);
             this.gb_TextInput.Location = new System.Drawing.Point(12, 123);
             this.gb_TextInput.Name = "gb_TextInput";
-            this.gb_TextInput.Size = new System.Drawing.Size(205, 46);
+            this.gb_TextInput.Size = new System.Drawing.Size(217, 46);
             this.gb_TextInput.TabIndex = 0;
             this.gb_TextInput.TabStop = false;
             this.gb_TextInput.Text = "Text Input";
             // 
             // tb_TextInput
             // 
+            this.tb_TextInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_TextInput.Enabled = false;
             this.tb_TextInput.Location = new System.Drawing.Point(6, 19);
             this.tb_TextInput.Name = "tb_TextInput";
-            this.tb_TextInput.Size = new System.Drawing.Size(191, 20);
+            this.tb_TextInput.Size = new System.Drawing.Size(203, 20);
             this.tb_TextInput.TabIndex = 0;
             // 
             // gb_ModifierKey
             // 
+            this.gb_ModifierKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gb_ModifierKey.Controls.Add(this.cb_ModifierKey);
             this.gb_ModifierKey.Location = new System.Drawing.Point(6, 71);
             this.gb_ModifierKey.Name = "gb_ModifierKey";
-            this.gb_ModifierKey.Size = new System.Drawing.Size(205, 46);
+            this.gb_ModifierKey.Size = new System.Drawing.Size(223, 46);
             this.gb_ModifierKey.TabIndex = 0;
             this.gb_ModifierKey.TabStop = false;
             this.gb_ModifierKey.Text = "Modifier Key";
             // 
             // cb_ModifierKey
             // 
+            this.cb_ModifierKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cb_ModifierKey.FormattingEnabled = true;
             this.cb_ModifierKey.Items.AddRange(new object[] {
             "",
@@ -391,22 +445,26 @@
             "RMENU"});
             this.cb_ModifierKey.Location = new System.Drawing.Point(6, 19);
             this.cb_ModifierKey.Name = "cb_ModifierKey";
-            this.cb_ModifierKey.Size = new System.Drawing.Size(193, 21);
+            this.cb_ModifierKey.Size = new System.Drawing.Size(211, 21);
             this.cb_ModifierKey.TabIndex = 0;
             this.cb_ModifierKey.SelectedIndexChanged += new System.EventHandler(this.cb_ModifierKey_SelectedIndexChanged);
             // 
             // groupBox7
             // 
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.Controls.Add(this.cb_KeystrokeKey);
             this.groupBox7.Location = new System.Drawing.Point(6, 19);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(205, 46);
+            this.groupBox7.Size = new System.Drawing.Size(223, 46);
             this.groupBox7.TabIndex = 0;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Key";
             // 
             // cb_KeystrokeKey
             // 
+            this.cb_KeystrokeKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cb_KeystrokeKey.FormattingEnabled = true;
             this.cb_KeystrokeKey.Items.AddRange(new object[] {
             "",
@@ -585,7 +643,7 @@
             "OEM_CLEAR"});
             this.cb_KeystrokeKey.Location = new System.Drawing.Point(6, 19);
             this.cb_KeystrokeKey.Name = "cb_KeystrokeKey";
-            this.cb_KeystrokeKey.Size = new System.Drawing.Size(193, 21);
+            this.cb_KeystrokeKey.Size = new System.Drawing.Size(211, 21);
             this.cb_KeystrokeKey.TabIndex = 0;
             this.cb_KeystrokeKey.SelectedIndexChanged += new System.EventHandler(this.cb_CommandKey_SelectedIndexChanged);
             // 
@@ -594,13 +652,15 @@
             this.gb_KeystrokeRepeat.Controls.Add(this.nud_KeystrokeRepeat);
             this.gb_KeystrokeRepeat.Location = new System.Drawing.Point(6, 334);
             this.gb_KeystrokeRepeat.Name = "gb_KeystrokeRepeat";
-            this.gb_KeystrokeRepeat.Size = new System.Drawing.Size(205, 45);
+            this.gb_KeystrokeRepeat.Size = new System.Drawing.Size(223, 45);
             this.gb_KeystrokeRepeat.TabIndex = 4;
             this.gb_KeystrokeRepeat.TabStop = false;
             this.gb_KeystrokeRepeat.Text = "Repeat";
             // 
             // nud_KeystrokeRepeat
             // 
+            this.nud_KeystrokeRepeat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nud_KeystrokeRepeat.Location = new System.Drawing.Point(6, 19);
             this.nud_KeystrokeRepeat.Minimum = new decimal(new int[] {
             1,
@@ -608,7 +668,7 @@
             0,
             0});
             this.nud_KeystrokeRepeat.Name = "nud_KeystrokeRepeat";
-            this.nud_KeystrokeRepeat.Size = new System.Drawing.Size(193, 20);
+            this.nud_KeystrokeRepeat.Size = new System.Drawing.Size(211, 20);
             this.nud_KeystrokeRepeat.TabIndex = 0;
             this.nud_KeystrokeRepeat.Value = new decimal(new int[] {
             1,
@@ -623,7 +683,7 @@
             this.gb_Action.Controls.Add(this.gb_ActonRepeat);
             this.gb_Action.Location = new System.Drawing.Point(731, 397);
             this.gb_Action.Name = "gb_Action";
-            this.gb_Action.Size = new System.Drawing.Size(217, 121);
+            this.gb_Action.Size = new System.Drawing.Size(235, 121);
             this.gb_Action.TabIndex = 16;
             this.gb_Action.TabStop = false;
             this.gb_Action.Text = "Action Command";
@@ -633,13 +693,15 @@
             this.gb_ActionPausedDuration.Controls.Add(this.nud_ActionPausedDuration);
             this.gb_ActionPausedDuration.Location = new System.Drawing.Point(6, 19);
             this.gb_ActionPausedDuration.Name = "gb_ActionPausedDuration";
-            this.gb_ActionPausedDuration.Size = new System.Drawing.Size(205, 45);
+            this.gb_ActionPausedDuration.Size = new System.Drawing.Size(223, 45);
             this.gb_ActionPausedDuration.TabIndex = 0;
             this.gb_ActionPausedDuration.TabStop = false;
             this.gb_ActionPausedDuration.Text = "Paused Duration (milliseconds)";
             // 
             // nud_ActionPausedDuration
             // 
+            this.nud_ActionPausedDuration.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nud_ActionPausedDuration.Location = new System.Drawing.Point(6, 19);
             this.nud_ActionPausedDuration.Maximum = new decimal(new int[] {
             100000,
@@ -652,7 +714,7 @@
             0,
             0});
             this.nud_ActionPausedDuration.Name = "nud_ActionPausedDuration";
-            this.nud_ActionPausedDuration.Size = new System.Drawing.Size(193, 20);
+            this.nud_ActionPausedDuration.Size = new System.Drawing.Size(211, 20);
             this.nud_ActionPausedDuration.TabIndex = 0;
             this.nud_ActionPausedDuration.Value = new decimal(new int[] {
             25,
@@ -666,13 +728,15 @@
             this.gb_ActonRepeat.Controls.Add(this.nud_ActionRepeat);
             this.gb_ActonRepeat.Location = new System.Drawing.Point(6, 70);
             this.gb_ActonRepeat.Name = "gb_ActonRepeat";
-            this.gb_ActonRepeat.Size = new System.Drawing.Size(205, 45);
+            this.gb_ActonRepeat.Size = new System.Drawing.Size(223, 45);
             this.gb_ActonRepeat.TabIndex = 1;
             this.gb_ActonRepeat.TabStop = false;
             this.gb_ActonRepeat.Text = "Repeat";
             // 
             // nud_ActionRepeat
             // 
+            this.nud_ActionRepeat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.nud_ActionRepeat.Location = new System.Drawing.Point(6, 19);
             this.nud_ActionRepeat.Minimum = new decimal(new int[] {
             1,
@@ -680,7 +744,7 @@
             0,
             0});
             this.nud_ActionRepeat.Name = "nud_ActionRepeat";
-            this.nud_ActionRepeat.Size = new System.Drawing.Size(193, 20);
+            this.nud_ActionRepeat.Size = new System.Drawing.Size(211, 20);
             this.nud_ActionRepeat.TabIndex = 0;
             this.nud_ActionRepeat.Value = new decimal(new int[] {
             1,
@@ -699,17 +763,18 @@
             this.gb_KeystrokeList.Controls.Add(this.gb_AddKeystrokeList);
             this.gb_KeystrokeList.Location = new System.Drawing.Point(490, 6);
             this.gb_KeystrokeList.Name = "gb_KeystrokeList";
-            this.gb_KeystrokeList.Size = new System.Drawing.Size(235, 512);
+            this.gb_KeystrokeList.Size = new System.Drawing.Size(235, 514);
             this.gb_KeystrokeList.TabIndex = 14;
             this.gb_KeystrokeList.TabStop = false;
             this.gb_KeystrokeList.Text = "Keystroke List:";
             // 
             // gb_RenameKeystrokeList
             // 
-            this.gb_RenameKeystrokeList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.gb_RenameKeystrokeList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gb_RenameKeystrokeList.Controls.Add(this.tb_RenameKeystrokeList);
             this.gb_RenameKeystrokeList.Controls.Add(this.bttn_RenameKeystrokeList);
-            this.gb_RenameKeystrokeList.Location = new System.Drawing.Point(6, 466);
+            this.gb_RenameKeystrokeList.Location = new System.Drawing.Point(6, 462);
             this.gb_RenameKeystrokeList.Name = "gb_RenameKeystrokeList";
             this.gb_RenameKeystrokeList.Size = new System.Drawing.Size(223, 46);
             this.gb_RenameKeystrokeList.TabIndex = 3;
@@ -718,6 +783,8 @@
             // 
             // tb_RenameKeystrokeList
             // 
+            this.tb_RenameKeystrokeList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_RenameKeystrokeList.Location = new System.Drawing.Point(6, 19);
             this.tb_RenameKeystrokeList.Name = "tb_RenameKeystrokeList";
             this.tb_RenameKeystrokeList.Size = new System.Drawing.Size(147, 20);
@@ -737,8 +804,8 @@
             // 
             // bttn_RemoveKeystrokeList
             // 
-            this.bttn_RemoveKeystrokeList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bttn_RemoveKeystrokeList.Location = new System.Drawing.Point(165, 437);
+            this.bttn_RemoveKeystrokeList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_RemoveKeystrokeList.Location = new System.Drawing.Point(165, 433);
             this.bttn_RemoveKeystrokeList.Name = "bttn_RemoveKeystrokeList";
             this.bttn_RemoveKeystrokeList.Size = new System.Drawing.Size(58, 23);
             this.bttn_RemoveKeystrokeList.TabIndex = 2;
@@ -748,21 +815,24 @@
             // 
             // lb_KeystrokeList
             // 
-            this.lb_KeystrokeList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lb_KeystrokeList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_KeystrokeList.FormattingEnabled = true;
+            this.lb_KeystrokeList.IntegralHeight = false;
             this.lb_KeystrokeList.Location = new System.Drawing.Point(6, 19);
             this.lb_KeystrokeList.Name = "lb_KeystrokeList";
-            this.lb_KeystrokeList.Size = new System.Drawing.Size(223, 355);
+            this.lb_KeystrokeList.Size = new System.Drawing.Size(223, 356);
             this.lb_KeystrokeList.TabIndex = 0;
             this.lb_KeystrokeList.SelectedIndexChanged += new System.EventHandler(this.lb_KeyStrokeList_SelectedIndexChanged);
             // 
             // gb_AddKeystrokeList
             // 
-            this.gb_AddKeystrokeList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.gb_AddKeystrokeList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gb_AddKeystrokeList.Controls.Add(this.tb_AddKeystrokeList);
             this.gb_AddKeystrokeList.Controls.Add(this.bttn_AddKeystrokeList);
-            this.gb_AddKeystrokeList.Location = new System.Drawing.Point(6, 385);
+            this.gb_AddKeystrokeList.Location = new System.Drawing.Point(6, 381);
             this.gb_AddKeystrokeList.Name = "gb_AddKeystrokeList";
             this.gb_AddKeystrokeList.Size = new System.Drawing.Size(223, 46);
             this.gb_AddKeystrokeList.TabIndex = 1;
@@ -771,6 +841,8 @@
             // 
             // tb_AddKeystrokeList
             // 
+            this.tb_AddKeystrokeList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_AddKeystrokeList.Location = new System.Drawing.Point(6, 19);
             this.tb_AddKeystrokeList.Name = "tb_AddKeystrokeList";
             this.tb_AddKeystrokeList.Size = new System.Drawing.Size(147, 20);
@@ -798,17 +870,18 @@
             this.gb_Phrases.Controls.Add(this.gb_AddPhrase);
             this.gb_Phrases.Location = new System.Drawing.Point(249, 6);
             this.gb_Phrases.Name = "gb_Phrases";
-            this.gb_Phrases.Size = new System.Drawing.Size(235, 512);
+            this.gb_Phrases.Size = new System.Drawing.Size(235, 514);
             this.gb_Phrases.TabIndex = 13;
             this.gb_Phrases.TabStop = false;
             this.gb_Phrases.Text = "Phrases:";
             // 
             // gb_RenamePhrase
             // 
-            this.gb_RenamePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.gb_RenamePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gb_RenamePhrase.Controls.Add(this.tb_RenamePhrase);
             this.gb_RenamePhrase.Controls.Add(this.bttn_RenamePhrase);
-            this.gb_RenamePhrase.Location = new System.Drawing.Point(6, 466);
+            this.gb_RenamePhrase.Location = new System.Drawing.Point(6, 462);
             this.gb_RenamePhrase.Name = "gb_RenamePhrase";
             this.gb_RenamePhrase.Size = new System.Drawing.Size(223, 46);
             this.gb_RenamePhrase.TabIndex = 3;
@@ -817,6 +890,8 @@
             // 
             // tb_RenamePhrase
             // 
+            this.tb_RenamePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_RenamePhrase.Location = new System.Drawing.Point(6, 19);
             this.tb_RenamePhrase.Name = "tb_RenamePhrase";
             this.tb_RenamePhrase.Size = new System.Drawing.Size(147, 20);
@@ -836,8 +911,8 @@
             // 
             // bttn_RemovePhrase
             // 
-            this.bttn_RemovePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bttn_RemovePhrase.Location = new System.Drawing.Point(165, 437);
+            this.bttn_RemovePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_RemovePhrase.Location = new System.Drawing.Point(165, 433);
             this.bttn_RemovePhrase.Name = "bttn_RemovePhrase";
             this.bttn_RemovePhrase.Size = new System.Drawing.Size(58, 23);
             this.bttn_RemovePhrase.TabIndex = 2;
@@ -847,21 +922,24 @@
             // 
             // lb_Phrases
             // 
-            this.lb_Phrases.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lb_Phrases.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Phrases.FormattingEnabled = true;
+            this.lb_Phrases.IntegralHeight = false;
             this.lb_Phrases.Location = new System.Drawing.Point(6, 19);
             this.lb_Phrases.Name = "lb_Phrases";
-            this.lb_Phrases.Size = new System.Drawing.Size(223, 355);
+            this.lb_Phrases.Size = new System.Drawing.Size(223, 356);
             this.lb_Phrases.TabIndex = 0;
             this.lb_Phrases.SelectedIndexChanged += new System.EventHandler(this.lb_Phrases_SelectedIndexChanged);
             // 
             // gb_AddPhrase
             // 
-            this.gb_AddPhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.gb_AddPhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gb_AddPhrase.Controls.Add(this.tb_AddPhrase);
             this.gb_AddPhrase.Controls.Add(this.bttn_AddPhrase);
-            this.gb_AddPhrase.Location = new System.Drawing.Point(6, 385);
+            this.gb_AddPhrase.Location = new System.Drawing.Point(6, 381);
             this.gb_AddPhrase.Name = "gb_AddPhrase";
             this.gb_AddPhrase.Size = new System.Drawing.Size(223, 46);
             this.gb_AddPhrase.TabIndex = 1;
@@ -870,6 +948,8 @@
             // 
             // tb_AddPhrase
             // 
+            this.tb_AddPhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_AddPhrase.Location = new System.Drawing.Point(6, 19);
             this.tb_AddPhrase.Name = "tb_AddPhrase";
             this.tb_AddPhrase.Size = new System.Drawing.Size(147, 20);
@@ -897,17 +977,18 @@
             this.gb_Actions.Controls.Add(this.gb_AddAction);
             this.gb_Actions.Location = new System.Drawing.Point(8, 6);
             this.gb_Actions.Name = "gb_Actions";
-            this.gb_Actions.Size = new System.Drawing.Size(235, 512);
+            this.gb_Actions.Size = new System.Drawing.Size(235, 514);
             this.gb_Actions.TabIndex = 12;
             this.gb_Actions.TabStop = false;
             this.gb_Actions.Text = "Actions:";
             // 
             // gb_RenameAction
             // 
-            this.gb_RenameAction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.gb_RenameAction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gb_RenameAction.Controls.Add(this.tb_RenameAction);
             this.gb_RenameAction.Controls.Add(this.bttn_RenameAction);
-            this.gb_RenameAction.Location = new System.Drawing.Point(6, 466);
+            this.gb_RenameAction.Location = new System.Drawing.Point(6, 462);
             this.gb_RenameAction.Name = "gb_RenameAction";
             this.gb_RenameAction.Size = new System.Drawing.Size(223, 46);
             this.gb_RenameAction.TabIndex = 3;
@@ -916,6 +997,8 @@
             // 
             // tb_RenameAction
             // 
+            this.tb_RenameAction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_RenameAction.Location = new System.Drawing.Point(6, 19);
             this.tb_RenameAction.Name = "tb_RenameAction";
             this.tb_RenameAction.Size = new System.Drawing.Size(147, 20);
@@ -935,8 +1018,8 @@
             // 
             // bttn_RemoveAction
             // 
-            this.bttn_RemoveAction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bttn_RemoveAction.Location = new System.Drawing.Point(165, 437);
+            this.bttn_RemoveAction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_RemoveAction.Location = new System.Drawing.Point(165, 433);
             this.bttn_RemoveAction.Name = "bttn_RemoveAction";
             this.bttn_RemoveAction.Size = new System.Drawing.Size(58, 23);
             this.bttn_RemoveAction.TabIndex = 2;
@@ -946,21 +1029,24 @@
             // 
             // lb_Actions
             // 
-            this.lb_Actions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lb_Actions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Actions.FormattingEnabled = true;
+            this.lb_Actions.IntegralHeight = false;
             this.lb_Actions.Location = new System.Drawing.Point(6, 19);
             this.lb_Actions.Name = "lb_Actions";
-            this.lb_Actions.Size = new System.Drawing.Size(223, 355);
+            this.lb_Actions.Size = new System.Drawing.Size(223, 356);
             this.lb_Actions.TabIndex = 0;
             this.lb_Actions.SelectedIndexChanged += new System.EventHandler(this.lb_Actions_SelectedIndexChanged);
             // 
             // gb_AddAction
             // 
-            this.gb_AddAction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.gb_AddAction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gb_AddAction.Controls.Add(this.tb_AddAction);
             this.gb_AddAction.Controls.Add(this.bttn_AddAction);
-            this.gb_AddAction.Location = new System.Drawing.Point(6, 385);
+            this.gb_AddAction.Location = new System.Drawing.Point(6, 381);
             this.gb_AddAction.Name = "gb_AddAction";
             this.gb_AddAction.Size = new System.Drawing.Size(223, 46);
             this.gb_AddAction.TabIndex = 1;
@@ -969,6 +1055,8 @@
             // 
             // tb_AddAction
             // 
+            this.tb_AddAction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_AddAction.Location = new System.Drawing.Point(6, 19);
             this.tb_AddAction.Name = "tb_AddAction";
             this.tb_AddAction.Size = new System.Drawing.Size(147, 20);
@@ -996,67 +1084,72 @@
             this.tp_Profile.Location = new System.Drawing.Point(4, 22);
             this.tp_Profile.Name = "tp_Profile";
             this.tp_Profile.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_Profile.Size = new System.Drawing.Size(956, 528);
+            this.tp_Profile.Size = new System.Drawing.Size(974, 528);
             this.tp_Profile.TabIndex = 1;
             this.tp_Profile.Text = "Profile";
             // 
             // gb_Dialogue
             // 
-            this.gb_Dialogue.Controls.Add(this.gb_DialogueFile);
-            this.gb_Dialogue.Controls.Add(this.cb_Dialogue);
-            this.gb_Dialogue.Location = new System.Drawing.Point(8, 165);
+            this.gb_Dialogue.Controls.Add(this.gb_DialogueNavigation);
+            this.gb_Dialogue.Controls.Add(this.gb_DialogueFolder);
+            this.gb_Dialogue.Controls.Add(this.cb_DialogueEnabled);
+            this.gb_Dialogue.Controls.Add(this.gb_DialogueGoodbye);
+            this.gb_Dialogue.Location = new System.Drawing.Point(6, 112);
             this.gb_Dialogue.Name = "gb_Dialogue";
-            this.gb_Dialogue.Size = new System.Drawing.Size(217, 126);
+            this.gb_Dialogue.Size = new System.Drawing.Size(478, 410);
             this.gb_Dialogue.TabIndex = 21;
             this.gb_Dialogue.TabStop = false;
-            this.gb_Dialogue.Text = "Dialogue";
+            this.gb_Dialogue.Text = "Dialogue Options";
             // 
-            // gb_DialogueFile
+            // gb_DialogueFolder
             // 
-            this.gb_DialogueFile.Controls.Add(this.bttn_DialogueFilePath);
-            this.gb_DialogueFile.Controls.Add(this.tb_DialogueFilePath);
-            this.gb_DialogueFile.Location = new System.Drawing.Point(6, 42);
-            this.gb_DialogueFile.Name = "gb_DialogueFile";
-            this.gb_DialogueFile.Size = new System.Drawing.Size(205, 78);
-            this.gb_DialogueFile.TabIndex = 2;
-            this.gb_DialogueFile.TabStop = false;
-            this.gb_DialogueFile.Text = "Dialogue File Path";
+            this.gb_DialogueFolder.Controls.Add(this.bttn_DialogueFolderPath);
+            this.gb_DialogueFolder.Controls.Add(this.tb_DialogueFolderPath);
+            this.gb_DialogueFolder.Location = new System.Drawing.Point(6, 42);
+            this.gb_DialogueFolder.Name = "gb_DialogueFolder";
+            this.gb_DialogueFolder.Size = new System.Drawing.Size(221, 46);
+            this.gb_DialogueFolder.TabIndex = 2;
+            this.gb_DialogueFolder.TabStop = false;
+            this.gb_DialogueFolder.Text = "Dialogue Folder Path";
             // 
-            // bttn_DialogueFilePath
+            // bttn_DialogueFolderPath
             // 
-            this.bttn_DialogueFilePath.Location = new System.Drawing.Point(8, 49);
-            this.bttn_DialogueFilePath.Name = "bttn_DialogueFilePath";
-            this.bttn_DialogueFilePath.Size = new System.Drawing.Size(191, 23);
-            this.bttn_DialogueFilePath.TabIndex = 2;
-            this.bttn_DialogueFilePath.Text = "Browse...";
-            this.bttn_DialogueFilePath.UseVisualStyleBackColor = true;
-            this.bttn_DialogueFilePath.Click += new System.EventHandler(this.bttn_DialogueFilePath_Click);
+            this.bttn_DialogueFolderPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_DialogueFolderPath.Location = new System.Drawing.Point(185, 17);
+            this.bttn_DialogueFolderPath.Name = "bttn_DialogueFolderPath";
+            this.bttn_DialogueFolderPath.Size = new System.Drawing.Size(30, 23);
+            this.bttn_DialogueFolderPath.TabIndex = 2;
+            this.bttn_DialogueFolderPath.Text = "...";
+            this.bttn_DialogueFolderPath.UseVisualStyleBackColor = true;
+            this.bttn_DialogueFolderPath.Click += new System.EventHandler(this.bttn_DialogueFilePath_Click);
             // 
-            // tb_DialogueFilePath
+            // tb_DialogueFolderPath
             // 
-            this.tb_DialogueFilePath.Location = new System.Drawing.Point(6, 19);
-            this.tb_DialogueFilePath.Name = "tb_DialogueFilePath";
-            this.tb_DialogueFilePath.Size = new System.Drawing.Size(193, 20);
-            this.tb_DialogueFilePath.TabIndex = 1;
-            this.tb_DialogueFilePath.Text = "\"C:\\Program Files (x86)\\The Elder Scrolls V Skyrim\\Data\\Interface\\CurrentDialogue" +
-    ".diag\"";
-            this.tb_DialogueFilePath.TextChanged += new System.EventHandler(this.tb_DialogueFilePath_TextChanged);
+            this.tb_DialogueFolderPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_DialogueFolderPath.Location = new System.Drawing.Point(6, 19);
+            this.tb_DialogueFolderPath.Name = "tb_DialogueFolderPath";
+            this.tb_DialogueFolderPath.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tb_DialogueFolderPath.Size = new System.Drawing.Size(173, 20);
+            this.tb_DialogueFolderPath.TabIndex = 1;
+            this.tb_DialogueFolderPath.Text = "C:\\Program Files (x86)\\The Elder Scrolls V Skyrim\\Data\\Interface\\";
+            this.tb_DialogueFolderPath.TextChanged += new System.EventHandler(this.tb_DialogueFilePath_TextChanged);
             // 
-            // cb_Dialogue
+            // cb_DialogueEnabled
             // 
-            this.cb_Dialogue.AutoSize = true;
-            this.cb_Dialogue.Location = new System.Drawing.Point(14, 19);
-            this.cb_Dialogue.Name = "cb_Dialogue";
-            this.cb_Dialogue.Size = new System.Drawing.Size(161, 17);
-            this.cb_Dialogue.TabIndex = 0;
-            this.cb_Dialogue.Text = "Recognize Dialogue Options";
-            this.cb_Dialogue.UseVisualStyleBackColor = true;
-            this.cb_Dialogue.CheckedChanged += new System.EventHandler(this.cb_Dialogue_CheckedChanged);
+            this.cb_DialogueEnabled.AutoSize = true;
+            this.cb_DialogueEnabled.Location = new System.Drawing.Point(14, 19);
+            this.cb_DialogueEnabled.Name = "cb_DialogueEnabled";
+            this.cb_DialogueEnabled.Size = new System.Drawing.Size(143, 17);
+            this.cb_DialogueEnabled.TabIndex = 0;
+            this.cb_DialogueEnabled.Text = "Enable Dialogue Options";
+            this.cb_DialogueEnabled.UseVisualStyleBackColor = true;
+            this.cb_DialogueEnabled.CheckedChanged += new System.EventHandler(this.cb_Dialogue_CheckedChanged);
             // 
             // gb_Timeout
             // 
             this.gb_Timeout.Controls.Add(this.nud_Timeout);
-            this.gb_Timeout.Location = new System.Drawing.Point(8, 112);
+            this.gb_Timeout.Location = new System.Drawing.Point(247, 6);
             this.gb_Timeout.Name = "gb_Timeout";
             this.gb_Timeout.Size = new System.Drawing.Size(235, 47);
             this.gb_Timeout.TabIndex = 19;
@@ -1084,6 +1177,8 @@
             // gb_Confidence
             // 
             this.gb_Confidence.Controls.Add(this.nud_Confidence);
+            this.gb_Confidence.Controls.Add(this.groupBox6);
+            this.gb_Confidence.Controls.Add(this.groupBox4);
             this.gb_Confidence.Location = new System.Drawing.Point(6, 59);
             this.gb_Confidence.Name = "gb_Confidence";
             this.gb_Confidence.Size = new System.Drawing.Size(235, 47);
@@ -1138,11 +1233,514 @@
             this.tb_ProfileName.TabIndex = 0;
             this.tb_ProfileName.TextChanged += new System.EventHandler(this.tb_ProfileName_TextChanged);
             // 
+            // gb_DialogueCommand
+            // 
+            this.gb_DialogueCommand.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_DialogueCommand.Controls.Add(this.cb_DialogueCommand);
+            this.gb_DialogueCommand.Location = new System.Drawing.Point(6, 19);
+            this.gb_DialogueCommand.Name = "gb_DialogueCommand";
+            this.gb_DialogueCommand.Size = new System.Drawing.Size(223, 46);
+            this.gb_DialogueCommand.TabIndex = 3;
+            this.gb_DialogueCommand.TabStop = false;
+            this.gb_DialogueCommand.Text = "Dialogue Command";
+            // 
+            // cb_DialogueCommand
+            // 
+            this.cb_DialogueCommand.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_DialogueCommand.FormattingEnabled = true;
+            this.cb_DialogueCommand.Items.AddRange(new object[] {
+            "Previous",
+            "Next",
+            "Accept",
+            "Cancel"});
+            this.cb_DialogueCommand.Location = new System.Drawing.Point(6, 19);
+            this.cb_DialogueCommand.Name = "cb_DialogueCommand";
+            this.cb_DialogueCommand.Size = new System.Drawing.Size(211, 21);
+            this.cb_DialogueCommand.TabIndex = 0;
+            this.cb_DialogueCommand.Text = "Previous";
+            this.cb_DialogueCommand.SelectedIndexChanged += new System.EventHandler(this.cb_DialogueCommand_SelectedIndexChanged);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Location = new System.Drawing.Point(0, -53);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(235, 47);
+            this.groupBox4.TabIndex = 18;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Profile Name:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(6, 19);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(223, 20);
+            this.textBox2.TabIndex = 0;
+            this.textBox2.TextChanged += new System.EventHandler(this.tb_ProfileName_TextChanged);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.numericUpDown4);
+            this.groupBox6.Location = new System.Drawing.Point(2, 53);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(235, 47);
+            this.groupBox6.TabIndex = 19;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Timeout:";
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Location = new System.Drawing.Point(6, 19);
+            this.numericUpDown4.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(223, 20);
+            this.numericUpDown4.TabIndex = 0;
+            this.numericUpDown4.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.numericUpDown4.ValueChanged += new System.EventHandler(this.nud_Timeout_ValueChanged);
+            // 
+            // gb_DialogueGoodbye
+            // 
+            this.gb_DialogueGoodbye.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gb_DialogueGoodbye.Controls.Add(this.gb_DialogueGoodbyeRename);
+            this.gb_DialogueGoodbye.Controls.Add(this.bttn_DialogueGoodbyeRemove);
+            this.gb_DialogueGoodbye.Controls.Add(this.lb_DialogueGoodbyeList);
+            this.gb_DialogueGoodbye.Controls.Add(this.gb_DialogueGoodbyeAdd);
+            this.gb_DialogueGoodbye.Location = new System.Drawing.Point(249, 19);
+            this.gb_DialogueGoodbye.Name = "gb_DialogueGoodbye";
+            this.gb_DialogueGoodbye.Size = new System.Drawing.Size(223, 385);
+            this.gb_DialogueGoodbye.TabIndex = 22;
+            this.gb_DialogueGoodbye.TabStop = false;
+            this.gb_DialogueGoodbye.Text = "Goodbye Phrases:";
+            // 
+            // gb_DialogueGoodbyeRename
+            // 
+            this.gb_DialogueGoodbyeRename.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_DialogueGoodbyeRename.Controls.Add(this.tb_DialogueGoodbyeRename);
+            this.gb_DialogueGoodbyeRename.Controls.Add(this.bttn_DialogueGoodbyeRename);
+            this.gb_DialogueGoodbyeRename.Location = new System.Drawing.Point(6, 333);
+            this.gb_DialogueGoodbyeRename.Name = "gb_DialogueGoodbyeRename";
+            this.gb_DialogueGoodbyeRename.Size = new System.Drawing.Size(211, 46);
+            this.gb_DialogueGoodbyeRename.TabIndex = 3;
+            this.gb_DialogueGoodbyeRename.TabStop = false;
+            this.gb_DialogueGoodbyeRename.Text = "Rename Phrase";
+            // 
+            // tb_DialogueGoodbyeRename
+            // 
+            this.tb_DialogueGoodbyeRename.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_DialogueGoodbyeRename.Location = new System.Drawing.Point(6, 19);
+            this.tb_DialogueGoodbyeRename.Name = "tb_DialogueGoodbyeRename";
+            this.tb_DialogueGoodbyeRename.Size = new System.Drawing.Size(135, 20);
+            this.tb_DialogueGoodbyeRename.TabIndex = 0;
+            this.tb_DialogueGoodbyeRename.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_DialogueGoodbyeRename_KeyDown);
+            // 
+            // bttn_DialogueGoodbyeRename
+            // 
+            this.bttn_DialogueGoodbyeRename.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_DialogueGoodbyeRename.Location = new System.Drawing.Point(147, 17);
+            this.bttn_DialogueGoodbyeRename.Name = "bttn_DialogueGoodbyeRename";
+            this.bttn_DialogueGoodbyeRename.Size = new System.Drawing.Size(58, 23);
+            this.bttn_DialogueGoodbyeRename.TabIndex = 1;
+            this.bttn_DialogueGoodbyeRename.Text = "Rename";
+            this.bttn_DialogueGoodbyeRename.UseVisualStyleBackColor = true;
+            this.bttn_DialogueGoodbyeRename.Click += new System.EventHandler(this.bttn_DialogueGoodbyeRename_Click);
+            // 
+            // bttn_DialogueGoodbyeRemove
+            // 
+            this.bttn_DialogueGoodbyeRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_DialogueGoodbyeRemove.Location = new System.Drawing.Point(153, 310);
+            this.bttn_DialogueGoodbyeRemove.Name = "bttn_DialogueGoodbyeRemove";
+            this.bttn_DialogueGoodbyeRemove.Size = new System.Drawing.Size(58, 23);
+            this.bttn_DialogueGoodbyeRemove.TabIndex = 2;
+            this.bttn_DialogueGoodbyeRemove.Text = "Remove";
+            this.bttn_DialogueGoodbyeRemove.UseVisualStyleBackColor = true;
+            this.bttn_DialogueGoodbyeRemove.Click += new System.EventHandler(this.bttn_DialogueGoodbyeRemove_Click);
+            // 
+            // lb_DialogueGoodbyeList
+            // 
+            this.lb_DialogueGoodbyeList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_DialogueGoodbyeList.FormattingEnabled = true;
+            this.lb_DialogueGoodbyeList.IntegralHeight = false;
+            this.lb_DialogueGoodbyeList.Location = new System.Drawing.Point(6, 19);
+            this.lb_DialogueGoodbyeList.Name = "lb_DialogueGoodbyeList";
+            this.lb_DialogueGoodbyeList.Size = new System.Drawing.Size(211, 233);
+            this.lb_DialogueGoodbyeList.TabIndex = 0;
+            this.lb_DialogueGoodbyeList.SelectedIndexChanged += new System.EventHandler(this.lb_DialogueGoodbyeList_SelectedIndexChanged);
+            // 
+            // gb_DialogueGoodbyeAdd
+            // 
+            this.gb_DialogueGoodbyeAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_DialogueGoodbyeAdd.Controls.Add(this.tb_DialogueGoodbyeAdd);
+            this.gb_DialogueGoodbyeAdd.Controls.Add(this.bttn_DialogueGoodbyeAdd);
+            this.gb_DialogueGoodbyeAdd.Location = new System.Drawing.Point(6, 258);
+            this.gb_DialogueGoodbyeAdd.Name = "gb_DialogueGoodbyeAdd";
+            this.gb_DialogueGoodbyeAdd.Size = new System.Drawing.Size(211, 46);
+            this.gb_DialogueGoodbyeAdd.TabIndex = 1;
+            this.gb_DialogueGoodbyeAdd.TabStop = false;
+            this.gb_DialogueGoodbyeAdd.Text = "Add Phrase";
+            // 
+            // tb_DialogueGoodbyeAdd
+            // 
+            this.tb_DialogueGoodbyeAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_DialogueGoodbyeAdd.Location = new System.Drawing.Point(6, 19);
+            this.tb_DialogueGoodbyeAdd.Name = "tb_DialogueGoodbyeAdd";
+            this.tb_DialogueGoodbyeAdd.Size = new System.Drawing.Size(135, 20);
+            this.tb_DialogueGoodbyeAdd.TabIndex = 0;
+            this.tb_DialogueGoodbyeAdd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_DialogueGoodbyeAdd_KeyDown);
+            // 
+            // bttn_DialogueGoodbyeAdd
+            // 
+            this.bttn_DialogueGoodbyeAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_DialogueGoodbyeAdd.Location = new System.Drawing.Point(147, 17);
+            this.bttn_DialogueGoodbyeAdd.Name = "bttn_DialogueGoodbyeAdd";
+            this.bttn_DialogueGoodbyeAdd.Size = new System.Drawing.Size(58, 23);
+            this.bttn_DialogueGoodbyeAdd.TabIndex = 1;
+            this.bttn_DialogueGoodbyeAdd.Text = "Add";
+            this.bttn_DialogueGoodbyeAdd.UseVisualStyleBackColor = true;
+            this.bttn_DialogueGoodbyeAdd.Click += new System.EventHandler(this.bttn_DialogueGoodbyeAdd_Click);
+            // 
+            // gb_DialogueCommandPaused
+            // 
+            this.gb_DialogueCommandPaused.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_DialogueCommandPaused.Controls.Add(this.nud_DialogueCommandPaused);
+            this.gb_DialogueCommandPaused.Location = new System.Drawing.Point(6, 259);
+            this.gb_DialogueCommandPaused.Name = "gb_DialogueCommandPaused";
+            this.gb_DialogueCommandPaused.Size = new System.Drawing.Size(223, 45);
+            this.gb_DialogueCommandPaused.TabIndex = 28;
+            this.gb_DialogueCommandPaused.TabStop = false;
+            this.gb_DialogueCommandPaused.Text = "Paused Duration (milliseconds)";
+            // 
+            // nud_DialogueCommandPaused
+            // 
+            this.nud_DialogueCommandPaused.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nud_DialogueCommandPaused.Location = new System.Drawing.Point(6, 19);
+            this.nud_DialogueCommandPaused.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nud_DialogueCommandPaused.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nud_DialogueCommandPaused.Name = "nud_DialogueCommandPaused";
+            this.nud_DialogueCommandPaused.Size = new System.Drawing.Size(211, 20);
+            this.nud_DialogueCommandPaused.TabIndex = 0;
+            this.nud_DialogueCommandPaused.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            this.nud_DialogueCommandPaused.ValueChanged += new System.EventHandler(this.nud_DialogueCommandPaused_ValueChanged);
+            // 
+            // gb_DialogueCommandHeld
+            // 
+            this.gb_DialogueCommandHeld.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_DialogueCommandHeld.Controls.Add(this.nud_DialogueCommandHeld);
+            this.gb_DialogueCommandHeld.Location = new System.Drawing.Point(6, 206);
+            this.gb_DialogueCommandHeld.Name = "gb_DialogueCommandHeld";
+            this.gb_DialogueCommandHeld.Size = new System.Drawing.Size(223, 45);
+            this.gb_DialogueCommandHeld.TabIndex = 27;
+            this.gb_DialogueCommandHeld.TabStop = false;
+            this.gb_DialogueCommandHeld.Text = "Held Duration (milliseconds)";
+            // 
+            // nud_DialogueCommandHeld
+            // 
+            this.nud_DialogueCommandHeld.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nud_DialogueCommandHeld.Location = new System.Drawing.Point(6, 19);
+            this.nud_DialogueCommandHeld.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nud_DialogueCommandHeld.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nud_DialogueCommandHeld.Name = "nud_DialogueCommandHeld";
+            this.nud_DialogueCommandHeld.Size = new System.Drawing.Size(211, 20);
+            this.nud_DialogueCommandHeld.TabIndex = 0;
+            this.nud_DialogueCommandHeld.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nud_DialogueCommandHeld.ValueChanged += new System.EventHandler(this.nud_DialogueCommandHeld_ValueChanged);
+            // 
+            // gb_DialogueCommandModifierKey
+            // 
+            this.gb_DialogueCommandModifierKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_DialogueCommandModifierKey.Controls.Add(this.cb_DialogueCommandModifierKey);
+            this.gb_DialogueCommandModifierKey.Location = new System.Drawing.Point(6, 154);
+            this.gb_DialogueCommandModifierKey.Name = "gb_DialogueCommandModifierKey";
+            this.gb_DialogueCommandModifierKey.Size = new System.Drawing.Size(223, 46);
+            this.gb_DialogueCommandModifierKey.TabIndex = 24;
+            this.gb_DialogueCommandModifierKey.TabStop = false;
+            this.gb_DialogueCommandModifierKey.Text = "Modifier Key";
+            // 
+            // cb_DialogueCommandModifierKey
+            // 
+            this.cb_DialogueCommandModifierKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_DialogueCommandModifierKey.FormattingEnabled = true;
+            this.cb_DialogueCommandModifierKey.Items.AddRange(new object[] {
+            "",
+            "SHIFT",
+            "CONTROL",
+            "LWIN",
+            "RWIN",
+            "LSHIFT",
+            "RSHIFT",
+            "LCONTROL",
+            "RCONTROL",
+            "LMENU",
+            "RMENU"});
+            this.cb_DialogueCommandModifierKey.Location = new System.Drawing.Point(6, 19);
+            this.cb_DialogueCommandModifierKey.Name = "cb_DialogueCommandModifierKey";
+            this.cb_DialogueCommandModifierKey.Size = new System.Drawing.Size(211, 21);
+            this.cb_DialogueCommandModifierKey.TabIndex = 0;
+            this.cb_DialogueCommandModifierKey.SelectedIndexChanged += new System.EventHandler(this.cb_DialogueCommandModifierKey_SelectedIndexChanged);
+            // 
+            // gb_DialogueCommandKey
+            // 
+            this.gb_DialogueCommandKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_DialogueCommandKey.Controls.Add(this.cb_DialogueCommandKey);
+            this.gb_DialogueCommandKey.Location = new System.Drawing.Point(6, 102);
+            this.gb_DialogueCommandKey.Name = "gb_DialogueCommandKey";
+            this.gb_DialogueCommandKey.Size = new System.Drawing.Size(223, 46);
+            this.gb_DialogueCommandKey.TabIndex = 25;
+            this.gb_DialogueCommandKey.TabStop = false;
+            this.gb_DialogueCommandKey.Text = "Key";
+            // 
+            // cb_DialogueCommandKey
+            // 
+            this.cb_DialogueCommandKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_DialogueCommandKey.FormattingEnabled = true;
+            this.cb_DialogueCommandKey.Items.AddRange(new object[] {
+            "",
+            "LBUTTON",
+            "RBUTTON",
+            "CANCEL",
+            "MBUTTON",
+            "XBUTTON1",
+            "XBUTTON2",
+            "BACK",
+            "TAB",
+            "CLEAR",
+            "RETURN",
+            "SHIFT",
+            "CONTROL",
+            "MENU",
+            "PAUSE",
+            "CAPITAL",
+            "KANA",
+            "HANGEUL",
+            "HANGUL",
+            "JUNJA",
+            "FINAL",
+            "HANJA",
+            "KANJI",
+            "ESCAPE",
+            "CONVERT",
+            "NONCONVERT",
+            "ACCEPT",
+            "MODECHANGE",
+            "SPACE",
+            "PRIOR",
+            "NEXT",
+            "END",
+            "HOME",
+            "LEFT",
+            "UP",
+            "RIGHT",
+            "DOWN",
+            "SELECT",
+            "PRINT",
+            "EXECUTE",
+            "SNAPSHOT",
+            "INSERT",
+            "DELETE",
+            "HELP",
+            "VK_0",
+            "VK_1",
+            "VK_2",
+            "VK_3",
+            "VK_4",
+            "VK_5",
+            "VK_6",
+            "VK_7",
+            "VK_8",
+            "VK_9",
+            "VK_A",
+            "VK_B",
+            "VK_C",
+            "VK_D",
+            "VK_E",
+            "VK_F",
+            "VK_G",
+            "VK_H",
+            "VK_I",
+            "VK_J",
+            "VK_K",
+            "VK_L",
+            "VK_M",
+            "VK_N",
+            "VK_O",
+            "VK_P",
+            "VK_Q",
+            "VK_R",
+            "VK_S",
+            "VK_T",
+            "VK_U",
+            "VK_V",
+            "VK_W",
+            "VK_X",
+            "VK_Y",
+            "VK_Z",
+            "LWIN",
+            "RWIN",
+            "APPS",
+            "SLEEP",
+            "NUMPAD0",
+            "NUMPAD1",
+            "NUMPAD2",
+            "NUMPAD3",
+            "NUMPAD4",
+            "NUMPAD5",
+            "NUMPAD6",
+            "NUMPAD7",
+            "NUMPAD8",
+            "NUMPAD9",
+            "MULTIPLY",
+            "ADD",
+            "SEPARATOR",
+            "SUBTRACT",
+            "DECIMAL",
+            "DIVIDE",
+            "F1",
+            "F2",
+            "F3",
+            "F4",
+            "F5",
+            "F6",
+            "F7",
+            "F8",
+            "F9",
+            "F10",
+            "F11",
+            "F12",
+            "F13",
+            "F14",
+            "F15",
+            "F16",
+            "F17",
+            "F18",
+            "F19",
+            "F20",
+            "F21",
+            "F22",
+            "F23",
+            "F24",
+            "NUMLOCK",
+            "SCROLL",
+            "LSHIFT",
+            "RSHIFT",
+            "LCONTROL",
+            "RCONTROL",
+            "LMENU",
+            "RMENU",
+            "BROWSER_BACK",
+            "BROWSER_FORWARD",
+            "BROWSER_REFRESH",
+            "BROWSER_STOP",
+            "BROWSER_SEARCH",
+            "BROWSER_FAVORITES",
+            "BROWSER_HOME",
+            "VOLUME_MUTE",
+            "VOLUME_DOWN",
+            "VOLUME_UP",
+            "MEDIA_NEXT_TRACK",
+            "MEDIA_PREV_TRACK",
+            "MEDIA_STOP",
+            "MEDIA_PLAY_PAUSE",
+            "LAUNCH_MAIL",
+            "LAUNCH_MEDIA_SELECT",
+            "LAUNCH_APP1",
+            "LAUNCH_APP2",
+            "OEM_1",
+            "OEM_PLUS",
+            "OEM_COMMA",
+            "OEM_MINUS",
+            "OEM_PERIOD",
+            "OEM_2",
+            "OEM_3",
+            "OEM_4",
+            "OEM_5",
+            "OEM_6",
+            "OEM_7",
+            "OEM_8",
+            "OEM_102",
+            "PROCESSKEY",
+            "PACKET",
+            "ATTN",
+            "CRSEL",
+            "EXSEL",
+            "EREOF",
+            "PLAY",
+            "ZOOM",
+            "NONAME",
+            "PA1",
+            "OEM_CLEAR"});
+            this.cb_DialogueCommandKey.Location = new System.Drawing.Point(6, 19);
+            this.cb_DialogueCommandKey.Name = "cb_DialogueCommandKey";
+            this.cb_DialogueCommandKey.Size = new System.Drawing.Size(211, 21);
+            this.cb_DialogueCommandKey.TabIndex = 0;
+            this.cb_DialogueCommandKey.SelectedIndexChanged += new System.EventHandler(this.cb_DialogueCommandKey_SelectedIndexChanged);
+            // 
+            // gb_DialogueNavigation
+            // 
+            this.gb_DialogueNavigation.Controls.Add(this.gb_DialogueCommandPaused);
+            this.gb_DialogueNavigation.Controls.Add(this.gb_DialogueCommandKey);
+            this.gb_DialogueNavigation.Controls.Add(this.gb_DialogueCommand);
+            this.gb_DialogueNavigation.Controls.Add(this.gb_DialogueCommandModifierKey);
+            this.gb_DialogueNavigation.Controls.Add(this.gb_DialogueCommandHeld);
+            this.gb_DialogueNavigation.Location = new System.Drawing.Point(6, 94);
+            this.gb_DialogueNavigation.Name = "gb_DialogueNavigation";
+            this.gb_DialogueNavigation.Size = new System.Drawing.Size(235, 310);
+            this.gb_DialogueNavigation.TabIndex = 23;
+            this.gb_DialogueNavigation.TabStop = false;
+            this.gb_DialogueNavigation.Text = "Dialogue Automatic Navigation";
+            // 
             // CommandBuilder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 578);
+            this.ClientSize = new System.Drawing.Size(982, 578);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.tb_RecognizedWord);
             this.Controls.Add(this.ms_MainMenuStrip);
@@ -1188,14 +1786,31 @@
             this.tp_Profile.ResumeLayout(false);
             this.gb_Dialogue.ResumeLayout(false);
             this.gb_Dialogue.PerformLayout();
-            this.gb_DialogueFile.ResumeLayout(false);
-            this.gb_DialogueFile.PerformLayout();
+            this.gb_DialogueFolder.ResumeLayout(false);
+            this.gb_DialogueFolder.PerformLayout();
             this.gb_Timeout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nud_Timeout)).EndInit();
             this.gb_Confidence.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nud_Confidence)).EndInit();
             this.gb_ProfileName.ResumeLayout(false);
             this.gb_ProfileName.PerformLayout();
+            this.gb_DialogueCommand.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            this.gb_DialogueGoodbye.ResumeLayout(false);
+            this.gb_DialogueGoodbyeRename.ResumeLayout(false);
+            this.gb_DialogueGoodbyeRename.PerformLayout();
+            this.gb_DialogueGoodbyeAdd.ResumeLayout(false);
+            this.gb_DialogueGoodbyeAdd.PerformLayout();
+            this.gb_DialogueCommandPaused.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nud_DialogueCommandPaused)).EndInit();
+            this.gb_DialogueCommandHeld.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nud_DialogueCommandHeld)).EndInit();
+            this.gb_DialogueCommandModifierKey.ResumeLayout(false);
+            this.gb_DialogueCommandKey.ResumeLayout(false);
+            this.gb_DialogueNavigation.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1264,15 +1879,39 @@
         private System.Windows.Forms.Button bttn_AddAction;
         private System.Windows.Forms.TabPage tp_Profile;
         private System.Windows.Forms.GroupBox gb_Dialogue;
-        private System.Windows.Forms.GroupBox gb_DialogueFile;
-        private System.Windows.Forms.Button bttn_DialogueFilePath;
-        private System.Windows.Forms.TextBox tb_DialogueFilePath;
-        private System.Windows.Forms.CheckBox cb_Dialogue;
+        private System.Windows.Forms.GroupBox gb_DialogueFolder;
+        private System.Windows.Forms.Button bttn_DialogueFolderPath;
+        private System.Windows.Forms.TextBox tb_DialogueFolderPath;
+        private System.Windows.Forms.CheckBox cb_DialogueEnabled;
         private System.Windows.Forms.GroupBox gb_Timeout;
         private System.Windows.Forms.NumericUpDown nud_Timeout;
         private System.Windows.Forms.GroupBox gb_Confidence;
         private System.Windows.Forms.NumericUpDown nud_Confidence;
         private System.Windows.Forms.GroupBox gb_ProfileName;
         private System.Windows.Forms.TextBox tb_ProfileName;
+        private System.Windows.Forms.GroupBox gb_DialogueCommand;
+        private System.Windows.Forms.ComboBox cb_DialogueCommand;
+        private System.Windows.Forms.GroupBox gb_DialogueGoodbye;
+        private System.Windows.Forms.GroupBox gb_DialogueGoodbyeRename;
+        private System.Windows.Forms.TextBox tb_DialogueGoodbyeRename;
+        private System.Windows.Forms.Button bttn_DialogueGoodbyeRename;
+        private System.Windows.Forms.Button bttn_DialogueGoodbyeRemove;
+        private System.Windows.Forms.ListBox lb_DialogueGoodbyeList;
+        private System.Windows.Forms.GroupBox gb_DialogueGoodbyeAdd;
+        private System.Windows.Forms.TextBox tb_DialogueGoodbyeAdd;
+        private System.Windows.Forms.Button bttn_DialogueGoodbyeAdd;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.GroupBox gb_DialogueNavigation;
+        private System.Windows.Forms.GroupBox gb_DialogueCommandPaused;
+        private System.Windows.Forms.NumericUpDown nud_DialogueCommandPaused;
+        private System.Windows.Forms.GroupBox gb_DialogueCommandKey;
+        private System.Windows.Forms.ComboBox cb_DialogueCommandKey;
+        private System.Windows.Forms.GroupBox gb_DialogueCommandModifierKey;
+        private System.Windows.Forms.ComboBox cb_DialogueCommandModifierKey;
+        private System.Windows.Forms.GroupBox gb_DialogueCommandHeld;
+        private System.Windows.Forms.NumericUpDown nud_DialogueCommandHeld;
     }
 }

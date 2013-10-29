@@ -23,16 +23,14 @@ namespace SpeechCommander
         public int EndTimeout { get; set; }
 
         [DataMember()]
-        public bool EngageNpcDialogue { get; set; }
-
-        [DataMember()]
-        public string CurrentDialogPath { get; set; }
+        public DialogueProfile Dialogue { get; set; }
 
         public sp.Grammar Grammar { get; set; }
 
         public Profile()
         {
             this.Actions = new List<Action>();
+            this.Dialogue = new DialogueProfile();
         }
 
         public void Save(string filename)
@@ -57,9 +55,8 @@ namespace SpeechCommander
             Profile openedProfile = serializer.ReadObject(stream) as Profile;
             this.ProfileName = openedProfile.ProfileName;
             this.Actions = openedProfile.Actions;
-            this.CurrentDialogPath = openedProfile.CurrentDialogPath;
+            this.Dialogue = openedProfile.Dialogue;
             this.EndTimeout = openedProfile.EndTimeout;
-            this.EngageNpcDialogue = openedProfile.EngageNpcDialogue;
             this.RequiredConfidence = openedProfile.RequiredConfidence;
         }
 

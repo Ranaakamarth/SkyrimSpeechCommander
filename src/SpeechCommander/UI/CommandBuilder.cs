@@ -18,6 +18,7 @@ namespace SpeechCommander.UI
         //private List<Action> currentDialogActions;
         private Profile dialogProfile;
 
+
         public Action CurrentAction
         {
             get
@@ -66,6 +67,71 @@ namespace SpeechCommander.UI
             get;
             private set;
         }
+        public string CurrentDialogueCancelPhrase
+        {
+            get
+            {
+                if (this.currentProfile.Dialogue.Enabled && this.lb_DialogueGoodbyeList.SelectedIndex != -1 && this.lb_DialogueGoodbyeList.SelectedIndex < this.currentProfile.Dialogue.CancelPhrases.Count)
+                {
+                    return this.currentProfile.Dialogue.CancelPhrases[this.lb_Phrases.SelectedIndex];
+                }
+                else
+                    return null;
+            }
+            set
+            {
+                this.currentProfile.Dialogue.CancelPhrases[this.lb_Phrases.SelectedIndex] = value;
+            }
+        }
+        public Command CurrentDialogueCommand
+        {
+            get
+            {
+                Command cmd;// = null;
+                switch (cb_DialogueCommand.Items[cb_DialogueCommand.SelectedIndex].ToString())
+                {
+                    case "Previous":
+                        cmd = this.currentProfile.Dialogue.CommandPrevious;
+                        break;
+                    case "Next":
+                        cmd = this.currentProfile.Dialogue.CommandNext;
+                        break;
+                    case "Accept":
+                        cmd = this.currentProfile.Dialogue.CommandAccept;
+                        break;
+                    case "Cancel":
+                        cmd = this.currentProfile.Dialogue.CommandCancel;
+                        break;
+                    default:
+                        cmd = null;
+                        break;
+                }
+                return cmd;
+            }
+            set
+            {
+                Command cmd;// = null;
+                switch (cb_DialogueCommand.Items[cb_DialogueCommand.SelectedIndex].ToString())
+                {
+                    case "Previous":
+                        cmd = this.currentProfile.Dialogue.CommandPrevious;
+                        break;
+                    case "Next":
+                        cmd = this.currentProfile.Dialogue.CommandNext;
+                        break;
+                    case "Accept":
+                        cmd = this.currentProfile.Dialogue.CommandAccept;
+                        break;
+                    case "Cancel":
+                        cmd = this.currentProfile.Dialogue.CommandCancel;
+                        break;
+                    default:
+                        cmd = null;
+                        break;
+                }
+                cmd = value;
+            }
+        }
 
         const string FILE_DIALOGUETEXT = "CurrentDialogue.diag";
         const string FILE_DIALOGUESTATE = "DialogueState.diag";
@@ -97,10 +163,7 @@ namespace SpeechCommander.UI
                 this.currentProfile.EndTimeout = 15;
             this.nud_Timeout.Value = (decimal)this.currentProfile.EndTimeout;
 
-            this.tb_DialogueFilePath.Text = this.currentProfile.CurrentDialogPath;
-            this.cb_Dialogue.Checked = this.currentProfile.EngageNpcDialogue;
-            this.tb_DialogueFilePath.Text = this.currentProfile.CurrentDialogPath;
-
+            LoadDialogue();
             LoadActionList();
         }
 
@@ -225,6 +288,8 @@ namespace SpeechCommander.UI
                     bttn_RemoveKeystrokeList.Enabled = true;
                     tb_RenameKeystrokeList.Enabled = true;
                     bttn_RenameKeystrokeList.Enabled = true;
+
+                    tb_RenameKeystrokeList.Text = this.CurrentKeystroke.CommandName;
                 }
                 else
                 {
@@ -256,8 +321,6 @@ namespace SpeechCommander.UI
 
                 tb_AddKeystrokeList.Text = string.Empty;
                 tb_RenameKeystrokeList.Text = string.Empty;
-                if (this.CurrentKeystroke != null)
-                    tb_RenameKeystrokeList.Text = this.CurrentKeystroke.CommandName;
 
                 if (this.CurrentAction.Repeat < nud_ActionRepeat.Minimum || this.CurrentAction.Repeat > nud_ActionRepeat.Maximum)
                     this.CurrentAction.Repeat = 1;
@@ -357,6 +420,64 @@ namespace SpeechCommander.UI
             }
         }
 
+        public void LoadDialogue()
+        {
+            if (this.cb_DialogueEnabled.Checked)
+            {
+                this.tb_DialogueFolderPath.Enabled = true;
+                this.bttn_DialogueFolderPath.Enabled = true;
+                this.cb_DialogueCommand.Enabled = true;
+                this.cb_DialogueCommandKey.Enabled = true;
+                this.cb_DialogueCommandModifierKey.Enabled = true;
+                this.nud_DialogueCommandHeld.Enabled = true;
+                this.nud_DialogueCommandPaused.Enabled = true;
+
+                this.lb_DialogueGoodbyeList.Enabled = true;
+                this.tb_DialogueGoodbyeAdd.Enabled = true;
+                this.bttn_DialogueGoodbyeAdd.Enabled = true;
+
+                if (this.CurrentDialogueCancelPhrase != null)
+                {
+                    this.tb_DialogueGoodbyeRename.Enabled = true;
+                    this.bttn_DialogueGoodbyeRemove.Enabled = true;
+                    this.bttn_DialogueGoodbyeRename.Enabled = true;
+
+                    this.bttn_DialogueGoodbyeRename.Text = this.CurrentDialogueCancelPhrase;
+                }
+                else
+                {
+                    this.tb_DialogueGoodbyeRename.Enabled = false;
+                    this.bttn_DialogueGoodbyeRemove.Enabled = false;
+                    this.bttn_DialogueGoodbyeRename.Enabled = false;
+
+                    this.bttn_DialogueGoodbyeRename.Text = string.Empty;
+                }
+
+                this.tb_DialogueFolderPath.Text = this.currentProfile.Dialogue.FilePath;
+                this.cb_DialogueEnabled.Checked = this.currentProfile.Dialogue.Enabled;
+            }
+            else
+            {
+                this.tb_DialogueFolderPath.Enabled = false;
+                this.bttn_DialogueFolderPath.Enabled = false;
+                this.cb_DialogueCommand.Enabled = false;
+                this.cb_DialogueCommandKey.Enabled = false;
+                this.cb_DialogueCommandModifierKey.Enabled = false;
+                this.nud_DialogueCommandHeld.Enabled = false;
+                this.nud_DialogueCommandPaused.Enabled = false;
+
+                this.lb_DialogueGoodbyeList.Enabled = false;
+                this.tb_DialogueGoodbyeAdd.Enabled = false;
+                this.bttn_DialogueGoodbyeAdd.Enabled = false;
+
+                this.tb_DialogueGoodbyeRename.Enabled = false;
+                this.bttn_DialogueGoodbyeRemove.Enabled = false;
+                this.bttn_DialogueGoodbyeRename.Enabled = false;
+
+                this.bttn_DialogueGoodbyeRename.Text = string.Empty;
+            }
+        }
+
         #region Profile
         private void tb_ProfileName_TextChanged(object sender, EventArgs e)
         {
@@ -371,42 +492,6 @@ namespace SpeechCommander.UI
         private void nud_Timeout_ValueChanged(object sender, EventArgs e)
         {
             this.currentProfile.EndTimeout = (int)nud_Timeout.Value;
-        }
-
-        private void cb_Dialogue_CheckedChanged(object sender, EventArgs e)
-        {
-            this.currentProfile.EngageNpcDialogue = this.cb_Dialogue.Checked;
-        }
-
-        private void bttn_DialogueFilePath_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog diag = new OpenFileDialog())
-            {
-                diag.DefaultExt = "diag";
-                diag.Filter = "CurrentDialogue|*.diag";
-                diag.Title = "Find CurrentDialog.diag";
-
-                DialogResult result = diag.ShowDialog();
-                if (result == System.Windows.Forms.DialogResult.OK)
-                {
-                    this.tb_DialogueFilePath.Text = diag.FileName;
-                }
-            }
-        }
-
-        private void tb_DialogueFilePath_TextChanged(object sender, EventArgs e)
-        {
-            this.currentProfile.CurrentDialogPath = this.tb_DialogueFilePath.Text;
-
-            try
-            {
-                this.dialogueWatcher.Path = System.IO.Path.GetDirectoryName(this.currentProfile.CurrentDialogPath);
-            }
-            catch (ArgumentException)
-            {
-                // this.dialogueWatcher.Path = null;
-                //this.tb_DialogueFilePath.Text = string.Empty;
-            }
         }
         #endregion
 
@@ -709,7 +794,7 @@ namespace SpeechCommander.UI
 
         private void tsmi_Start_Click(object sender, EventArgs e)
         {
-            if (this.currentProfile.EngageNpcDialogue)
+            if (this.currentProfile.Dialogue.Enabled)
             {
                 try
                 {
@@ -789,9 +874,9 @@ namespace SpeechCommander.UI
 
         private void UpdateDialoguePosition()
         {
-            string filename = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(this.currentProfile.CurrentDialogPath), FILE_DIALOGUESTATE);
+            string filename = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(this.currentProfile.Dialogue.FilePath), FILE_DIALOGUESTATE);
 
-            int position = 0; 
+            int position = 0;
             bool readSuccess = true;
             do
             {
@@ -822,13 +907,21 @@ namespace SpeechCommander.UI
                 {
                     lock (this.dialogProfile.Actions[index].Commands)
                     {
-                        Command cmd = this.dialogProfile.Actions[index].Commands[0];
+                        Command move = this.dialogProfile.Actions[index].Commands[0];
+                        Command tmp;
 
                         if (this.DialoguePosition > index)
-                            cmd.Key = WindowsInput.VirtualKeyCode.VK_W;
+                            tmp = this.currentProfile.Dialogue.CommandPrevious;
                         else
-                            cmd.Key = WindowsInput.VirtualKeyCode.VK_S;
-                        cmd.Repeat = Math.Abs(this.DialoguePosition - index);
+                            tmp = this.currentProfile.Dialogue.CommandNext;
+
+                        move.Repeat = Math.Abs(this.DialoguePosition - index);
+
+                        move.CommandName = String.Format("Go Down {0}", index);
+                        move.Key = tmp.Key;
+                        move.ModifierKey = tmp.ModifierKey;
+                        move.HeldDuration = tmp.HeldDuration;
+                        move.PausedDuration = tmp.PausedDuration;
                     }
                 }
             }
@@ -845,7 +938,7 @@ namespace SpeechCommander.UI
 
                     try
                     {
-                        string filename = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(this.currentProfile.CurrentDialogPath), FILE_DIALOGUETEXT);
+                        string filename = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(this.currentProfile.Dialogue.FilePath), FILE_DIALOGUETEXT);
                         using (System.IO.StreamReader rdr = new System.IO.StreamReader(filename))
                         {
                             readSuccess = true;
@@ -853,13 +946,7 @@ namespace SpeechCommander.UI
 
                             while (!rdr.EndOfStream)
                             {
-                                string text = rdr.ReadLine().Split('(')[0].Replace('?','.');
-
-                                Command select = new Command();
-                                select.CommandName = "Select";
-                                select.Key = WindowsInput.VirtualKeyCode.VK_E;
-                                select.HeldDuration = 50;
-                                select.PausedDuration = 25;
+                                string text = rdr.ReadLine().Split('(')[0].Replace('?', '.');
 
                                 Action action = new Action();
                                 action.ActionName = text;
@@ -867,20 +954,23 @@ namespace SpeechCommander.UI
 
 
                                 Command move = new Command();
-                                move.CommandName = String.Format("Go Down {0}", index);
+                                Command tmp;
+
                                 if (this.DialoguePosition > index)
-                                    move.Key = WindowsInput.VirtualKeyCode.VK_W;
+                                    tmp = this.currentProfile.Dialogue.CommandPrevious;
                                 else
-                                    move.Key = WindowsInput.VirtualKeyCode.VK_S;
+                                    tmp = this.currentProfile.Dialogue.CommandNext;
+
                                 move.Repeat = Math.Abs(this.DialoguePosition - index);
 
-                                move.HeldDuration = 50;
-                                move.PausedDuration = 25;
-
+                                move.CommandName = String.Format("Go Down {0}", index);
+                                move.Key = tmp.Key;
+                                move.ModifierKey = tmp.ModifierKey;
+                                move.HeldDuration = tmp.HeldDuration;
+                                move.PausedDuration = tmp.PausedDuration;
 
                                 action.Commands.Add(move);
-                                action.Commands.Add(select);
-
+                                action.Commands.Add(this.currentProfile.Dialogue.CommandAccept);
                                 actionlist.Add(action);
                                 ++index;
 
@@ -918,16 +1008,16 @@ namespace SpeechCommander.UI
                         prof.UpdateGrammar();
 
                         var changes = new List<UpdateOperation>();
-                        changes.Add(new UpdateOperation() 
-                        { 
-                            UpdateType = UpdateOperationType.DisableGrammar, 
-                            Grammar = this.currentProfile.Grammar 
+                        changes.Add(new UpdateOperation()
+                        {
+                            UpdateType = UpdateOperationType.DisableGrammar,
+                            Grammar = this.currentProfile.Grammar
                         });
-                        changes.Add(new UpdateOperation() 
-                        { 
+                        changes.Add(new UpdateOperation()
+                        {
                             UpdateType = UpdateOperationType.AddGrammar,
-                            Grammar = prof.Grammar, 
-                            AssociatedActions = prof.Actions 
+                            Grammar = prof.Grammar,
+                            AssociatedActions = prof.Actions
                         });
 
                         if (this.dialogProfile != null)
@@ -975,24 +1065,135 @@ namespace SpeechCommander.UI
         {
             Action action = new Action();
             action.ActionName = "Goodbye";
-            Command cmd = new Command();
-            cmd.CommandName = "Exit";
-            cmd.Key = WindowsInput.VirtualKeyCode.TAB;
-            cmd.HeldDuration = 50;
-            cmd.PausedDuration = 25;
-            action.Commands.Add(cmd);
-
-            action.Phrases.AddRange(new string[] 
-            {
-                "Goodbye",
-                "See yuh",
-                "audios",
-                "bye",
-                "talk to you later",
-                "Never mind"
-            });
+            action.Commands.Add(this.currentProfile.Dialogue.CommandCancel);
+            action.Phrases.AddRange(this.currentProfile.Dialogue.CancelPhrases);
 
             return action;
+        }
+
+        private void cb_Dialogue_CheckedChanged(object sender, EventArgs e)
+        {
+            this.currentProfile.Dialogue.Enabled = this.cb_DialogueEnabled.Checked;
+            LoadDialogue();
+        }
+
+        private void bttn_DialogueFilePath_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog diag = new FolderBrowserDialog())
+            {
+                diag.Description = "Dialogue Information Folder";
+
+                DialogResult result = diag.ShowDialog();
+                if (result == System.Windows.Forms.DialogResult.OK)
+                {
+                    this.tb_DialogueFolderPath.Text = diag.SelectedPath;
+                }
+            }
+        }
+
+        private void tb_DialogueFilePath_TextChanged(object sender, EventArgs e)
+        {
+            this.currentProfile.Dialogue.FilePath = this.tb_DialogueFolderPath.Text;
+
+            try
+            {
+                this.dialogueWatcher.Path = System.IO.Path.GetDirectoryName(this.currentProfile.Dialogue.FilePath);
+            }
+            catch (ArgumentException)
+            {
+                // this.dialogueWatcher.Path = null;
+                //this.tb_DialogueFilePath.Text = string.Empty;
+            }
+        }
+
+        private void cb_DialogueCommand_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadDialogue();
+        }
+
+        private void cb_DialogueCommandKey_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.CurrentDialogueCommand != null)
+            {
+                WindowsInput.VirtualKeyCode code;
+                if (Enum.TryParse<WindowsInput.VirtualKeyCode>(cb_DialogueCommandKey.Items[cb_DialogueCommandKey.SelectedIndex].ToString(), out code))
+                {
+                    this.CurrentDialogueCommand.Key = code;
+                }
+                else
+                {
+                    this.CurrentDialogueCommand.Key = null;
+                }
+            }
+        }
+
+        private void cb_DialogueCommandModifierKey_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.CurrentDialogueCommand != null)
+            {
+                WindowsInput.VirtualKeyCode code;
+                if (Enum.TryParse<WindowsInput.VirtualKeyCode>(cb_DialogueCommandModifierKey.Items[cb_DialogueCommandModifierKey.SelectedIndex].ToString(), out code))
+                {
+                    this.CurrentDialogueCommand.ModifierKey = code;
+                }
+                else
+                {
+                    this.CurrentDialogueCommand.ModifierKey = null;
+                }
+            }
+        }
+
+        private void nud_DialogueCommandHeld_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nud_DialogueCommandPaused_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_DialogueGoodbyeList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_DialogueGoodbyeAdd_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bttn_DialogueGoodbyeAdd_Click(sender, e);
+            }
+        }
+
+        private void tb_DialogueGoodbyeRename_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bttn_DialogueGoodbyeRename_Click(sender, e);
+            }
+        }
+
+        private void bttn_DialogueGoodbyeAdd_Click(object sender, EventArgs e)
+        {
+            if (tb_DialogueGoodbyeAdd.Text != string.Empty)
+            {
+                if (!this.currentProfile.Dialogue.CancelPhrases.Contains(tb_DialogueGoodbyeAdd.Text))
+                {
+                    this.currentProfile.Dialogue.CancelPhrases.Add(tb_DialogueGoodbyeAdd.Text);
+                    LoadDialogue();
+                }
+            }
+        }
+
+        private void bttn_DialogueGoodbyeRemove_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttn_DialogueGoodbyeRename_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

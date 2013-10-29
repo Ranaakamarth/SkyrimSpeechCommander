@@ -410,7 +410,7 @@ namespace WindowsInput
         /// </summary>
         /// <param name="modifierKeyCode">The modifier key</param>
         /// <param name="keyCode">The key to simulate</param>
-        public static void SimulateModifiedKeyStroke(VirtualKeyCode modifierKeyCode, VirtualKeyCode keyCode)
+        public static void SimulateModifierKeyStroke(VirtualKeyCode modifierKeyCode, VirtualKeyCode keyCode)
         {
             SimulateKeyDown(modifierKeyCode);
             SimulateKeyPress(keyCode);
@@ -423,7 +423,7 @@ namespace WindowsInput
         /// <param name="modifierKeyCode">Modifier such as Control, Alt, Shift</param>
         /// <param name="keyCode">The VirtualkeyCode to press</param>
         /// <param name="heldDuration">The length of time (in milliseconds) to hold</param>
-        public static void SimulateModifiedKeyStroke(VirtualKeyCode modifierKeyCode, VirtualKeyCode keyCode, int heldDuration)
+        public static void SimulateModifierKeyStroke(VirtualKeyCode modifierKeyCode, VirtualKeyCode keyCode, int heldDuration)
         {
             System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
             watch.Start();

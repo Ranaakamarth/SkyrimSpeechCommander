@@ -106,7 +106,7 @@ namespace SpeechCommander
                 else if (this.key != null)
                 {
                     if (this.modifierKey != null)
-                        InputSimulator.SimulateModifiedKeyStroke((VirtualKeyCode)this.modifierKey, (VirtualKeyCode)this.key, this.HeldDuration);
+                        InputSimulator.SimulateModifierKeyStroke((VirtualKeyCode)this.modifierKey, (VirtualKeyCode)this.key, this.HeldDuration);
                     else
                         InputSimulator.SimulateKeyPress((VirtualKeyCode)this.key, this.HeldDuration);
                     //System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();

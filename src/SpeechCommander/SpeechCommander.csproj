@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Action.cs" />
     <Compile Include="Command.cs" />
+    <Compile Include="DialogueProfile.cs" />
     <Compile Include="InputSimulator\HARDWAREINPUT.cs" />
     <Compile Include="InputSimulator\INPUT.cs" />
     <Compile Include="InputSimulator\InputSimulator.cs" />
