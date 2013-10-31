@@ -7,7 +7,7 @@ using sp = System.Speech.Recognition;
 
 namespace SpeechCommander
 {
-    [DataContractAttribute(Name="Profile", Namespace="")]
+    [DataContractAttribute(Name = "Profile", Namespace = "")]
     public class Profile
     {
         [DataMember()]
@@ -25,17 +25,32 @@ namespace SpeechCommander
         [DataMember()]
         public DialogueProfile Dialogue { get; set; }
 
+        [DataMember()]
+        public bool EnableVoicePausing { get; set; }
+
+        [DataMember()]
+        public List<string> PauseRecognitionPhrases { get; set; }
+
+        [DataMember()]
+        public List<string> UnpauseRecognitionPhrases { get; set; }
+
         public sp.Grammar Grammar { get; set; }
 
         public Profile()
         {
             this.Actions = new List<Action>();
             this.Dialogue = new DialogueProfile();
+            this.PauseRecognitionPhrases = new List<string>();
+            this.UnpauseRecognitionPhrases = new List<string>();
         }
 
         public void Save(string filename)
         {
-            this.Save(System.IO.File.Create(filename));
+            
+            using (System.IO.FileStream stream = System.IO.File.Create(filename))
+            {
+                this.Save(stream);
+            }
         }
 
         public void Save(System.IO.Stream stream)
@@ -46,7 +61,10 @@ namespace SpeechCommander
 
         public void Open(string filename)
         {
-            this.Open(System.IO.File.OpenRead(filename));
+            using (System.IO.FileStream stream = System.IO.File.OpenRead(filename))
+            {
+                this.Open(stream);
+            }
         }
 
         public void Open(System.IO.Stream stream)
@@ -58,6 +76,9 @@ namespace SpeechCommander
             this.Dialogue = openedProfile.Dialogue;
             this.EndTimeout = openedProfile.EndTimeout;
             this.RequiredConfidence = openedProfile.RequiredConfidence;
+            this.PauseRecognitionPhrases = openedProfile.PauseRecognitionPhrases;
+            this.UnpauseRecognitionPhrases = openedProfile.UnpauseRecognitionPhrases;
+            this.EnableVoicePausing = openedProfile.EnableVoicePausing;
         }
 
         public sp.Grammar UpdateGrammar()
@@ -79,7 +100,7 @@ namespace SpeechCommander
             builder.Append(new sp.SemanticResultKey("command", choices));
             this.Grammar = new sp.Grammar(builder);
             this.Grammar.Name = this.ProfileName;
-            return this.Grammar ;
+            return this.Grammar;
         }
     }
 }

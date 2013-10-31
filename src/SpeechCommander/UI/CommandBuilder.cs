@@ -13,10 +13,10 @@ namespace SpeechCommander.UI
     {
         private RecognitionEngine engine;
         private Profile currentProfile;
-        private System.IO.FileSystemWatcher dialogueWatcher;
+        //private System.IO.FileSystemWatcher dialogueWatcher;
         //private sp.Grammar currentDialog;
         //private List<Action> currentDialogActions;
-        private Profile dialogProfile;
+        //private Profile dialogProfile;
 
 
         public Action CurrentAction
@@ -62,25 +62,23 @@ namespace SpeechCommander.UI
                 this.CurrentAction.Commands[this.lb_KeystrokeList.SelectedIndex] = value;
             }
         }
-        public int DialoguePosition
-        {
-            get;
-            private set;
-        }
+        //public int DialoguePosition
+        //{
+        //    get;
+        //    private set;
+        //}
         public string CurrentDialogueCancelPhrase
         {
             get
             {
                 if (this.currentProfile.Dialogue.Enabled && this.lb_DialogueGoodbyeList.SelectedIndex != -1 && this.lb_DialogueGoodbyeList.SelectedIndex < this.currentProfile.Dialogue.CancelPhrases.Count)
-                {
-                    return this.currentProfile.Dialogue.CancelPhrases[this.lb_Phrases.SelectedIndex];
-                }
+                    return this.currentProfile.Dialogue.CancelPhrases[this.lb_DialogueGoodbyeList.SelectedIndex];
                 else
                     return null;
             }
             set
             {
-                this.currentProfile.Dialogue.CancelPhrases[this.lb_Phrases.SelectedIndex] = value;
+                this.currentProfile.Dialogue.CancelPhrases[this.lb_DialogueGoodbyeList.SelectedIndex] = value;
             }
         }
         public Command CurrentDialogueCommand
@@ -92,15 +90,39 @@ namespace SpeechCommander.UI
                 {
                     case "Previous":
                         cmd = this.currentProfile.Dialogue.CommandPrevious;
+                        if (cmd == null)
+                        {
+                            this.currentProfile.Dialogue.CommandPrevious = new Command();
+                            cmd = this.currentProfile.Dialogue.CommandPrevious;
+                            cmd.CommandName = "Previous";
+                        }
                         break;
                     case "Next":
                         cmd = this.currentProfile.Dialogue.CommandNext;
+                        if (cmd == null)
+                        {
+                            this.currentProfile.Dialogue.CommandNext = new Command();
+                            cmd = this.currentProfile.Dialogue.CommandNext;
+                            cmd.CommandName = "Next";
+                        }
                         break;
                     case "Accept":
                         cmd = this.currentProfile.Dialogue.CommandAccept;
+                        if (cmd == null)
+                        {
+                            this.currentProfile.Dialogue.CommandAccept = new Command();
+                            cmd = this.currentProfile.Dialogue.CommandAccept;
+                            cmd.CommandName = "Accept";
+                        }
                         break;
                     case "Cancel":
                         cmd = this.currentProfile.Dialogue.CommandCancel;
+                        if (cmd == null)
+                        {
+                            this.currentProfile.Dialogue.CommandCancel = new Command();
+                            cmd = this.currentProfile.Dialogue.CommandCancel;
+                            cmd.CommandName = "Cancel";
+                        }
                         break;
                     default:
                         cmd = null;
@@ -133,8 +155,8 @@ namespace SpeechCommander.UI
             }
         }
 
-        const string FILE_DIALOGUETEXT = "CurrentDialogue.diag";
-        const string FILE_DIALOGUESTATE = "DialogueState.diag";
+        //const string FILE_DIALOGUETEXT = "CurrentDialogue.diag";
+        //const string FILE_DIALOGUESTATE = "DialogueState.diag";
 
         public CommandBuilder()
         {
@@ -142,10 +164,10 @@ namespace SpeechCommander.UI
 
             this.currentProfile = new Profile();
 
-            dialogueWatcher = new System.IO.FileSystemWatcher();
-            dialogueWatcher.NotifyFilter = System.IO.NotifyFilters.LastWrite;
-            dialogueWatcher.Changed += dialogueWatcher_Changed;
-            this.dialogueWatcher.Filter = "*.diag";
+            //dialogueWatcher = new System.IO.FileSystemWatcher();
+            //dialogueWatcher.NotifyFilter = System.IO.NotifyFilters.LastWrite;
+            //dialogueWatcher.Changed += dialogueWatcher_Changed;
+            //this.dialogueWatcher.Filter = "*.diag";
 
             LoadProfile();
 
@@ -422,7 +444,9 @@ namespace SpeechCommander.UI
 
         public void LoadDialogue()
         {
-            if (this.cb_DialogueEnabled.Checked)
+            this.cb_DialogueEnabled.Checked = this.currentProfile.Dialogue.Enabled;
+
+            if (this.currentProfile.Dialogue.Enabled)
             {
                 this.tb_DialogueFolderPath.Enabled = true;
                 this.bttn_DialogueFolderPath.Enabled = true;
@@ -436,13 +460,38 @@ namespace SpeechCommander.UI
                 this.tb_DialogueGoodbyeAdd.Enabled = true;
                 this.bttn_DialogueGoodbyeAdd.Enabled = true;
 
+                bool same = false;
+
+                if (this.currentProfile.Dialogue.CancelPhrases == null)
+                    this.currentProfile.Dialogue.CancelPhrases = new List<string>();
+
+                if (lb_DialogueGoodbyeList.Items.Count == this.currentProfile.Dialogue.CancelPhrases.Count)
+                {
+                    same = true;
+                    for (int i = 0; i < lb_DialogueGoodbyeList.Items.Count; i++)
+                    {
+                        if (lb_DialogueGoodbyeList.Items[i] as string != this.currentProfile.Dialogue.CancelPhrases[i])
+                            same = false;
+                    }
+                }
+
+                if (!same)
+                {
+                    this.lb_DialogueGoodbyeList.Items.Clear();
+
+                    foreach (var phrase in this.currentProfile.Dialogue.CancelPhrases)
+                    {
+                        this.lb_DialogueGoodbyeList.Items.Add(phrase);
+                    }
+                }
+
                 if (this.CurrentDialogueCancelPhrase != null)
                 {
                     this.tb_DialogueGoodbyeRename.Enabled = true;
                     this.bttn_DialogueGoodbyeRemove.Enabled = true;
                     this.bttn_DialogueGoodbyeRename.Enabled = true;
 
-                    this.bttn_DialogueGoodbyeRename.Text = this.CurrentDialogueCancelPhrase;
+                    this.tb_DialogueGoodbyeRename.Text = this.CurrentDialogueCancelPhrase;
                 }
                 else
                 {
@@ -450,9 +499,10 @@ namespace SpeechCommander.UI
                     this.bttn_DialogueGoodbyeRemove.Enabled = false;
                     this.bttn_DialogueGoodbyeRename.Enabled = false;
 
-                    this.bttn_DialogueGoodbyeRename.Text = string.Empty;
+                    this.tb_DialogueGoodbyeRename.Text = string.Empty;
                 }
 
+                this.tb_DialogueGoodbyeAdd.Text = string.Empty;
                 this.tb_DialogueFolderPath.Text = this.currentProfile.Dialogue.FilePath;
                 this.cb_DialogueEnabled.Checked = this.currentProfile.Dialogue.Enabled;
             }
@@ -474,7 +524,55 @@ namespace SpeechCommander.UI
                 this.bttn_DialogueGoodbyeRemove.Enabled = false;
                 this.bttn_DialogueGoodbyeRename.Enabled = false;
 
-                this.bttn_DialogueGoodbyeRename.Text = string.Empty;
+                this.tb_DialogueGoodbyeAdd.Text = string.Empty;
+                this.tb_DialogueGoodbyeRename.Text = string.Empty;
+                this.tb_DialogueFolderPath.Text = this.currentProfile.Dialogue.FilePath;
+
+                this.lb_DialogueGoodbyeList.Items.Clear();
+
+            }
+
+            LoadDialogueCommand();
+        }
+
+        public void LoadDialogueCommand()
+        {
+            if (this.CurrentDialogueCommand != null)
+            {
+                //cb_DialogueCommandKey.Enabled = true;
+                //cb_DialogueCommandModifierKey.Enabled = true;
+                //nud_DialogueCommandHeld.Enabled = true;
+                //nud_DialogueCommandPaused.Enabled = true;
+
+                if (this.CurrentDialogueCommand.Key != null)
+                    cb_DialogueCommandKey.SelectedItem = this.CurrentDialogueCommand.Key.ToString();
+                else
+                    cb_DialogueCommandKey.SelectedIndex = 0;
+
+                if (this.CurrentDialogueCommand.ModifierKey != null)
+                    cb_DialogueCommandModifierKey.SelectedItem = this.CurrentDialogueCommand.ModifierKey.ToString();
+                else
+                    cb_DialogueCommandModifierKey.SelectedIndex = 0;
+
+                if (this.CurrentDialogueCommand.HeldDuration < nud_DialogueCommandHeld.Minimum || this.CurrentDialogueCommand.HeldDuration > nud_DialogueCommandHeld.Maximum)
+                    this.CurrentDialogueCommand.HeldDuration = 50;
+                nud_DialogueCommandHeld.Value = (decimal)this.CurrentDialogueCommand.HeldDuration;
+
+                if (this.CurrentDialogueCommand.PausedDuration < nud_DialogueCommandPaused.Minimum || this.CurrentDialogueCommand.PausedDuration > nud_DialogueCommandPaused.Maximum)
+                    this.CurrentDialogueCommand.PausedDuration = 25;
+                nud_DialogueCommandPaused.Value = (decimal)this.CurrentDialogueCommand.PausedDuration;
+            }
+            else
+            {
+                //cb_DialogueCommandKey.Enabled = false;
+                //cb_DialogueCommandModifierKey.Enabled = false;
+                //nud_DialogueCommandHeld.Enabled = false;
+                //nud_DialogueCommandPaused.Enabled = false;
+
+                cb_DialogueCommandKey.SelectedIndex = 0;
+                cb_DialogueCommandModifierKey.SelectedIndex = 0;
+                nud_DialogueCommandHeld.Value = 50;
+                nud_DialogueCommandPaused.Value = 25;
             }
         }
 
@@ -534,7 +632,11 @@ namespace SpeechCommander.UI
 
         private void bttn_RenameAction_Click(object sender, EventArgs e)
         {
-
+            if (this.CurrentAction != null && tb_RenameAction.Text != string.Empty && !this.currentProfile.Actions.Any(act => act.ActionName == tb_RenameAction.Text))
+            {
+                this.CurrentAction.ActionName = tb_RenameAction.Text;
+                LoadActionList();
+            }
         }
 
         private void bttn_RemoveAction_Click(object sender, EventArgs e)
@@ -782,9 +884,32 @@ namespace SpeechCommander.UI
                 DialogResult result = diag.ShowDialog();
                 if (result == System.Windows.Forms.DialogResult.OK)
                 {
-                    this.currentProfile.Save(diag.FileName);
+                    SafeSave(diag.FileName);
                 }
             }
+        }
+
+        private bool SafeSave(string path)
+        {
+            System.Windows.Forms.DialogResult result;
+            do
+            {
+                result = System.Windows.Forms.DialogResult.Ignore;
+                //try
+                //{
+                this.currentProfile.Save(path);
+                //}
+                //catch (System.IO.IOException e)
+                //{
+                //    result = System.Windows.Forms.MessageBox.Show(e.Message, "File Save Error", System.Windows.Forms.MessageBoxButtons.AbortRetryIgnore);
+                //    if (result == System.Windows.Forms.DialogResult.Abort)
+                //    {
+                //        return false;
+                //    }
+                //}
+            }
+            while (result == System.Windows.Forms.DialogResult.Retry);
+            return true;
         }
 
         private void tsmi_Throw_Click(object sender, EventArgs e)
@@ -794,17 +919,17 @@ namespace SpeechCommander.UI
 
         private void tsmi_Start_Click(object sender, EventArgs e)
         {
-            if (this.currentProfile.Dialogue.Enabled)
-            {
-                try
-                {
-                    this.dialogueWatcher.EnableRaisingEvents = true;
-                }
-                catch (ArgumentException ex)
-                {
-                    Console.WriteLine(String.Format("The dialogue file path,'{0}', is invalid!", this.dialogueWatcher.Path));
-                }
-            }
+            //if (this.currentProfile.Dialogue.Enabled)
+            //{
+            //    try
+            //    {
+            //        this.dialogueWatcher.EnableRaisingEvents = true;
+            //    }
+            //    catch (ArgumentException ex)
+            //    {
+            //        Console.WriteLine(String.Format("The dialogue file path,'{0}', is invalid!", this.dialogueWatcher.Path));
+            //    }
+            //}
 
             this.tb_RecognizedWord.BackColor = Color.LightGreen;
             if (engine != null)
@@ -822,7 +947,7 @@ namespace SpeechCommander.UI
 
         private void tsmi_Stop_Click(object sender, EventArgs e)
         {
-            this.dialogueWatcher.EnableRaisingEvents = false;
+            //this.dialogueWatcher.EnableRaisingEvents = false;
             this.tb_RecognizedWord.BackColor = SystemColors.Control;
             this.tb_RecognizedWord.Text = string.Empty;
 
@@ -859,218 +984,219 @@ namespace SpeechCommander.UI
             this.tb_RecognizedWord.Text = text;
         }
 
-        void dialogueWatcher_Changed(object sender, System.IO.FileSystemEventArgs e)
-        {
-            Console.WriteLine(String.Format("Changetype: {0}, Fullpath: {1}, Name: {2}", e.ChangeType, e.FullPath, e.Name));
-            if (e.Name == FILE_DIALOGUETEXT)
-            {
-                UpdateDialogueOptions();
-            }
-            if (e.Name == FILE_DIALOGUESTATE)
-            {
-                UpdateDialoguePosition();
-            }
-        }
+        //void dialogueWatcher_Changed(object sender, System.IO.FileSystemEventArgs e)
+        //{
+        //    Console.WriteLine(String.Format("Changetype: {0}, Fullpath: {1}, Name: {2}", e.ChangeType, e.FullPath, e.Name));
+        //    if (e.Name == FILE_DIALOGUETEXT)
+        //    {
+        //        UpdateDialogueOptions();
+        //    }
+        //    if (e.Name == FILE_DIALOGUESTATE)
+        //    {
+        //        UpdateDialoguePosition();
+        //    }
+        //}
 
-        private void UpdateDialoguePosition()
-        {
-            string filename = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(this.currentProfile.Dialogue.FilePath), FILE_DIALOGUESTATE);
+        //private void UpdateDialoguePosition()
+        //{
+        //    string filename = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(this.currentProfile.Dialogue.FilePath), FILE_DIALOGUESTATE);
 
-            int position = 0;
-            bool readSuccess = true;
-            do
-            {
+        //    int position = 0;
+        //    bool readSuccess = true;
+        //    do
+        //    {
 
-                try
-                {
-                    using (System.IO.StreamReader rdr = new System.IO.StreamReader(filename))
-                    {
-                        readSuccess = true;
+        //        try
+        //        {
+        //            using (System.IO.StreamReader rdr = new System.IO.StreamReader(filename))
+        //            {
+        //                readSuccess = true;
 
-                        string line = rdr.ReadLine();
-                        int.TryParse(line, out position);
-                    }
-                }
-                catch (System.IO.IOException)
-                {
-                    readSuccess = false;
-                }
+        //                string line = rdr.ReadLine();
+        //                int.TryParse(line, out position);
+        //            }
+        //        }
+        //        catch (System.IO.IOException)
+        //        {
+        //            readSuccess = false;
+        //        }
 
-            }
-            while (!readSuccess);
+        //    }
+        //    while (!readSuccess);
 
-            if (position != this.DialoguePosition)
-            {
-                this.DialoguePosition = position;
-                Console.WriteLine("Modified Position! " + this.DialoguePosition);
-                for (int index = 0; index < this.dialogProfile.Actions.Count - 1; index++) // -1 to ignore goodbye
-                {
-                    lock (this.dialogProfile.Actions[index].Commands)
-                    {
-                        Command move = this.dialogProfile.Actions[index].Commands[0];
-                        Command tmp;
+        //    if (position != this.DialoguePosition)
+        //    {
+        //        this.DialoguePosition = position;
+        //        Console.WriteLine("Modified Position! " + this.DialoguePosition);
+        //        for (int index = 0; index < this.dialogProfile.Actions.Count - 1; index++) // -1 to ignore goodbye
+        //        {
+        //            lock (this.dialogProfile.Actions[index].Commands)
+        //            {
+        //                Command move = this.dialogProfile.Actions[index].Commands[0];
+        //                Command tmp;
 
-                        if (this.DialoguePosition > index)
-                            tmp = this.currentProfile.Dialogue.CommandPrevious;
-                        else
-                            tmp = this.currentProfile.Dialogue.CommandNext;
+        //                if (this.DialoguePosition > index)
+        //                    tmp = this.currentProfile.Dialogue.CommandPrevious;
+        //                else
+        //                    tmp = this.currentProfile.Dialogue.CommandNext;
 
-                        move.Repeat = Math.Abs(this.DialoguePosition - index);
+        //                move.Repeat = Math.Abs(this.DialoguePosition - index);
 
-                        move.CommandName = String.Format("Go Down {0}", index);
-                        move.Key = tmp.Key;
-                        move.ModifierKey = tmp.ModifierKey;
-                        move.HeldDuration = tmp.HeldDuration;
-                        move.PausedDuration = tmp.PausedDuration;
-                    }
-                }
-            }
-        }
+        //                move.CommandName = String.Format("Go Down {0}", index);
+        //                move.Key = tmp.Key;
+        //                move.ModifierKey = tmp.ModifierKey;
+        //                move.HeldDuration = tmp.HeldDuration;
+        //                move.PausedDuration = tmp.PausedDuration;
+        //            }
+        //        }
+        //    }
+        //}
 
-        void UpdateDialogueOptions()
-        {
-            if (this.engine.Running)
-            {
-                List<Action> actionlist = new List<Action>();
-                bool readSuccess = true;
-                do
-                {
+        //void UpdateDialogueOptions()
+        //{
+        //    if (this.engine.Running)
+        //    {
+        //        List<Action> actionlist = new List<Action>();
+        //        bool readSuccess = true;
+        //        do
+        //        {
 
-                    try
-                    {
-                        string filename = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(this.currentProfile.Dialogue.FilePath), FILE_DIALOGUETEXT);
-                        using (System.IO.StreamReader rdr = new System.IO.StreamReader(filename))
-                        {
-                            readSuccess = true;
-                            int index = 0;
+        //            try
+        //            {
+        //                string filename = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(this.currentProfile.Dialogue.FilePath), FILE_DIALOGUETEXT);
+        //                using (System.IO.StreamReader rdr = new System.IO.StreamReader(filename))
+        //                {
+        //                    readSuccess = true;
+        //                    int index = 0;
 
-                            while (!rdr.EndOfStream)
-                            {
-                                string text = rdr.ReadLine().Split('(')[0].Replace('?', '.');
+        //                    while (!rdr.EndOfStream)
+        //                    {
+        //                        string text = rdr.ReadLine().Split('(')[0].Replace('?', '.');
 
-                                Action action = new Action();
-                                action.ActionName = text;
-                                action.Phrases.Add(text);
-
-
-                                Command move = new Command();
-                                Command tmp;
-
-                                if (this.DialoguePosition > index)
-                                    tmp = this.currentProfile.Dialogue.CommandPrevious;
-                                else
-                                    tmp = this.currentProfile.Dialogue.CommandNext;
-
-                                move.Repeat = Math.Abs(this.DialoguePosition - index);
-
-                                move.CommandName = String.Format("Go Down {0}", index);
-                                move.Key = tmp.Key;
-                                move.ModifierKey = tmp.ModifierKey;
-                                move.HeldDuration = tmp.HeldDuration;
-                                move.PausedDuration = tmp.PausedDuration;
-
-                                action.Commands.Add(move);
-                                action.Commands.Add(this.currentProfile.Dialogue.CommandAccept);
-                                actionlist.Add(action);
-                                ++index;
-
-                            }
-                        }
-                    }
-                    catch (System.IO.IOException)
-                    {
-                        readSuccess = false;
-                    }
-
-                }
-                while (!readSuccess);
-
-                if (actionlist.Count > 0)
-                {
-                    Profile prof = new Profile();
-                    prof.Actions = actionlist;
-                    prof.Actions.Add(GenerateGoodbyeAction());
-                    prof.ProfileName = "Dialogue";
-                    bool same = false;
-                    if (this.dialogProfile != null && this.dialogProfile.Actions.Count == prof.Actions.Count)
-                    {
-                        same = true;
-                        for (int i = 0; i < this.dialogProfile.Actions.Count; i++)
-                        {
-                            if (this.dialogProfile.Actions[i].ActionName != prof.Actions[i].ActionName)
-                                same = false;
-                        }
-                    }
-                    if (!same)
-                    {
+        //                        Action action = new Action();
+        //                        action.ActionName = text;
+        //                        action.Phrases.Add(text);
 
 
-                        prof.UpdateGrammar();
+        //                        Command move = new Command();
+        //                        Command tmp;
 
-                        var changes = new List<UpdateOperation>();
-                        changes.Add(new UpdateOperation()
-                        {
-                            UpdateType = UpdateOperationType.DisableGrammar,
-                            Grammar = this.currentProfile.Grammar
-                        });
-                        changes.Add(new UpdateOperation()
-                        {
-                            UpdateType = UpdateOperationType.AddGrammar,
-                            Grammar = prof.Grammar,
-                            AssociatedActions = prof.Actions
-                        });
+        //                        if (this.DialoguePosition > index)
+        //                            tmp = this.currentProfile.Dialogue.CommandPrevious;
+        //                        else
+        //                            tmp = this.currentProfile.Dialogue.CommandNext;
 
-                        if (this.dialogProfile != null)
-                        {
-                            changes.Add(new UpdateOperation()
-                            {
-                                UpdateType = UpdateOperationType.RemoveGrammar,
-                                Grammar = this.dialogProfile.Grammar,
-                                AssociatedActions = this.dialogProfile.Actions
-                            });
-                            //this.engine.RemoveGrammar(this.dialogProfile.Grammar, this.dialogProfile.Actions);
-                        }
+        //                        move.Repeat = Math.Abs(this.DialoguePosition - index);
 
-                        this.engine.ExecuteGrammarChanges(changes);
+        //                        move.CommandName = String.Format("Go Down {0}", index);
+        //                        move.Key = tmp.Key;
+        //                        move.ModifierKey = tmp.ModifierKey;
+        //                        move.HeldDuration = tmp.HeldDuration;
+        //                        move.PausedDuration = tmp.PausedDuration;
 
-                        this.dialogProfile = prof;
-                        Console.WriteLine("Dialogue Mode Initializing");
-                    }
-                }
-                else if (this.dialogProfile != null)
-                {
-                    Console.WriteLine("End Dialogue");
+        //                        action.Commands.Add(move);
+        //                        action.Commands.Add(this.currentProfile.Dialogue.CommandAccept);
+        //                        actionlist.Add(action);
+        //                        ++index;
 
-                    var changes = new List<UpdateOperation>();
-                    changes.Add(new UpdateOperation()
-                    {
-                        UpdateType = UpdateOperationType.EnableGrammar,
-                        Grammar = this.currentProfile.Grammar
-                    });
-                    changes.Add(new UpdateOperation()
-                    {
-                        UpdateType = UpdateOperationType.RemoveGrammar,
-                        Grammar = this.dialogProfile.Grammar,
-                        AssociatedActions = this.dialogProfile.Actions
-                    });
+        //                    }
+        //                }
+        //            }
+        //            catch (System.IO.IOException)
+        //            {
+        //                readSuccess = false;
+        //            }
 
-                    this.engine.ExecuteGrammarChanges(changes);
+        //        }
+        //        while (!readSuccess);
 
-                    this.dialogProfile = null;
-                }
-            }
-        }
+        //        if (actionlist.Count > 0)
+        //        {
+        //            Profile prof = new Profile();
+        //            prof.Actions = actionlist;
+        //            prof.Actions.Add(GenerateGoodbyeAction());
+        //            prof.ProfileName = "Dialogue";
+        //            bool same = false;
+        //            if (this.dialogProfile != null && this.dialogProfile.Actions.Count == prof.Actions.Count)
+        //            {
+        //                same = true;
+        //                for (int i = 0; i < this.dialogProfile.Actions.Count; i++)
+        //                {
+        //                    if (this.dialogProfile.Actions[i].ActionName != prof.Actions[i].ActionName)
+        //                        same = false;
+        //                }
+        //            }
+        //            if (!same)
+        //            {
 
-        private Action GenerateGoodbyeAction()
-        {
-            Action action = new Action();
-            action.ActionName = "Goodbye";
-            action.Commands.Add(this.currentProfile.Dialogue.CommandCancel);
-            action.Phrases.AddRange(this.currentProfile.Dialogue.CancelPhrases);
 
-            return action;
-        }
+        //                prof.UpdateGrammar();
 
+        //                var changes = new List<UpdateOperation>();
+        //                changes.Add(new UpdateOperation()
+        //                {
+        //                    UpdateType = UpdateOperationType.DisableGrammar,
+        //                    Grammar = this.currentProfile.Grammar
+        //                });
+        //                changes.Add(new UpdateOperation()
+        //                {
+        //                    UpdateType = UpdateOperationType.AddGrammar,
+        //                    Grammar = prof.Grammar,
+        //                    AssociatedActions = prof.Actions
+        //                });
+
+        //                if (this.dialogProfile != null)
+        //                {
+        //                    changes.Add(new UpdateOperation()
+        //                    {
+        //                        UpdateType = UpdateOperationType.RemoveGrammar,
+        //                        Grammar = this.dialogProfile.Grammar,
+        //                        AssociatedActions = this.dialogProfile.Actions
+        //                    });
+        //                    //this.engine.RemoveGrammar(this.dialogProfile.Grammar, this.dialogProfile.Actions);
+        //                }
+
+        //                this.engine.ExecuteGrammarChanges(changes);
+
+        //                this.dialogProfile = prof;
+        //                Console.WriteLine("Dialogue Mode Initializing");
+        //            }
+        //        }
+        //        else if (this.dialogProfile != null)
+        //        {
+        //            Console.WriteLine("End Dialogue");
+
+        //            var changes = new List<UpdateOperation>();
+        //            changes.Add(new UpdateOperation()
+        //            {
+        //                UpdateType = UpdateOperationType.EnableGrammar,
+        //                Grammar = this.currentProfile.Grammar
+        //            });
+        //            changes.Add(new UpdateOperation()
+        //            {
+        //                UpdateType = UpdateOperationType.RemoveGrammar,
+        //                Grammar = this.dialogProfile.Grammar,
+        //                AssociatedActions = this.dialogProfile.Actions
+        //            });
+
+        //            this.engine.ExecuteGrammarChanges(changes);
+
+        //            this.dialogProfile = null;
+        //        }
+        //    }
+        //}
+
+        //private Action GenerateGoodbyeAction()
+        //{
+        //    Action action = new Action();
+        //    action.ActionName = "Goodbye";
+        //    action.Commands.Add(this.currentProfile.Dialogue.CommandCancel);
+        //    action.Phrases.AddRange(this.currentProfile.Dialogue.CancelPhrases);
+
+        //    return action;
+        //}
+
+        #region Dialogue
         private void cb_Dialogue_CheckedChanged(object sender, EventArgs e)
         {
             this.currentProfile.Dialogue.Enabled = this.cb_DialogueEnabled.Checked;
@@ -1095,15 +1221,15 @@ namespace SpeechCommander.UI
         {
             this.currentProfile.Dialogue.FilePath = this.tb_DialogueFolderPath.Text;
 
-            try
-            {
-                this.dialogueWatcher.Path = System.IO.Path.GetDirectoryName(this.currentProfile.Dialogue.FilePath);
-            }
-            catch (ArgumentException)
-            {
-                // this.dialogueWatcher.Path = null;
-                //this.tb_DialogueFilePath.Text = string.Empty;
-            }
+            //try
+            //{
+            //    this.dialogueWatcher.Path = System.IO.Path.GetDirectoryName(this.currentProfile.Dialogue.FilePath);
+            //}
+            //catch (ArgumentException)
+            //{
+            //    // this.dialogueWatcher.Path = null;
+            //    //this.tb_DialogueFilePath.Text = string.Empty;
+            //}
         }
 
         private void cb_DialogueCommand_SelectedIndexChanged(object sender, EventArgs e)
@@ -1155,7 +1281,7 @@ namespace SpeechCommander.UI
 
         private void lb_DialogueGoodbyeList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            LoadDialogue();
         }
 
         private void tb_DialogueGoodbyeAdd_KeyDown(object sender, KeyEventArgs e)
@@ -1188,12 +1314,21 @@ namespace SpeechCommander.UI
 
         private void bttn_DialogueGoodbyeRemove_Click(object sender, EventArgs e)
         {
-
+            if (this.CurrentDialogueCancelPhrase != null)
+            {
+                this.currentProfile.Dialogue.CancelPhrases.Remove(this.CurrentDialogueCancelPhrase);
+                LoadDialogue();
+            }
         }
 
         private void bttn_DialogueGoodbyeRename_Click(object sender, EventArgs e)
         {
-
+            if (this.CurrentDialogueCancelPhrase != null && tb_DialogueGoodbyeRename.Text != string.Empty && !this.currentProfile.Dialogue.CancelPhrases.Contains(tb_DialogueGoodbyeRename.Text))
+            {
+                this.CurrentDialogueCancelPhrase = tb_DialogueGoodbyeRename.Text;
+                LoadDialogue();
+            }
         }
+        #endregion
     }
 }

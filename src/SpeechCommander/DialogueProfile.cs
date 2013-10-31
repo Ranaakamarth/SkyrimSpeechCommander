@@ -29,5 +29,10 @@ namespace SpeechCommander
 
         [DataMember()]
         public List<string> CancelPhrases { get; set; }
+
+        public DialogueProfile()
+        {
+            this.CancelPhrases = new List<string>();
+        }
     }
 }

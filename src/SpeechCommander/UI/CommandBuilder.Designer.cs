@@ -89,22 +89,21 @@
             this.bttn_AddAction = new System.Windows.Forms.Button();
             this.tp_Profile = new System.Windows.Forms.TabPage();
             this.gb_Dialogue = new System.Windows.Forms.GroupBox();
+            this.gb_DialogueNavigation = new System.Windows.Forms.GroupBox();
+            this.gb_DialogueCommandPaused = new System.Windows.Forms.GroupBox();
+            this.nud_DialogueCommandPaused = new System.Windows.Forms.NumericUpDown();
+            this.gb_DialogueCommandKey = new System.Windows.Forms.GroupBox();
+            this.cb_DialogueCommandKey = new System.Windows.Forms.ComboBox();
+            this.gb_DialogueCommand = new System.Windows.Forms.GroupBox();
+            this.cb_DialogueCommand = new System.Windows.Forms.ComboBox();
+            this.gb_DialogueCommandModifierKey = new System.Windows.Forms.GroupBox();
+            this.cb_DialogueCommandModifierKey = new System.Windows.Forms.ComboBox();
+            this.gb_DialogueCommandHeld = new System.Windows.Forms.GroupBox();
+            this.nud_DialogueCommandHeld = new System.Windows.Forms.NumericUpDown();
             this.gb_DialogueFolder = new System.Windows.Forms.GroupBox();
             this.bttn_DialogueFolderPath = new System.Windows.Forms.Button();
             this.tb_DialogueFolderPath = new System.Windows.Forms.TextBox();
             this.cb_DialogueEnabled = new System.Windows.Forms.CheckBox();
-            this.gb_Timeout = new System.Windows.Forms.GroupBox();
-            this.nud_Timeout = new System.Windows.Forms.NumericUpDown();
-            this.gb_Confidence = new System.Windows.Forms.GroupBox();
-            this.nud_Confidence = new System.Windows.Forms.NumericUpDown();
-            this.gb_ProfileName = new System.Windows.Forms.GroupBox();
-            this.tb_ProfileName = new System.Windows.Forms.TextBox();
-            this.gb_DialogueCommand = new System.Windows.Forms.GroupBox();
-            this.cb_DialogueCommand = new System.Windows.Forms.ComboBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.gb_DialogueGoodbye = new System.Windows.Forms.GroupBox();
             this.gb_DialogueGoodbyeRename = new System.Windows.Forms.GroupBox();
             this.tb_DialogueGoodbyeRename = new System.Windows.Forms.TextBox();
@@ -114,15 +113,35 @@
             this.gb_DialogueGoodbyeAdd = new System.Windows.Forms.GroupBox();
             this.tb_DialogueGoodbyeAdd = new System.Windows.Forms.TextBox();
             this.bttn_DialogueGoodbyeAdd = new System.Windows.Forms.Button();
-            this.gb_DialogueCommandPaused = new System.Windows.Forms.GroupBox();
-            this.nud_DialogueCommandPaused = new System.Windows.Forms.NumericUpDown();
-            this.gb_DialogueCommandHeld = new System.Windows.Forms.GroupBox();
-            this.nud_DialogueCommandHeld = new System.Windows.Forms.NumericUpDown();
-            this.gb_DialogueCommandModifierKey = new System.Windows.Forms.GroupBox();
-            this.cb_DialogueCommandModifierKey = new System.Windows.Forms.ComboBox();
-            this.gb_DialogueCommandKey = new System.Windows.Forms.GroupBox();
-            this.cb_DialogueCommandKey = new System.Windows.Forms.ComboBox();
-            this.gb_DialogueNavigation = new System.Windows.Forms.GroupBox();
+            this.gb_Timeout = new System.Windows.Forms.GroupBox();
+            this.nud_Timeout = new System.Windows.Forms.NumericUpDown();
+            this.gb_Confidence = new System.Windows.Forms.GroupBox();
+            this.nud_Confidence = new System.Windows.Forms.NumericUpDown();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.gb_ProfileName = new System.Windows.Forms.GroupBox();
+            this.tb_ProfileName = new System.Windows.Forms.TextBox();
+            this.gb_PausePhrases = new System.Windows.Forms.GroupBox();
+            this.gb_RenamePausePhrase = new System.Windows.Forms.GroupBox();
+            this.tb_RenamePausePhrase = new System.Windows.Forms.TextBox();
+            this.bttn_RenamePausePhrase = new System.Windows.Forms.Button();
+            this.bttn_RemovePausePhrase = new System.Windows.Forms.Button();
+            this.lb_PausePhrases = new System.Windows.Forms.ListBox();
+            this.gb_AddPausePhrase = new System.Windows.Forms.GroupBox();
+            this.tb_AddPausePhrase = new System.Windows.Forms.TextBox();
+            this.bttn_AddPausePhrase = new System.Windows.Forms.Button();
+            this.gb_VocalToggle = new System.Windows.Forms.GroupBox();
+            this.gb_UnpausePhrases = new System.Windows.Forms.GroupBox();
+            this.gb_RenameUnpausePhrase = new System.Windows.Forms.GroupBox();
+            this.tb_RenameUnpausePhrase = new System.Windows.Forms.TextBox();
+            this.bttn_RenameUnpausePhrase = new System.Windows.Forms.Button();
+            this.bttn_RemoveUnpausePhrase = new System.Windows.Forms.Button();
+            this.lb_UnpausePhrases = new System.Windows.Forms.ListBox();
+            this.gb_AddUnpausePhrase = new System.Windows.Forms.GroupBox();
+            this.tb_AddUnpausePhrase = new System.Windows.Forms.TextBox();
+            this.bttn_AddUnpausePhrase = new System.Windows.Forms.Button();
             this.ms_MainMenuStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tp_Actions.SuspendLayout();
@@ -152,26 +171,33 @@
             this.gb_AddAction.SuspendLayout();
             this.tp_Profile.SuspendLayout();
             this.gb_Dialogue.SuspendLayout();
+            this.gb_DialogueNavigation.SuspendLayout();
+            this.gb_DialogueCommandPaused.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_DialogueCommandPaused)).BeginInit();
+            this.gb_DialogueCommandKey.SuspendLayout();
+            this.gb_DialogueCommand.SuspendLayout();
+            this.gb_DialogueCommandModifierKey.SuspendLayout();
+            this.gb_DialogueCommandHeld.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_DialogueCommandHeld)).BeginInit();
             this.gb_DialogueFolder.SuspendLayout();
+            this.gb_DialogueGoodbye.SuspendLayout();
+            this.gb_DialogueGoodbyeRename.SuspendLayout();
+            this.gb_DialogueGoodbyeAdd.SuspendLayout();
             this.gb_Timeout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Timeout)).BeginInit();
             this.gb_Confidence.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Confidence)).BeginInit();
-            this.gb_ProfileName.SuspendLayout();
-            this.gb_DialogueCommand.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            this.gb_DialogueGoodbye.SuspendLayout();
-            this.gb_DialogueGoodbyeRename.SuspendLayout();
-            this.gb_DialogueGoodbyeAdd.SuspendLayout();
-            this.gb_DialogueCommandPaused.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_DialogueCommandPaused)).BeginInit();
-            this.gb_DialogueCommandHeld.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_DialogueCommandHeld)).BeginInit();
-            this.gb_DialogueCommandModifierKey.SuspendLayout();
-            this.gb_DialogueCommandKey.SuspendLayout();
-            this.gb_DialogueNavigation.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.gb_ProfileName.SuspendLayout();
+            this.gb_PausePhrases.SuspendLayout();
+            this.gb_RenamePausePhrase.SuspendLayout();
+            this.gb_AddPausePhrase.SuspendLayout();
+            this.gb_VocalToggle.SuspendLayout();
+            this.gb_UnpausePhrases.SuspendLayout();
+            this.gb_RenameUnpausePhrase.SuspendLayout();
+            this.gb_AddUnpausePhrase.SuspendLayout();
             this.SuspendLayout();
             // 
             // ms_MainMenuStrip
@@ -1014,7 +1040,7 @@
             this.bttn_RenameAction.TabIndex = 1;
             this.bttn_RenameAction.Text = "Rename";
             this.bttn_RenameAction.UseVisualStyleBackColor = true;
-            this.bttn_RenameAction.Click += new System.EventHandler(this.bttn_RemoveAction_Click);
+            this.bttn_RenameAction.Click += new System.EventHandler(this.bttn_RenameAction_Click);
             // 
             // bttn_RemoveAction
             // 
@@ -1077,6 +1103,7 @@
             // tp_Profile
             // 
             this.tp_Profile.BackColor = System.Drawing.SystemColors.Control;
+            this.tp_Profile.Controls.Add(this.gb_VocalToggle);
             this.tp_Profile.Controls.Add(this.gb_Dialogue);
             this.tp_Profile.Controls.Add(this.gb_Timeout);
             this.tp_Profile.Controls.Add(this.gb_Confidence);
@@ -1101,319 +1128,19 @@
             this.gb_Dialogue.TabStop = false;
             this.gb_Dialogue.Text = "Dialogue Options";
             // 
-            // gb_DialogueFolder
+            // gb_DialogueNavigation
             // 
-            this.gb_DialogueFolder.Controls.Add(this.bttn_DialogueFolderPath);
-            this.gb_DialogueFolder.Controls.Add(this.tb_DialogueFolderPath);
-            this.gb_DialogueFolder.Location = new System.Drawing.Point(6, 42);
-            this.gb_DialogueFolder.Name = "gb_DialogueFolder";
-            this.gb_DialogueFolder.Size = new System.Drawing.Size(221, 46);
-            this.gb_DialogueFolder.TabIndex = 2;
-            this.gb_DialogueFolder.TabStop = false;
-            this.gb_DialogueFolder.Text = "Dialogue Folder Path";
-            // 
-            // bttn_DialogueFolderPath
-            // 
-            this.bttn_DialogueFolderPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bttn_DialogueFolderPath.Location = new System.Drawing.Point(185, 17);
-            this.bttn_DialogueFolderPath.Name = "bttn_DialogueFolderPath";
-            this.bttn_DialogueFolderPath.Size = new System.Drawing.Size(30, 23);
-            this.bttn_DialogueFolderPath.TabIndex = 2;
-            this.bttn_DialogueFolderPath.Text = "...";
-            this.bttn_DialogueFolderPath.UseVisualStyleBackColor = true;
-            this.bttn_DialogueFolderPath.Click += new System.EventHandler(this.bttn_DialogueFilePath_Click);
-            // 
-            // tb_DialogueFolderPath
-            // 
-            this.tb_DialogueFolderPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_DialogueFolderPath.Location = new System.Drawing.Point(6, 19);
-            this.tb_DialogueFolderPath.Name = "tb_DialogueFolderPath";
-            this.tb_DialogueFolderPath.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tb_DialogueFolderPath.Size = new System.Drawing.Size(173, 20);
-            this.tb_DialogueFolderPath.TabIndex = 1;
-            this.tb_DialogueFolderPath.Text = "C:\\Program Files (x86)\\The Elder Scrolls V Skyrim\\Data\\Interface\\";
-            this.tb_DialogueFolderPath.TextChanged += new System.EventHandler(this.tb_DialogueFilePath_TextChanged);
-            // 
-            // cb_DialogueEnabled
-            // 
-            this.cb_DialogueEnabled.AutoSize = true;
-            this.cb_DialogueEnabled.Location = new System.Drawing.Point(14, 19);
-            this.cb_DialogueEnabled.Name = "cb_DialogueEnabled";
-            this.cb_DialogueEnabled.Size = new System.Drawing.Size(143, 17);
-            this.cb_DialogueEnabled.TabIndex = 0;
-            this.cb_DialogueEnabled.Text = "Enable Dialogue Options";
-            this.cb_DialogueEnabled.UseVisualStyleBackColor = true;
-            this.cb_DialogueEnabled.CheckedChanged += new System.EventHandler(this.cb_Dialogue_CheckedChanged);
-            // 
-            // gb_Timeout
-            // 
-            this.gb_Timeout.Controls.Add(this.nud_Timeout);
-            this.gb_Timeout.Location = new System.Drawing.Point(247, 6);
-            this.gb_Timeout.Name = "gb_Timeout";
-            this.gb_Timeout.Size = new System.Drawing.Size(235, 47);
-            this.gb_Timeout.TabIndex = 19;
-            this.gb_Timeout.TabStop = false;
-            this.gb_Timeout.Text = "Timeout:";
-            // 
-            // nud_Timeout
-            // 
-            this.nud_Timeout.Location = new System.Drawing.Point(6, 19);
-            this.nud_Timeout.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-            this.nud_Timeout.Name = "nud_Timeout";
-            this.nud_Timeout.Size = new System.Drawing.Size(223, 20);
-            this.nud_Timeout.TabIndex = 0;
-            this.nud_Timeout.Value = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            this.nud_Timeout.ValueChanged += new System.EventHandler(this.nud_Timeout_ValueChanged);
-            // 
-            // gb_Confidence
-            // 
-            this.gb_Confidence.Controls.Add(this.nud_Confidence);
-            this.gb_Confidence.Controls.Add(this.groupBox6);
-            this.gb_Confidence.Controls.Add(this.groupBox4);
-            this.gb_Confidence.Location = new System.Drawing.Point(6, 59);
-            this.gb_Confidence.Name = "gb_Confidence";
-            this.gb_Confidence.Size = new System.Drawing.Size(235, 47);
-            this.gb_Confidence.TabIndex = 20;
-            this.gb_Confidence.TabStop = false;
-            this.gb_Confidence.Text = "Required Confidence:";
-            // 
-            // nud_Confidence
-            // 
-            this.nud_Confidence.DecimalPlaces = 3;
-            this.nud_Confidence.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            131072});
-            this.nud_Confidence.Location = new System.Drawing.Point(6, 19);
-            this.nud_Confidence.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nud_Confidence.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.nud_Confidence.Name = "nud_Confidence";
-            this.nud_Confidence.Size = new System.Drawing.Size(223, 20);
-            this.nud_Confidence.TabIndex = 0;
-            this.nud_Confidence.Value = new decimal(new int[] {
-            9,
-            0,
-            0,
-            65536});
-            this.nud_Confidence.ValueChanged += new System.EventHandler(this.nud_Confidence_ValueChanged);
-            // 
-            // gb_ProfileName
-            // 
-            this.gb_ProfileName.Controls.Add(this.tb_ProfileName);
-            this.gb_ProfileName.Location = new System.Drawing.Point(6, 6);
-            this.gb_ProfileName.Name = "gb_ProfileName";
-            this.gb_ProfileName.Size = new System.Drawing.Size(235, 47);
-            this.gb_ProfileName.TabIndex = 18;
-            this.gb_ProfileName.TabStop = false;
-            this.gb_ProfileName.Text = "Profile Name:";
-            // 
-            // tb_ProfileName
-            // 
-            this.tb_ProfileName.Location = new System.Drawing.Point(6, 19);
-            this.tb_ProfileName.Name = "tb_ProfileName";
-            this.tb_ProfileName.Size = new System.Drawing.Size(223, 20);
-            this.tb_ProfileName.TabIndex = 0;
-            this.tb_ProfileName.TextChanged += new System.EventHandler(this.tb_ProfileName_TextChanged);
-            // 
-            // gb_DialogueCommand
-            // 
-            this.gb_DialogueCommand.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gb_DialogueCommand.Controls.Add(this.cb_DialogueCommand);
-            this.gb_DialogueCommand.Location = new System.Drawing.Point(6, 19);
-            this.gb_DialogueCommand.Name = "gb_DialogueCommand";
-            this.gb_DialogueCommand.Size = new System.Drawing.Size(223, 46);
-            this.gb_DialogueCommand.TabIndex = 3;
-            this.gb_DialogueCommand.TabStop = false;
-            this.gb_DialogueCommand.Text = "Dialogue Command";
-            // 
-            // cb_DialogueCommand
-            // 
-            this.cb_DialogueCommand.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cb_DialogueCommand.FormattingEnabled = true;
-            this.cb_DialogueCommand.Items.AddRange(new object[] {
-            "Previous",
-            "Next",
-            "Accept",
-            "Cancel"});
-            this.cb_DialogueCommand.Location = new System.Drawing.Point(6, 19);
-            this.cb_DialogueCommand.Name = "cb_DialogueCommand";
-            this.cb_DialogueCommand.Size = new System.Drawing.Size(211, 21);
-            this.cb_DialogueCommand.TabIndex = 0;
-            this.cb_DialogueCommand.Text = "Previous";
-            this.cb_DialogueCommand.SelectedIndexChanged += new System.EventHandler(this.cb_DialogueCommand_SelectedIndexChanged);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.textBox2);
-            this.groupBox4.Location = new System.Drawing.Point(0, -53);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(235, 47);
-            this.groupBox4.TabIndex = 18;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Profile Name:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(6, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(223, 20);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.TextChanged += new System.EventHandler(this.tb_ProfileName_TextChanged);
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.numericUpDown4);
-            this.groupBox6.Location = new System.Drawing.Point(2, 53);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(235, 47);
-            this.groupBox6.TabIndex = 19;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Timeout:";
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.Location = new System.Drawing.Point(6, 19);
-            this.numericUpDown4.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(223, 20);
-            this.numericUpDown4.TabIndex = 0;
-            this.numericUpDown4.Value = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            this.numericUpDown4.ValueChanged += new System.EventHandler(this.nud_Timeout_ValueChanged);
-            // 
-            // gb_DialogueGoodbye
-            // 
-            this.gb_DialogueGoodbye.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.gb_DialogueGoodbye.Controls.Add(this.gb_DialogueGoodbyeRename);
-            this.gb_DialogueGoodbye.Controls.Add(this.bttn_DialogueGoodbyeRemove);
-            this.gb_DialogueGoodbye.Controls.Add(this.lb_DialogueGoodbyeList);
-            this.gb_DialogueGoodbye.Controls.Add(this.gb_DialogueGoodbyeAdd);
-            this.gb_DialogueGoodbye.Location = new System.Drawing.Point(249, 19);
-            this.gb_DialogueGoodbye.Name = "gb_DialogueGoodbye";
-            this.gb_DialogueGoodbye.Size = new System.Drawing.Size(223, 385);
-            this.gb_DialogueGoodbye.TabIndex = 22;
-            this.gb_DialogueGoodbye.TabStop = false;
-            this.gb_DialogueGoodbye.Text = "Goodbye Phrases:";
-            // 
-            // gb_DialogueGoodbyeRename
-            // 
-            this.gb_DialogueGoodbyeRename.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gb_DialogueGoodbyeRename.Controls.Add(this.tb_DialogueGoodbyeRename);
-            this.gb_DialogueGoodbyeRename.Controls.Add(this.bttn_DialogueGoodbyeRename);
-            this.gb_DialogueGoodbyeRename.Location = new System.Drawing.Point(6, 333);
-            this.gb_DialogueGoodbyeRename.Name = "gb_DialogueGoodbyeRename";
-            this.gb_DialogueGoodbyeRename.Size = new System.Drawing.Size(211, 46);
-            this.gb_DialogueGoodbyeRename.TabIndex = 3;
-            this.gb_DialogueGoodbyeRename.TabStop = false;
-            this.gb_DialogueGoodbyeRename.Text = "Rename Phrase";
-            // 
-            // tb_DialogueGoodbyeRename
-            // 
-            this.tb_DialogueGoodbyeRename.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_DialogueGoodbyeRename.Location = new System.Drawing.Point(6, 19);
-            this.tb_DialogueGoodbyeRename.Name = "tb_DialogueGoodbyeRename";
-            this.tb_DialogueGoodbyeRename.Size = new System.Drawing.Size(135, 20);
-            this.tb_DialogueGoodbyeRename.TabIndex = 0;
-            this.tb_DialogueGoodbyeRename.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_DialogueGoodbyeRename_KeyDown);
-            // 
-            // bttn_DialogueGoodbyeRename
-            // 
-            this.bttn_DialogueGoodbyeRename.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bttn_DialogueGoodbyeRename.Location = new System.Drawing.Point(147, 17);
-            this.bttn_DialogueGoodbyeRename.Name = "bttn_DialogueGoodbyeRename";
-            this.bttn_DialogueGoodbyeRename.Size = new System.Drawing.Size(58, 23);
-            this.bttn_DialogueGoodbyeRename.TabIndex = 1;
-            this.bttn_DialogueGoodbyeRename.Text = "Rename";
-            this.bttn_DialogueGoodbyeRename.UseVisualStyleBackColor = true;
-            this.bttn_DialogueGoodbyeRename.Click += new System.EventHandler(this.bttn_DialogueGoodbyeRename_Click);
-            // 
-            // bttn_DialogueGoodbyeRemove
-            // 
-            this.bttn_DialogueGoodbyeRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bttn_DialogueGoodbyeRemove.Location = new System.Drawing.Point(153, 310);
-            this.bttn_DialogueGoodbyeRemove.Name = "bttn_DialogueGoodbyeRemove";
-            this.bttn_DialogueGoodbyeRemove.Size = new System.Drawing.Size(58, 23);
-            this.bttn_DialogueGoodbyeRemove.TabIndex = 2;
-            this.bttn_DialogueGoodbyeRemove.Text = "Remove";
-            this.bttn_DialogueGoodbyeRemove.UseVisualStyleBackColor = true;
-            this.bttn_DialogueGoodbyeRemove.Click += new System.EventHandler(this.bttn_DialogueGoodbyeRemove_Click);
-            // 
-            // lb_DialogueGoodbyeList
-            // 
-            this.lb_DialogueGoodbyeList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_DialogueGoodbyeList.FormattingEnabled = true;
-            this.lb_DialogueGoodbyeList.IntegralHeight = false;
-            this.lb_DialogueGoodbyeList.Location = new System.Drawing.Point(6, 19);
-            this.lb_DialogueGoodbyeList.Name = "lb_DialogueGoodbyeList";
-            this.lb_DialogueGoodbyeList.Size = new System.Drawing.Size(211, 233);
-            this.lb_DialogueGoodbyeList.TabIndex = 0;
-            this.lb_DialogueGoodbyeList.SelectedIndexChanged += new System.EventHandler(this.lb_DialogueGoodbyeList_SelectedIndexChanged);
-            // 
-            // gb_DialogueGoodbyeAdd
-            // 
-            this.gb_DialogueGoodbyeAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gb_DialogueGoodbyeAdd.Controls.Add(this.tb_DialogueGoodbyeAdd);
-            this.gb_DialogueGoodbyeAdd.Controls.Add(this.bttn_DialogueGoodbyeAdd);
-            this.gb_DialogueGoodbyeAdd.Location = new System.Drawing.Point(6, 258);
-            this.gb_DialogueGoodbyeAdd.Name = "gb_DialogueGoodbyeAdd";
-            this.gb_DialogueGoodbyeAdd.Size = new System.Drawing.Size(211, 46);
-            this.gb_DialogueGoodbyeAdd.TabIndex = 1;
-            this.gb_DialogueGoodbyeAdd.TabStop = false;
-            this.gb_DialogueGoodbyeAdd.Text = "Add Phrase";
-            // 
-            // tb_DialogueGoodbyeAdd
-            // 
-            this.tb_DialogueGoodbyeAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_DialogueGoodbyeAdd.Location = new System.Drawing.Point(6, 19);
-            this.tb_DialogueGoodbyeAdd.Name = "tb_DialogueGoodbyeAdd";
-            this.tb_DialogueGoodbyeAdd.Size = new System.Drawing.Size(135, 20);
-            this.tb_DialogueGoodbyeAdd.TabIndex = 0;
-            this.tb_DialogueGoodbyeAdd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_DialogueGoodbyeAdd_KeyDown);
-            // 
-            // bttn_DialogueGoodbyeAdd
-            // 
-            this.bttn_DialogueGoodbyeAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bttn_DialogueGoodbyeAdd.Location = new System.Drawing.Point(147, 17);
-            this.bttn_DialogueGoodbyeAdd.Name = "bttn_DialogueGoodbyeAdd";
-            this.bttn_DialogueGoodbyeAdd.Size = new System.Drawing.Size(58, 23);
-            this.bttn_DialogueGoodbyeAdd.TabIndex = 1;
-            this.bttn_DialogueGoodbyeAdd.Text = "Add";
-            this.bttn_DialogueGoodbyeAdd.UseVisualStyleBackColor = true;
-            this.bttn_DialogueGoodbyeAdd.Click += new System.EventHandler(this.bttn_DialogueGoodbyeAdd_Click);
+            this.gb_DialogueNavigation.Controls.Add(this.gb_DialogueCommandPaused);
+            this.gb_DialogueNavigation.Controls.Add(this.gb_DialogueCommandKey);
+            this.gb_DialogueNavigation.Controls.Add(this.gb_DialogueCommand);
+            this.gb_DialogueNavigation.Controls.Add(this.gb_DialogueCommandModifierKey);
+            this.gb_DialogueNavigation.Controls.Add(this.gb_DialogueCommandHeld);
+            this.gb_DialogueNavigation.Location = new System.Drawing.Point(6, 94);
+            this.gb_DialogueNavigation.Name = "gb_DialogueNavigation";
+            this.gb_DialogueNavigation.Size = new System.Drawing.Size(235, 310);
+            this.gb_DialogueNavigation.TabIndex = 23;
+            this.gb_DialogueNavigation.TabStop = false;
+            this.gb_DialogueNavigation.Text = "Dialogue Automatic Navigation";
             // 
             // gb_DialogueCommandPaused
             // 
@@ -1451,78 +1178,6 @@
             0,
             0});
             this.nud_DialogueCommandPaused.ValueChanged += new System.EventHandler(this.nud_DialogueCommandPaused_ValueChanged);
-            // 
-            // gb_DialogueCommandHeld
-            // 
-            this.gb_DialogueCommandHeld.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gb_DialogueCommandHeld.Controls.Add(this.nud_DialogueCommandHeld);
-            this.gb_DialogueCommandHeld.Location = new System.Drawing.Point(6, 206);
-            this.gb_DialogueCommandHeld.Name = "gb_DialogueCommandHeld";
-            this.gb_DialogueCommandHeld.Size = new System.Drawing.Size(223, 45);
-            this.gb_DialogueCommandHeld.TabIndex = 27;
-            this.gb_DialogueCommandHeld.TabStop = false;
-            this.gb_DialogueCommandHeld.Text = "Held Duration (milliseconds)";
-            // 
-            // nud_DialogueCommandHeld
-            // 
-            this.nud_DialogueCommandHeld.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nud_DialogueCommandHeld.Location = new System.Drawing.Point(6, 19);
-            this.nud_DialogueCommandHeld.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.nud_DialogueCommandHeld.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nud_DialogueCommandHeld.Name = "nud_DialogueCommandHeld";
-            this.nud_DialogueCommandHeld.Size = new System.Drawing.Size(211, 20);
-            this.nud_DialogueCommandHeld.TabIndex = 0;
-            this.nud_DialogueCommandHeld.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.nud_DialogueCommandHeld.ValueChanged += new System.EventHandler(this.nud_DialogueCommandHeld_ValueChanged);
-            // 
-            // gb_DialogueCommandModifierKey
-            // 
-            this.gb_DialogueCommandModifierKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gb_DialogueCommandModifierKey.Controls.Add(this.cb_DialogueCommandModifierKey);
-            this.gb_DialogueCommandModifierKey.Location = new System.Drawing.Point(6, 154);
-            this.gb_DialogueCommandModifierKey.Name = "gb_DialogueCommandModifierKey";
-            this.gb_DialogueCommandModifierKey.Size = new System.Drawing.Size(223, 46);
-            this.gb_DialogueCommandModifierKey.TabIndex = 24;
-            this.gb_DialogueCommandModifierKey.TabStop = false;
-            this.gb_DialogueCommandModifierKey.Text = "Modifier Key";
-            // 
-            // cb_DialogueCommandModifierKey
-            // 
-            this.cb_DialogueCommandModifierKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cb_DialogueCommandModifierKey.FormattingEnabled = true;
-            this.cb_DialogueCommandModifierKey.Items.AddRange(new object[] {
-            "",
-            "SHIFT",
-            "CONTROL",
-            "LWIN",
-            "RWIN",
-            "LSHIFT",
-            "RSHIFT",
-            "LCONTROL",
-            "RCONTROL",
-            "LMENU",
-            "RMENU"});
-            this.cb_DialogueCommandModifierKey.Location = new System.Drawing.Point(6, 19);
-            this.cb_DialogueCommandModifierKey.Name = "cb_DialogueCommandModifierKey";
-            this.cb_DialogueCommandModifierKey.Size = new System.Drawing.Size(211, 21);
-            this.cb_DialogueCommandModifierKey.TabIndex = 0;
-            this.cb_DialogueCommandModifierKey.SelectedIndexChanged += new System.EventHandler(this.cb_DialogueCommandModifierKey_SelectedIndexChanged);
             // 
             // gb_DialogueCommandKey
             // 
@@ -1722,19 +1377,615 @@
             this.cb_DialogueCommandKey.TabIndex = 0;
             this.cb_DialogueCommandKey.SelectedIndexChanged += new System.EventHandler(this.cb_DialogueCommandKey_SelectedIndexChanged);
             // 
-            // gb_DialogueNavigation
+            // gb_DialogueCommand
             // 
-            this.gb_DialogueNavigation.Controls.Add(this.gb_DialogueCommandPaused);
-            this.gb_DialogueNavigation.Controls.Add(this.gb_DialogueCommandKey);
-            this.gb_DialogueNavigation.Controls.Add(this.gb_DialogueCommand);
-            this.gb_DialogueNavigation.Controls.Add(this.gb_DialogueCommandModifierKey);
-            this.gb_DialogueNavigation.Controls.Add(this.gb_DialogueCommandHeld);
-            this.gb_DialogueNavigation.Location = new System.Drawing.Point(6, 94);
-            this.gb_DialogueNavigation.Name = "gb_DialogueNavigation";
-            this.gb_DialogueNavigation.Size = new System.Drawing.Size(235, 310);
-            this.gb_DialogueNavigation.TabIndex = 23;
-            this.gb_DialogueNavigation.TabStop = false;
-            this.gb_DialogueNavigation.Text = "Dialogue Automatic Navigation";
+            this.gb_DialogueCommand.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_DialogueCommand.Controls.Add(this.cb_DialogueCommand);
+            this.gb_DialogueCommand.Location = new System.Drawing.Point(6, 19);
+            this.gb_DialogueCommand.Name = "gb_DialogueCommand";
+            this.gb_DialogueCommand.Size = new System.Drawing.Size(223, 46);
+            this.gb_DialogueCommand.TabIndex = 3;
+            this.gb_DialogueCommand.TabStop = false;
+            this.gb_DialogueCommand.Text = "Dialogue Command";
+            // 
+            // cb_DialogueCommand
+            // 
+            this.cb_DialogueCommand.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_DialogueCommand.FormattingEnabled = true;
+            this.cb_DialogueCommand.Items.AddRange(new object[] {
+            "Previous",
+            "Next",
+            "Accept",
+            "Cancel"});
+            this.cb_DialogueCommand.Location = new System.Drawing.Point(6, 19);
+            this.cb_DialogueCommand.Name = "cb_DialogueCommand";
+            this.cb_DialogueCommand.Size = new System.Drawing.Size(211, 21);
+            this.cb_DialogueCommand.TabIndex = 0;
+            this.cb_DialogueCommand.Text = "Previous";
+            this.cb_DialogueCommand.SelectedIndexChanged += new System.EventHandler(this.cb_DialogueCommand_SelectedIndexChanged);
+            // 
+            // gb_DialogueCommandModifierKey
+            // 
+            this.gb_DialogueCommandModifierKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_DialogueCommandModifierKey.Controls.Add(this.cb_DialogueCommandModifierKey);
+            this.gb_DialogueCommandModifierKey.Location = new System.Drawing.Point(6, 154);
+            this.gb_DialogueCommandModifierKey.Name = "gb_DialogueCommandModifierKey";
+            this.gb_DialogueCommandModifierKey.Size = new System.Drawing.Size(223, 46);
+            this.gb_DialogueCommandModifierKey.TabIndex = 24;
+            this.gb_DialogueCommandModifierKey.TabStop = false;
+            this.gb_DialogueCommandModifierKey.Text = "Modifier Key";
+            // 
+            // cb_DialogueCommandModifierKey
+            // 
+            this.cb_DialogueCommandModifierKey.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_DialogueCommandModifierKey.FormattingEnabled = true;
+            this.cb_DialogueCommandModifierKey.Items.AddRange(new object[] {
+            "",
+            "SHIFT",
+            "CONTROL",
+            "LWIN",
+            "RWIN",
+            "LSHIFT",
+            "RSHIFT",
+            "LCONTROL",
+            "RCONTROL",
+            "LMENU",
+            "RMENU"});
+            this.cb_DialogueCommandModifierKey.Location = new System.Drawing.Point(6, 19);
+            this.cb_DialogueCommandModifierKey.Name = "cb_DialogueCommandModifierKey";
+            this.cb_DialogueCommandModifierKey.Size = new System.Drawing.Size(211, 21);
+            this.cb_DialogueCommandModifierKey.TabIndex = 0;
+            this.cb_DialogueCommandModifierKey.SelectedIndexChanged += new System.EventHandler(this.cb_DialogueCommandModifierKey_SelectedIndexChanged);
+            // 
+            // gb_DialogueCommandHeld
+            // 
+            this.gb_DialogueCommandHeld.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_DialogueCommandHeld.Controls.Add(this.nud_DialogueCommandHeld);
+            this.gb_DialogueCommandHeld.Location = new System.Drawing.Point(6, 206);
+            this.gb_DialogueCommandHeld.Name = "gb_DialogueCommandHeld";
+            this.gb_DialogueCommandHeld.Size = new System.Drawing.Size(223, 45);
+            this.gb_DialogueCommandHeld.TabIndex = 27;
+            this.gb_DialogueCommandHeld.TabStop = false;
+            this.gb_DialogueCommandHeld.Text = "Held Duration (milliseconds)";
+            // 
+            // nud_DialogueCommandHeld
+            // 
+            this.nud_DialogueCommandHeld.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nud_DialogueCommandHeld.Location = new System.Drawing.Point(6, 19);
+            this.nud_DialogueCommandHeld.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nud_DialogueCommandHeld.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nud_DialogueCommandHeld.Name = "nud_DialogueCommandHeld";
+            this.nud_DialogueCommandHeld.Size = new System.Drawing.Size(211, 20);
+            this.nud_DialogueCommandHeld.TabIndex = 0;
+            this.nud_DialogueCommandHeld.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nud_DialogueCommandHeld.ValueChanged += new System.EventHandler(this.nud_DialogueCommandHeld_ValueChanged);
+            // 
+            // gb_DialogueFolder
+            // 
+            this.gb_DialogueFolder.Controls.Add(this.bttn_DialogueFolderPath);
+            this.gb_DialogueFolder.Controls.Add(this.tb_DialogueFolderPath);
+            this.gb_DialogueFolder.Location = new System.Drawing.Point(6, 42);
+            this.gb_DialogueFolder.Name = "gb_DialogueFolder";
+            this.gb_DialogueFolder.Size = new System.Drawing.Size(221, 46);
+            this.gb_DialogueFolder.TabIndex = 2;
+            this.gb_DialogueFolder.TabStop = false;
+            this.gb_DialogueFolder.Text = "Dialogue Folder Path";
+            // 
+            // bttn_DialogueFolderPath
+            // 
+            this.bttn_DialogueFolderPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_DialogueFolderPath.Location = new System.Drawing.Point(185, 17);
+            this.bttn_DialogueFolderPath.Name = "bttn_DialogueFolderPath";
+            this.bttn_DialogueFolderPath.Size = new System.Drawing.Size(30, 23);
+            this.bttn_DialogueFolderPath.TabIndex = 2;
+            this.bttn_DialogueFolderPath.Text = "...";
+            this.bttn_DialogueFolderPath.UseVisualStyleBackColor = true;
+            this.bttn_DialogueFolderPath.Click += new System.EventHandler(this.bttn_DialogueFilePath_Click);
+            // 
+            // tb_DialogueFolderPath
+            // 
+            this.tb_DialogueFolderPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_DialogueFolderPath.Location = new System.Drawing.Point(6, 19);
+            this.tb_DialogueFolderPath.Name = "tb_DialogueFolderPath";
+            this.tb_DialogueFolderPath.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tb_DialogueFolderPath.Size = new System.Drawing.Size(173, 20);
+            this.tb_DialogueFolderPath.TabIndex = 1;
+            this.tb_DialogueFolderPath.Text = "C:\\Program Files (x86)\\The Elder Scrolls V Skyrim\\Data\\Interface\\";
+            this.tb_DialogueFolderPath.TextChanged += new System.EventHandler(this.tb_DialogueFilePath_TextChanged);
+            // 
+            // cb_DialogueEnabled
+            // 
+            this.cb_DialogueEnabled.AutoSize = true;
+            this.cb_DialogueEnabled.Location = new System.Drawing.Point(14, 19);
+            this.cb_DialogueEnabled.Name = "cb_DialogueEnabled";
+            this.cb_DialogueEnabled.Size = new System.Drawing.Size(143, 17);
+            this.cb_DialogueEnabled.TabIndex = 0;
+            this.cb_DialogueEnabled.Text = "Enable Dialogue Options";
+            this.cb_DialogueEnabled.UseVisualStyleBackColor = true;
+            this.cb_DialogueEnabled.CheckedChanged += new System.EventHandler(this.cb_Dialogue_CheckedChanged);
+            // 
+            // gb_DialogueGoodbye
+            // 
+            this.gb_DialogueGoodbye.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gb_DialogueGoodbye.Controls.Add(this.gb_DialogueGoodbyeRename);
+            this.gb_DialogueGoodbye.Controls.Add(this.bttn_DialogueGoodbyeRemove);
+            this.gb_DialogueGoodbye.Controls.Add(this.lb_DialogueGoodbyeList);
+            this.gb_DialogueGoodbye.Controls.Add(this.gb_DialogueGoodbyeAdd);
+            this.gb_DialogueGoodbye.Location = new System.Drawing.Point(249, 19);
+            this.gb_DialogueGoodbye.Name = "gb_DialogueGoodbye";
+            this.gb_DialogueGoodbye.Size = new System.Drawing.Size(223, 385);
+            this.gb_DialogueGoodbye.TabIndex = 22;
+            this.gb_DialogueGoodbye.TabStop = false;
+            this.gb_DialogueGoodbye.Text = "Goodbye Phrases:";
+            // 
+            // gb_DialogueGoodbyeRename
+            // 
+            this.gb_DialogueGoodbyeRename.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_DialogueGoodbyeRename.Controls.Add(this.tb_DialogueGoodbyeRename);
+            this.gb_DialogueGoodbyeRename.Controls.Add(this.bttn_DialogueGoodbyeRename);
+            this.gb_DialogueGoodbyeRename.Location = new System.Drawing.Point(6, 333);
+            this.gb_DialogueGoodbyeRename.Name = "gb_DialogueGoodbyeRename";
+            this.gb_DialogueGoodbyeRename.Size = new System.Drawing.Size(211, 46);
+            this.gb_DialogueGoodbyeRename.TabIndex = 3;
+            this.gb_DialogueGoodbyeRename.TabStop = false;
+            this.gb_DialogueGoodbyeRename.Text = "Rename Phrase";
+            // 
+            // tb_DialogueGoodbyeRename
+            // 
+            this.tb_DialogueGoodbyeRename.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_DialogueGoodbyeRename.Location = new System.Drawing.Point(6, 19);
+            this.tb_DialogueGoodbyeRename.Name = "tb_DialogueGoodbyeRename";
+            this.tb_DialogueGoodbyeRename.Size = new System.Drawing.Size(135, 20);
+            this.tb_DialogueGoodbyeRename.TabIndex = 0;
+            this.tb_DialogueGoodbyeRename.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_DialogueGoodbyeRename_KeyDown);
+            // 
+            // bttn_DialogueGoodbyeRename
+            // 
+            this.bttn_DialogueGoodbyeRename.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_DialogueGoodbyeRename.Location = new System.Drawing.Point(147, 17);
+            this.bttn_DialogueGoodbyeRename.Name = "bttn_DialogueGoodbyeRename";
+            this.bttn_DialogueGoodbyeRename.Size = new System.Drawing.Size(58, 23);
+            this.bttn_DialogueGoodbyeRename.TabIndex = 1;
+            this.bttn_DialogueGoodbyeRename.Text = "Rename";
+            this.bttn_DialogueGoodbyeRename.UseVisualStyleBackColor = true;
+            this.bttn_DialogueGoodbyeRename.Click += new System.EventHandler(this.bttn_DialogueGoodbyeRename_Click);
+            // 
+            // bttn_DialogueGoodbyeRemove
+            // 
+            this.bttn_DialogueGoodbyeRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_DialogueGoodbyeRemove.Location = new System.Drawing.Point(153, 310);
+            this.bttn_DialogueGoodbyeRemove.Name = "bttn_DialogueGoodbyeRemove";
+            this.bttn_DialogueGoodbyeRemove.Size = new System.Drawing.Size(58, 23);
+            this.bttn_DialogueGoodbyeRemove.TabIndex = 2;
+            this.bttn_DialogueGoodbyeRemove.Text = "Remove";
+            this.bttn_DialogueGoodbyeRemove.UseVisualStyleBackColor = true;
+            this.bttn_DialogueGoodbyeRemove.Click += new System.EventHandler(this.bttn_DialogueGoodbyeRemove_Click);
+            // 
+            // lb_DialogueGoodbyeList
+            // 
+            this.lb_DialogueGoodbyeList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_DialogueGoodbyeList.FormattingEnabled = true;
+            this.lb_DialogueGoodbyeList.IntegralHeight = false;
+            this.lb_DialogueGoodbyeList.Location = new System.Drawing.Point(6, 19);
+            this.lb_DialogueGoodbyeList.Name = "lb_DialogueGoodbyeList";
+            this.lb_DialogueGoodbyeList.Size = new System.Drawing.Size(211, 233);
+            this.lb_DialogueGoodbyeList.TabIndex = 0;
+            this.lb_DialogueGoodbyeList.SelectedIndexChanged += new System.EventHandler(this.lb_DialogueGoodbyeList_SelectedIndexChanged);
+            // 
+            // gb_DialogueGoodbyeAdd
+            // 
+            this.gb_DialogueGoodbyeAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_DialogueGoodbyeAdd.Controls.Add(this.tb_DialogueGoodbyeAdd);
+            this.gb_DialogueGoodbyeAdd.Controls.Add(this.bttn_DialogueGoodbyeAdd);
+            this.gb_DialogueGoodbyeAdd.Location = new System.Drawing.Point(6, 258);
+            this.gb_DialogueGoodbyeAdd.Name = "gb_DialogueGoodbyeAdd";
+            this.gb_DialogueGoodbyeAdd.Size = new System.Drawing.Size(211, 46);
+            this.gb_DialogueGoodbyeAdd.TabIndex = 1;
+            this.gb_DialogueGoodbyeAdd.TabStop = false;
+            this.gb_DialogueGoodbyeAdd.Text = "Add Phrase";
+            // 
+            // tb_DialogueGoodbyeAdd
+            // 
+            this.tb_DialogueGoodbyeAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_DialogueGoodbyeAdd.Location = new System.Drawing.Point(6, 19);
+            this.tb_DialogueGoodbyeAdd.Name = "tb_DialogueGoodbyeAdd";
+            this.tb_DialogueGoodbyeAdd.Size = new System.Drawing.Size(135, 20);
+            this.tb_DialogueGoodbyeAdd.TabIndex = 0;
+            this.tb_DialogueGoodbyeAdd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_DialogueGoodbyeAdd_KeyDown);
+            // 
+            // bttn_DialogueGoodbyeAdd
+            // 
+            this.bttn_DialogueGoodbyeAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_DialogueGoodbyeAdd.Location = new System.Drawing.Point(147, 17);
+            this.bttn_DialogueGoodbyeAdd.Name = "bttn_DialogueGoodbyeAdd";
+            this.bttn_DialogueGoodbyeAdd.Size = new System.Drawing.Size(58, 23);
+            this.bttn_DialogueGoodbyeAdd.TabIndex = 1;
+            this.bttn_DialogueGoodbyeAdd.Text = "Add";
+            this.bttn_DialogueGoodbyeAdd.UseVisualStyleBackColor = true;
+            this.bttn_DialogueGoodbyeAdd.Click += new System.EventHandler(this.bttn_DialogueGoodbyeAdd_Click);
+            // 
+            // gb_Timeout
+            // 
+            this.gb_Timeout.Controls.Add(this.nud_Timeout);
+            this.gb_Timeout.Location = new System.Drawing.Point(247, 6);
+            this.gb_Timeout.Name = "gb_Timeout";
+            this.gb_Timeout.Size = new System.Drawing.Size(237, 47);
+            this.gb_Timeout.TabIndex = 19;
+            this.gb_Timeout.TabStop = false;
+            this.gb_Timeout.Text = "Timeout:";
+            // 
+            // nud_Timeout
+            // 
+            this.nud_Timeout.Location = new System.Drawing.Point(6, 19);
+            this.nud_Timeout.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.nud_Timeout.Name = "nud_Timeout";
+            this.nud_Timeout.Size = new System.Drawing.Size(223, 20);
+            this.nud_Timeout.TabIndex = 0;
+            this.nud_Timeout.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.nud_Timeout.ValueChanged += new System.EventHandler(this.nud_Timeout_ValueChanged);
+            // 
+            // gb_Confidence
+            // 
+            this.gb_Confidence.Controls.Add(this.nud_Confidence);
+            this.gb_Confidence.Controls.Add(this.groupBox6);
+            this.gb_Confidence.Controls.Add(this.groupBox4);
+            this.gb_Confidence.Location = new System.Drawing.Point(6, 59);
+            this.gb_Confidence.Name = "gb_Confidence";
+            this.gb_Confidence.Size = new System.Drawing.Size(235, 47);
+            this.gb_Confidence.TabIndex = 20;
+            this.gb_Confidence.TabStop = false;
+            this.gb_Confidence.Text = "Required Confidence:";
+            // 
+            // nud_Confidence
+            // 
+            this.nud_Confidence.DecimalPlaces = 3;
+            this.nud_Confidence.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            131072});
+            this.nud_Confidence.Location = new System.Drawing.Point(6, 19);
+            this.nud_Confidence.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nud_Confidence.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.nud_Confidence.Name = "nud_Confidence";
+            this.nud_Confidence.Size = new System.Drawing.Size(223, 20);
+            this.nud_Confidence.TabIndex = 0;
+            this.nud_Confidence.Value = new decimal(new int[] {
+            9,
+            0,
+            0,
+            65536});
+            this.nud_Confidence.ValueChanged += new System.EventHandler(this.nud_Confidence_ValueChanged);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.numericUpDown4);
+            this.groupBox6.Location = new System.Drawing.Point(2, 53);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(235, 47);
+            this.groupBox6.TabIndex = 19;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Timeout:";
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Location = new System.Drawing.Point(6, 19);
+            this.numericUpDown4.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(223, 20);
+            this.numericUpDown4.TabIndex = 0;
+            this.numericUpDown4.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.numericUpDown4.ValueChanged += new System.EventHandler(this.nud_Timeout_ValueChanged);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Location = new System.Drawing.Point(0, -53);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(235, 47);
+            this.groupBox4.TabIndex = 18;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Profile Name:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(6, 19);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(223, 20);
+            this.textBox2.TabIndex = 0;
+            this.textBox2.TextChanged += new System.EventHandler(this.tb_ProfileName_TextChanged);
+            // 
+            // gb_ProfileName
+            // 
+            this.gb_ProfileName.Controls.Add(this.tb_ProfileName);
+            this.gb_ProfileName.Location = new System.Drawing.Point(6, 6);
+            this.gb_ProfileName.Name = "gb_ProfileName";
+            this.gb_ProfileName.Size = new System.Drawing.Size(235, 47);
+            this.gb_ProfileName.TabIndex = 18;
+            this.gb_ProfileName.TabStop = false;
+            this.gb_ProfileName.Text = "Profile Name:";
+            // 
+            // tb_ProfileName
+            // 
+            this.tb_ProfileName.Location = new System.Drawing.Point(6, 19);
+            this.tb_ProfileName.Name = "tb_ProfileName";
+            this.tb_ProfileName.Size = new System.Drawing.Size(223, 20);
+            this.tb_ProfileName.TabIndex = 0;
+            this.tb_ProfileName.TextChanged += new System.EventHandler(this.tb_ProfileName_TextChanged);
+            // 
+            // gb_PausePhrases
+            // 
+            this.gb_PausePhrases.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gb_PausePhrases.Controls.Add(this.gb_RenamePausePhrase);
+            this.gb_PausePhrases.Controls.Add(this.bttn_RemovePausePhrase);
+            this.gb_PausePhrases.Controls.Add(this.lb_PausePhrases);
+            this.gb_PausePhrases.Controls.Add(this.gb_AddPausePhrase);
+            this.gb_PausePhrases.Location = new System.Drawing.Point(6, 19);
+            this.gb_PausePhrases.Name = "gb_PausePhrases";
+            this.gb_PausePhrases.Size = new System.Drawing.Size(223, 224);
+            this.gb_PausePhrases.TabIndex = 22;
+            this.gb_PausePhrases.TabStop = false;
+            this.gb_PausePhrases.Text = "Pause Phrases:";
+            // 
+            // gb_RenamePausePhrase
+            // 
+            this.gb_RenamePausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_RenamePausePhrase.Controls.Add(this.tb_RenamePausePhrase);
+            this.gb_RenamePausePhrase.Controls.Add(this.bttn_RenamePausePhrase);
+            this.gb_RenamePausePhrase.Location = new System.Drawing.Point(6, 172);
+            this.gb_RenamePausePhrase.Name = "gb_RenamePausePhrase";
+            this.gb_RenamePausePhrase.Size = new System.Drawing.Size(211, 46);
+            this.gb_RenamePausePhrase.TabIndex = 3;
+            this.gb_RenamePausePhrase.TabStop = false;
+            this.gb_RenamePausePhrase.Text = "Rename Phrase";
+            // 
+            // tb_RenamePausePhrase
+            // 
+            this.tb_RenamePausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_RenamePausePhrase.Location = new System.Drawing.Point(6, 19);
+            this.tb_RenamePausePhrase.Name = "tb_RenamePausePhrase";
+            this.tb_RenamePausePhrase.Size = new System.Drawing.Size(135, 20);
+            this.tb_RenamePausePhrase.TabIndex = 0;
+            this.tb_RenamePausePhrase.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_DialogueGoodbyeRename_KeyDown);
+            // 
+            // bttn_RenamePausePhrase
+            // 
+            this.bttn_RenamePausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_RenamePausePhrase.Location = new System.Drawing.Point(147, 17);
+            this.bttn_RenamePausePhrase.Name = "bttn_RenamePausePhrase";
+            this.bttn_RenamePausePhrase.Size = new System.Drawing.Size(58, 23);
+            this.bttn_RenamePausePhrase.TabIndex = 1;
+            this.bttn_RenamePausePhrase.Text = "Rename";
+            this.bttn_RenamePausePhrase.UseVisualStyleBackColor = true;
+            this.bttn_RenamePausePhrase.Click += new System.EventHandler(this.bttn_DialogueGoodbyeRename_Click);
+            // 
+            // bttn_RemovePausePhrase
+            // 
+            this.bttn_RemovePausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_RemovePausePhrase.Location = new System.Drawing.Point(153, 149);
+            this.bttn_RemovePausePhrase.Name = "bttn_RemovePausePhrase";
+            this.bttn_RemovePausePhrase.Size = new System.Drawing.Size(58, 23);
+            this.bttn_RemovePausePhrase.TabIndex = 2;
+            this.bttn_RemovePausePhrase.Text = "Remove";
+            this.bttn_RemovePausePhrase.UseVisualStyleBackColor = true;
+            this.bttn_RemovePausePhrase.Click += new System.EventHandler(this.bttn_DialogueGoodbyeRemove_Click);
+            // 
+            // lb_PausePhrases
+            // 
+            this.lb_PausePhrases.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_PausePhrases.FormattingEnabled = true;
+            this.lb_PausePhrases.IntegralHeight = false;
+            this.lb_PausePhrases.Location = new System.Drawing.Point(6, 19);
+            this.lb_PausePhrases.Name = "lb_PausePhrases";
+            this.lb_PausePhrases.Size = new System.Drawing.Size(211, 72);
+            this.lb_PausePhrases.TabIndex = 0;
+            // 
+            // gb_AddPausePhrase
+            // 
+            this.gb_AddPausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_AddPausePhrase.Controls.Add(this.tb_AddPausePhrase);
+            this.gb_AddPausePhrase.Controls.Add(this.bttn_AddPausePhrase);
+            this.gb_AddPausePhrase.Location = new System.Drawing.Point(6, 97);
+            this.gb_AddPausePhrase.Name = "gb_AddPausePhrase";
+            this.gb_AddPausePhrase.Size = new System.Drawing.Size(211, 46);
+            this.gb_AddPausePhrase.TabIndex = 1;
+            this.gb_AddPausePhrase.TabStop = false;
+            this.gb_AddPausePhrase.Text = "Add Phrase";
+            // 
+            // tb_AddPausePhrase
+            // 
+            this.tb_AddPausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_AddPausePhrase.Location = new System.Drawing.Point(6, 19);
+            this.tb_AddPausePhrase.Name = "tb_AddPausePhrase";
+            this.tb_AddPausePhrase.Size = new System.Drawing.Size(135, 20);
+            this.tb_AddPausePhrase.TabIndex = 0;
+            this.tb_AddPausePhrase.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_DialogueGoodbyeAdd_KeyDown);
+            // 
+            // bttn_AddPausePhrase
+            // 
+            this.bttn_AddPausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_AddPausePhrase.Location = new System.Drawing.Point(147, 17);
+            this.bttn_AddPausePhrase.Name = "bttn_AddPausePhrase";
+            this.bttn_AddPausePhrase.Size = new System.Drawing.Size(58, 23);
+            this.bttn_AddPausePhrase.TabIndex = 1;
+            this.bttn_AddPausePhrase.Text = "Add";
+            this.bttn_AddPausePhrase.UseVisualStyleBackColor = true;
+            this.bttn_AddPausePhrase.Click += new System.EventHandler(this.bttn_DialogueGoodbyeAdd_Click);
+            // 
+            // gb_VocalToggle
+            // 
+            this.gb_VocalToggle.Controls.Add(this.gb_UnpausePhrases);
+            this.gb_VocalToggle.Controls.Add(this.gb_PausePhrases);
+            this.gb_VocalToggle.Location = new System.Drawing.Point(490, 6);
+            this.gb_VocalToggle.Name = "gb_VocalToggle";
+            this.gb_VocalToggle.Size = new System.Drawing.Size(235, 516);
+            this.gb_VocalToggle.TabIndex = 23;
+            this.gb_VocalToggle.TabStop = false;
+            this.gb_VocalToggle.Text = "Vocal Toggle";
+            // 
+            // gb_UnpausePhrases
+            // 
+            this.gb_UnpausePhrases.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gb_UnpausePhrases.Controls.Add(this.gb_RenameUnpausePhrase);
+            this.gb_UnpausePhrases.Controls.Add(this.bttn_RemoveUnpausePhrase);
+            this.gb_UnpausePhrases.Controls.Add(this.lb_UnpausePhrases);
+            this.gb_UnpausePhrases.Controls.Add(this.gb_AddUnpausePhrase);
+            this.gb_UnpausePhrases.Location = new System.Drawing.Point(6, 286);
+            this.gb_UnpausePhrases.Name = "gb_UnpausePhrases";
+            this.gb_UnpausePhrases.Size = new System.Drawing.Size(223, 224);
+            this.gb_UnpausePhrases.TabIndex = 22;
+            this.gb_UnpausePhrases.TabStop = false;
+            this.gb_UnpausePhrases.Text = "Unpause Phrases:";
+            // 
+            // gb_RenameUnpausePhrase
+            // 
+            this.gb_RenameUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_RenameUnpausePhrase.Controls.Add(this.tb_RenameUnpausePhrase);
+            this.gb_RenameUnpausePhrase.Controls.Add(this.bttn_RenameUnpausePhrase);
+            this.gb_RenameUnpausePhrase.Location = new System.Drawing.Point(6, 172);
+            this.gb_RenameUnpausePhrase.Name = "gb_RenameUnpausePhrase";
+            this.gb_RenameUnpausePhrase.Size = new System.Drawing.Size(211, 46);
+            this.gb_RenameUnpausePhrase.TabIndex = 3;
+            this.gb_RenameUnpausePhrase.TabStop = false;
+            this.gb_RenameUnpausePhrase.Text = "Rename Phrase";
+            // 
+            // tb_RenameUnpausePhrase
+            // 
+            this.tb_RenameUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_RenameUnpausePhrase.Location = new System.Drawing.Point(6, 19);
+            this.tb_RenameUnpausePhrase.Name = "tb_RenameUnpausePhrase";
+            this.tb_RenameUnpausePhrase.Size = new System.Drawing.Size(135, 20);
+            this.tb_RenameUnpausePhrase.TabIndex = 0;
+            this.tb_RenameUnpausePhrase.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_DialogueGoodbyeRename_KeyDown);
+            // 
+            // bttn_RenameUnpausePhrase
+            // 
+            this.bttn_RenameUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_RenameUnpausePhrase.Location = new System.Drawing.Point(147, 17);
+            this.bttn_RenameUnpausePhrase.Name = "bttn_RenameUnpausePhrase";
+            this.bttn_RenameUnpausePhrase.Size = new System.Drawing.Size(58, 23);
+            this.bttn_RenameUnpausePhrase.TabIndex = 1;
+            this.bttn_RenameUnpausePhrase.Text = "Rename";
+            this.bttn_RenameUnpausePhrase.UseVisualStyleBackColor = true;
+            this.bttn_RenameUnpausePhrase.Click += new System.EventHandler(this.bttn_DialogueGoodbyeRename_Click);
+            // 
+            // bttn_RemoveUnpausePhrase
+            // 
+            this.bttn_RemoveUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_RemoveUnpausePhrase.Location = new System.Drawing.Point(153, 149);
+            this.bttn_RemoveUnpausePhrase.Name = "bttn_RemoveUnpausePhrase";
+            this.bttn_RemoveUnpausePhrase.Size = new System.Drawing.Size(58, 23);
+            this.bttn_RemoveUnpausePhrase.TabIndex = 2;
+            this.bttn_RemoveUnpausePhrase.Text = "Remove";
+            this.bttn_RemoveUnpausePhrase.UseVisualStyleBackColor = true;
+            this.bttn_RemoveUnpausePhrase.Click += new System.EventHandler(this.bttn_DialogueGoodbyeRemove_Click);
+            // 
+            // lb_UnpausePhrases
+            // 
+            this.lb_UnpausePhrases.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_UnpausePhrases.FormattingEnabled = true;
+            this.lb_UnpausePhrases.IntegralHeight = false;
+            this.lb_UnpausePhrases.Location = new System.Drawing.Point(6, 19);
+            this.lb_UnpausePhrases.Name = "lb_UnpausePhrases";
+            this.lb_UnpausePhrases.Size = new System.Drawing.Size(211, 72);
+            this.lb_UnpausePhrases.TabIndex = 0;
+            this.lb_UnpausePhrases.SelectedIndexChanged += new System.EventHandler(this.lb_DialogueGoodbyeList_SelectedIndexChanged);
+            // 
+            // gb_AddUnpausePhrase
+            // 
+            this.gb_AddUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_AddUnpausePhrase.Controls.Add(this.tb_AddUnpausePhrase);
+            this.gb_AddUnpausePhrase.Controls.Add(this.bttn_AddUnpausePhrase);
+            this.gb_AddUnpausePhrase.Location = new System.Drawing.Point(6, 97);
+            this.gb_AddUnpausePhrase.Name = "gb_AddUnpausePhrase";
+            this.gb_AddUnpausePhrase.Size = new System.Drawing.Size(211, 46);
+            this.gb_AddUnpausePhrase.TabIndex = 1;
+            this.gb_AddUnpausePhrase.TabStop = false;
+            this.gb_AddUnpausePhrase.Text = "Add Phrase";
+            // 
+            // tb_AddUnpausePhrase
+            // 
+            this.tb_AddUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_AddUnpausePhrase.Location = new System.Drawing.Point(6, 19);
+            this.tb_AddUnpausePhrase.Name = "tb_AddUnpausePhrase";
+            this.tb_AddUnpausePhrase.Size = new System.Drawing.Size(135, 20);
+            this.tb_AddUnpausePhrase.TabIndex = 0;
+            this.tb_AddUnpausePhrase.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_DialogueGoodbyeAdd_KeyDown);
+            // 
+            // bttn_AddUnpausePhrase
+            // 
+            this.bttn_AddUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_AddUnpausePhrase.Location = new System.Drawing.Point(147, 17);
+            this.bttn_AddUnpausePhrase.Name = "bttn_AddUnpausePhrase";
+            this.bttn_AddUnpausePhrase.Size = new System.Drawing.Size(58, 23);
+            this.bttn_AddUnpausePhrase.TabIndex = 1;
+            this.bttn_AddUnpausePhrase.Text = "Add";
+            this.bttn_AddUnpausePhrase.UseVisualStyleBackColor = true;
+            this.bttn_AddUnpausePhrase.Click += new System.EventHandler(this.bttn_DialogueGoodbyeAdd_Click);
             // 
             // CommandBuilder
             // 
@@ -1746,7 +1997,7 @@
             this.Controls.Add(this.ms_MainMenuStrip);
             this.MainMenuStrip = this.ms_MainMenuStrip;
             this.Name = "CommandBuilder";
-            this.Text = "CommandBuilder";
+            this.Text = "Skyrim SpeechCommander";
             this.ms_MainMenuStrip.ResumeLayout(false);
             this.ms_MainMenuStrip.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -1786,31 +2037,42 @@
             this.tp_Profile.ResumeLayout(false);
             this.gb_Dialogue.ResumeLayout(false);
             this.gb_Dialogue.PerformLayout();
+            this.gb_DialogueNavigation.ResumeLayout(false);
+            this.gb_DialogueCommandPaused.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nud_DialogueCommandPaused)).EndInit();
+            this.gb_DialogueCommandKey.ResumeLayout(false);
+            this.gb_DialogueCommand.ResumeLayout(false);
+            this.gb_DialogueCommandModifierKey.ResumeLayout(false);
+            this.gb_DialogueCommandHeld.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nud_DialogueCommandHeld)).EndInit();
             this.gb_DialogueFolder.ResumeLayout(false);
             this.gb_DialogueFolder.PerformLayout();
-            this.gb_Timeout.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nud_Timeout)).EndInit();
-            this.gb_Confidence.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nud_Confidence)).EndInit();
-            this.gb_ProfileName.ResumeLayout(false);
-            this.gb_ProfileName.PerformLayout();
-            this.gb_DialogueCommand.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             this.gb_DialogueGoodbye.ResumeLayout(false);
             this.gb_DialogueGoodbyeRename.ResumeLayout(false);
             this.gb_DialogueGoodbyeRename.PerformLayout();
             this.gb_DialogueGoodbyeAdd.ResumeLayout(false);
             this.gb_DialogueGoodbyeAdd.PerformLayout();
-            this.gb_DialogueCommandPaused.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nud_DialogueCommandPaused)).EndInit();
-            this.gb_DialogueCommandHeld.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nud_DialogueCommandHeld)).EndInit();
-            this.gb_DialogueCommandModifierKey.ResumeLayout(false);
-            this.gb_DialogueCommandKey.ResumeLayout(false);
-            this.gb_DialogueNavigation.ResumeLayout(false);
+            this.gb_Timeout.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Timeout)).EndInit();
+            this.gb_Confidence.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Confidence)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.gb_ProfileName.ResumeLayout(false);
+            this.gb_ProfileName.PerformLayout();
+            this.gb_PausePhrases.ResumeLayout(false);
+            this.gb_RenamePausePhrase.ResumeLayout(false);
+            this.gb_RenamePausePhrase.PerformLayout();
+            this.gb_AddPausePhrase.ResumeLayout(false);
+            this.gb_AddPausePhrase.PerformLayout();
+            this.gb_VocalToggle.ResumeLayout(false);
+            this.gb_UnpausePhrases.ResumeLayout(false);
+            this.gb_RenameUnpausePhrase.ResumeLayout(false);
+            this.gb_RenameUnpausePhrase.PerformLayout();
+            this.gb_AddUnpausePhrase.ResumeLayout(false);
+            this.gb_AddUnpausePhrase.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1913,5 +2175,24 @@
         private System.Windows.Forms.ComboBox cb_DialogueCommandModifierKey;
         private System.Windows.Forms.GroupBox gb_DialogueCommandHeld;
         private System.Windows.Forms.NumericUpDown nud_DialogueCommandHeld;
+        private System.Windows.Forms.GroupBox gb_VocalToggle;
+        private System.Windows.Forms.GroupBox gb_UnpausePhrases;
+        private System.Windows.Forms.GroupBox gb_RenameUnpausePhrase;
+        private System.Windows.Forms.TextBox tb_RenameUnpausePhrase;
+        private System.Windows.Forms.Button bttn_RenameUnpausePhrase;
+        private System.Windows.Forms.Button bttn_RemoveUnpausePhrase;
+        private System.Windows.Forms.ListBox lb_UnpausePhrases;
+        private System.Windows.Forms.GroupBox gb_AddUnpausePhrase;
+        private System.Windows.Forms.TextBox tb_AddUnpausePhrase;
+        private System.Windows.Forms.Button bttn_AddUnpausePhrase;
+        private System.Windows.Forms.GroupBox gb_PausePhrases;
+        private System.Windows.Forms.GroupBox gb_RenamePausePhrase;
+        private System.Windows.Forms.TextBox tb_RenamePausePhrase;
+        private System.Windows.Forms.Button bttn_RenamePausePhrase;
+        private System.Windows.Forms.Button bttn_RemovePausePhrase;
+        private System.Windows.Forms.ListBox lb_PausePhrases;
+        private System.Windows.Forms.GroupBox gb_AddPausePhrase;
+        private System.Windows.Forms.TextBox tb_AddPausePhrase;
+        private System.Windows.Forms.Button bttn_AddPausePhrase;
     }
 }

@@ -11,9 +11,12 @@ namespace SpeechCommander
 
     public class RecognitionEngine : IDisposable
     {
-        private sp.SpeechRecognitionEngine engine;
-        private Profile currentProfile;
-        private List<Action> actions;
+        protected sp.SpeechRecognitionEngine engine;
+        protected Profile currentProfile;
+        protected List<Action> actions;
+        private sp.Grammar pauseGrammar;
+        private const string PAUSEDCOMMAND = "PauseVoiceRecognitionCommand";
+        private const string UNPAUSEDCOMMAND = "UnpauseVoiceRecognitionCommand";
 
         public Profile CurrentProfile
         {
@@ -67,12 +70,54 @@ namespace SpeechCommander
                     onWordRecognized(String.Format("Command: \"{0}\"\tPhrase: \"{1}\"", e.Result.Semantics["command"].Value.ToString(), e.Result.Text));
 
                 Action action = this.actions.Find(act => act.ActionName == e.Result.Semantics["command"].Value.ToString());
-                if (action != null)
+
+
+                if (e.Result.Semantics["command"].Value.ToString() == PAUSEDCOMMAND)
+                    VoicePause();
+                else if (e.Result.Semantics["command"].Value.ToString() == UNPAUSEDCOMMAND)
+                    VoiceUnpause();
+                else if (action != null)
                     action.Execute();
             }
         }
 
-        public void StartAsync(sp.RecognizeMode mode)
+        private void VoicePause()
+        {
+            if (this.pauseGrammar != null)
+            {
+                List<UpdateOperation> ops = new List<UpdateOperation>();
+
+                var grammars = this.engine.Grammars.Where(gr => gr != this.pauseGrammar);
+                foreach (var grammar in grammars)
+                {
+                    ops.Add(new UpdateOperation()
+                    {
+                        UpdateType = UpdateOperationType.DisableGrammar,
+                        Grammar = grammar
+                    });
+                }
+
+                this.ExecuteGrammarChanges(ops);
+            }
+        }
+
+        private void VoiceUnpause()
+        {
+            List<UpdateOperation> ops = new List<UpdateOperation>();
+
+            foreach (var grammar in this.engine.Grammars)
+            {
+                ops.Add(new UpdateOperation()
+                {
+                    UpdateType = UpdateOperationType.EnableGrammar,
+                    Grammar = grammar
+                });
+            }
+
+            this.ExecuteGrammarChanges(ops);
+        }
+
+        public virtual void StartAsync(sp.RecognizeMode mode)
         {
             this.engine.RecognizeAsync(mode);
         }
@@ -82,7 +127,7 @@ namespace SpeechCommander
             this.engine.EmulateRecognize(text);
         }
 
-        public void Stop()
+        public virtual void Stop()
         {
             this.engine.RecognizeAsyncCancel();
 
@@ -102,7 +147,54 @@ namespace SpeechCommander
 
             //engine.EndSilenceTimeout = new TimeSpan(0, 0, 0, 0, profile.EndTimeout);
             this.currentProfile.UpdateGrammar();
-            this.AddGrammar(this.currentProfile.Grammar, this.currentProfile.Actions);
+
+            List<UpdateOperation> ops = new List<UpdateOperation>();
+            foreach (sp.Grammar gram in this.engine.Grammars)
+            {
+                ops.Add(new UpdateOperation()
+                {
+                    UpdateType = UpdateOperationType.RemoveGrammar,
+                    Grammar = gram
+                });
+            }
+            ops.Add(new UpdateOperation()
+            {
+                UpdateType = UpdateOperationType.AddGrammar,
+                Grammar = this.currentProfile.Grammar
+            });
+
+            this.pauseGrammar = null;
+            if (this.currentProfile.EnableVoicePausing)
+            {
+                this.pauseGrammar = GeneratePauseGrammar();
+                ops.Add(new UpdateOperation()
+                {
+                    UpdateType = UpdateOperationType.AddGrammar,
+                    Grammar = pauseGrammar
+                });
+            }
+
+            this.ExecuteGrammarChanges(ops);
+        }
+
+        private sp.Grammar GeneratePauseGrammar()
+        {
+            sp.Choices choices = new sp.Choices();
+            foreach (string pausePhrase in this.currentProfile.PauseRecognitionPhrases)
+            {
+                sp.SemanticResultValue temp = new sp.SemanticResultValue(pausePhrase, "PauseVoiceRecognitionCommand");
+                choices.Add(temp);
+            }
+            foreach (string unpausePhrase in this.currentProfile.UnpauseRecognitionPhrases)
+            {
+                sp.SemanticResultValue temp = new sp.SemanticResultValue(unpausePhrase, "UnpauseVoiceRecognitionCommand");
+                choices.Add(temp);
+            }
+            sp.GrammarBuilder builder = new sp.GrammarBuilder();
+            builder.Append(new sp.SemanticResultKey("command", choices));
+            sp.Grammar grammar = new sp.Grammar(builder);
+            grammar.Name = "PauseCommands";
+            return grammar;
         }
 
         public void AddGrammar(sp.Grammar grammar, IEnumerable<Action> associatedActions)
