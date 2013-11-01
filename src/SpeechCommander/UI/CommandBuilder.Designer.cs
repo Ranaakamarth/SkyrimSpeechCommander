@@ -89,6 +89,7 @@
             this.bttn_AddAction = new System.Windows.Forms.Button();
             this.tp_Profile = new System.Windows.Forms.TabPage();
             this.gb_VoiceToggle = new System.Windows.Forms.GroupBox();
+            this.cb_VoiceToggle = new System.Windows.Forms.CheckBox();
             this.gb_UnpausePhrases = new System.Windows.Forms.GroupBox();
             this.gb_RenameUnpausePhrase = new System.Windows.Forms.GroupBox();
             this.tb_RenameUnpausePhrase = new System.Windows.Forms.TextBox();
@@ -142,7 +143,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.gb_ProfileName = new System.Windows.Forms.GroupBox();
             this.tb_ProfileName = new System.Windows.Forms.TextBox();
-            this.cb_VoiceToggle = new System.Windows.Forms.CheckBox();
             this.ms_MainMenuStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tp_Actions.SuspendLayout();
@@ -1128,6 +1128,17 @@
             this.gb_VoiceToggle.TabStop = false;
             this.gb_VoiceToggle.Text = "Voice Command Toggle";
             // 
+            // cb_VoiceToggle
+            // 
+            this.cb_VoiceToggle.AutoSize = true;
+            this.cb_VoiceToggle.Location = new System.Drawing.Point(12, 19);
+            this.cb_VoiceToggle.Name = "cb_VoiceToggle";
+            this.cb_VoiceToggle.Size = new System.Drawing.Size(194, 17);
+            this.cb_VoiceToggle.TabIndex = 23;
+            this.cb_VoiceToggle.Text = "Voice commands pause recognition";
+            this.cb_VoiceToggle.UseVisualStyleBackColor = true;
+            this.cb_VoiceToggle.CheckedChanged += new System.EventHandler(this.cb_VoiceToggle_CheckedChanged);
+            // 
             // gb_UnpausePhrases
             // 
             this.gb_UnpausePhrases.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1989,17 +2000,6 @@
             this.tb_ProfileName.Size = new System.Drawing.Size(223, 20);
             this.tb_ProfileName.TabIndex = 0;
             this.tb_ProfileName.TextChanged += new System.EventHandler(this.tb_ProfileName_TextChanged);
-            // 
-            // cb_VoiceToggle
-            // 
-            this.cb_VoiceToggle.AutoSize = true;
-            this.cb_VoiceToggle.Location = new System.Drawing.Point(12, 19);
-            this.cb_VoiceToggle.Name = "cb_VoiceToggle";
-            this.cb_VoiceToggle.Size = new System.Drawing.Size(194, 17);
-            this.cb_VoiceToggle.TabIndex = 23;
-            this.cb_VoiceToggle.Text = "Voice commands pause recognition";
-            this.cb_VoiceToggle.UseVisualStyleBackColor = true;
-            this.cb_VoiceToggle.CheckedChanged += new System.EventHandler(this.cb_VoiceToggle_CheckedChanged);
             // 
             // CommandBuilder
             // 
