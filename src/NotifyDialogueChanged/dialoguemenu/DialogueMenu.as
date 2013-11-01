@@ -163,8 +163,8 @@ class DialogueMenu extends MovieClip
 			// Select last topic entry if valid
 			TopicList.SetSelectedTopic(arguments[arguments.length - 1]);
 		}
-		if (!bAllowProgress)
-		{
+//		if (!bAllowProgress)
+//		{
 				skse.plugins.cfm.saveFile(
             "Data\\Interface\\CurrentDialogue.diag",
             options);
@@ -172,7 +172,7 @@ class DialogueMenu extends MovieClip
 								 TopicList.selectedIndex.toString());
 //		skse.Log("SpeechCommander: Wrote Open Dialogue");
 //		skse.Log(eMenuState + " " + bAllowProgress + " " + bFadedIn);
-		}
+//		}
 		TopicList.InvalidateData();
 	}
 

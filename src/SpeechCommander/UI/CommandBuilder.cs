@@ -11,7 +11,7 @@ namespace SpeechCommander.UI
 {
     public partial class CommandBuilder : Form
     {
-        private RecognitionEngine engine;
+        private DialogueRecognitionEngine engine;
         private Profile currentProfile;
         //private System.IO.FileSystemWatcher dialogueWatcher;
         //private sp.Grammar currentDialog;
@@ -154,6 +154,34 @@ namespace SpeechCommander.UI
                 cmd = value;
             }
         }
+        public string CurrentPausePhrase
+        {
+            get
+            {
+                if (this.currentProfile.EnableVoicePausing && this.lb_PausePhrases.SelectedIndex != -1 && this.lb_PausePhrases.SelectedIndex < this.currentProfile.PauseRecognitionPhrases.Count)
+                    return this.currentProfile.PauseRecognitionPhrases[this.lb_PausePhrases.SelectedIndex];
+                else
+                    return null;
+            }
+            set
+            {
+                this.currentProfile.PauseRecognitionPhrases[this.lb_PausePhrases.SelectedIndex] = value;
+            }
+        }
+        public string CurrentUnpausePhrase
+        {
+            get
+            {
+                if (this.currentProfile.EnableVoicePausing && this.lb_UnpausePhrases.SelectedIndex != -1 && this.lb_UnpausePhrases.SelectedIndex < this.currentProfile.UnpauseRecognitionPhrases.Count)
+                    return this.currentProfile.UnpauseRecognitionPhrases[this.lb_UnpausePhrases.SelectedIndex];
+                else
+                    return null;
+            }
+            set
+            {
+                this.currentProfile.UnpauseRecognitionPhrases[this.lb_UnpausePhrases.SelectedIndex] = value;
+            }
+        }
 
         //const string FILE_DIALOGUETEXT = "CurrentDialogue.diag";
         //const string FILE_DIALOGUESTATE = "DialogueState.diag";
@@ -187,6 +215,7 @@ namespace SpeechCommander.UI
 
             LoadDialogue();
             LoadActionList();
+            LoadVoiceToggle();
         }
 
         public void LoadActionList()
@@ -576,6 +605,121 @@ namespace SpeechCommander.UI
             }
         }
 
+        public void LoadVoiceToggle()
+        {
+            this.cb_VoiceToggle.Checked = this.currentProfile.EnableVoicePausing;
+
+            #region Populate listboxes
+            bool same = false;
+            if (lb_PausePhrases.Items.Count == this.currentProfile.PauseRecognitionPhrases.Count)
+            {
+                same = true;
+                for (int i = 0; i < lb_PausePhrases.Items.Count; i++)
+                {
+                    if (lb_PausePhrases.Items[i] as string != this.currentProfile.PauseRecognitionPhrases[i])
+                        same = false;
+                }
+            }
+
+            if (!same)
+            {
+                this.lb_PausePhrases.Items.Clear();
+
+                foreach (var phrase in this.currentProfile.PauseRecognitionPhrases)
+                {
+                    this.lb_PausePhrases.Items.Add(phrase);
+                }
+            }
+
+            same = false;
+            if (lb_UnpausePhrases.Items.Count == this.currentProfile.UnpauseRecognitionPhrases.Count)
+            {
+                same = true;
+                for (int i = 0; i < lb_UnpausePhrases.Items.Count; i++)
+                {
+                    if (lb_UnpausePhrases.Items[i] as string != this.currentProfile.UnpauseRecognitionPhrases[i])
+                        same = false;
+                }
+            }
+
+            if (!same)
+            {
+                this.lb_UnpausePhrases.Items.Clear();
+
+                foreach (var phrase in this.currentProfile.UnpauseRecognitionPhrases)
+                {
+                    this.lb_UnpausePhrases.Items.Add(phrase);
+                }
+            }
+            #endregion
+
+            if (this.currentProfile.EnableVoicePausing)
+            {
+                tb_AddPausePhrase.Enabled = true;
+                bttn_AddPausePhrase.Enabled = true;
+                tb_AddPausePhrase.Text = string.Empty;
+
+                if (this.CurrentPausePhrase != null)
+                {
+                    tb_RenamePausePhrase.Enabled = true;
+                    bttn_RenamePausePhrase.Enabled = true;
+                    bttn_RemovePausePhrase.Enabled = true;
+
+                    tb_RenamePausePhrase.Text = this.CurrentPausePhrase;
+                }
+                else
+                {
+                    tb_RenamePausePhrase.Enabled = false;
+                    bttn_RenamePausePhrase.Enabled = false;
+                    bttn_RemovePausePhrase.Enabled = false;
+
+                    tb_RenamePausePhrase.Text = string.Empty;
+                }
+
+                tb_AddUnpausePhrase.Enabled = true;
+                bttn_AddUnpausePhrase.Enabled = true;
+                tb_AddUnpausePhrase.Text = string.Empty;
+
+                if (this.CurrentUnpausePhrase != null)
+                {
+                    bttn_RemoveUnpausePhrase.Enabled = true;
+                    tb_RenameUnpausePhrase.Enabled = true;
+                    bttn_RenameUnpausePhrase.Enabled = true;
+
+                    tb_RenameUnpausePhrase.Text = this.CurrentUnpausePhrase;
+                }
+                else
+                {
+                    bttn_RemoveUnpausePhrase.Enabled = false;
+                    tb_RenameUnpausePhrase.Enabled = false;
+                    bttn_RenameUnpausePhrase.Enabled = false;
+
+                    tb_RenameUnpausePhrase.Text = string.Empty;
+
+                }
+
+
+
+
+
+            }
+            else
+            {
+                tb_AddPausePhrase.Enabled = false;
+                bttn_AddPausePhrase.Enabled = false;
+                tb_RenamePausePhrase.Enabled = false;
+                bttn_RenamePausePhrase.Enabled = false;
+                bttn_RemovePausePhrase.Enabled = false;
+
+
+                tb_AddUnpausePhrase.Enabled = false;
+                bttn_AddUnpausePhrase.Enabled = false;
+                bttn_RemoveUnpausePhrase.Enabled = false;
+                tb_RenameUnpausePhrase.Enabled = false;
+                bttn_RenameUnpausePhrase.Enabled = false;
+            }
+        }
+
         #region Profile
         private void tb_ProfileName_TextChanged(object sender, EventArgs e)
         {
@@ -936,9 +1080,9 @@ namespace SpeechCommander.UI
                 engine.Dispose();
 
             if (this.currentProfile.Actions.Count == 0)
-                engine = new RecognitionEngine();
+                engine = new DialogueRecognitionEngine();
             else
-                engine = new RecognitionEngine(this.currentProfile);
+                engine = new DialogueRecognitionEngine(this.currentProfile);
             engine.onWordRecognized += this.AddRecognizedText;
 
             if (!this.engine.Running)
@@ -967,7 +1111,7 @@ namespace SpeechCommander.UI
                     engine.Dispose();
 
 
-                engine = new RecognitionEngine(this.currentProfile);
+                engine = new DialogueRecognitionEngine(this.currentProfile);
                 engine.onWordRecognized += this.AddRecognizedText;
 
                 if (!this.engine.Running)
@@ -1330,5 +1474,114 @@ namespace SpeechCommander.UI
             }
         }
         #endregion
+
+        private void cb_VoiceToggle_CheckedChanged(object sender, EventArgs e)
+        {
+            this.currentProfile.EnableVoicePausing = this.cb_VoiceToggle.Checked;
+
+            LoadVoiceToggle();
+        }
+
+        private void bttn_AddPausePhrase_Click(object sender, EventArgs e)
+        {
+            if ( tb_AddPausePhrase.Text != string.Empty)
+            {
+                if (!this.currentProfile.PauseRecognitionPhrases.Contains(tb_AddPausePhrase.Text))
+                {
+                    this.currentProfile.PauseRecognitionPhrases.Add(tb_AddPausePhrase.Text);
+                    LoadVoiceToggle();
+                }
+            }
+        }
+
+        private void bttn_RemovePausePhrase_Click(object sender, EventArgs e)
+        {
+            if (this.CurrentPausePhrase != null)
+            {
+                this.currentProfile.PauseRecognitionPhrases.Remove(this.CurrentPausePhrase);
+                LoadVoiceToggle();
+            }
+        }
+
+        private void tb_AddPausePhrase_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bttn_AddPausePhrase_Click(sender, e);
+            }
+        }
+
+        private void tb_RenamePausePhrase_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bttn_RenamePausePhrase_Click(sender, e);
+            }
+        }
+
+        private void bttn_RenamePausePhrase_Click(object sender, EventArgs e)
+        {
+            if (this.CurrentPausePhrase != null && tb_RenamePausePhrase.Text != string.Empty && !this.currentProfile.PauseRecognitionPhrases.Contains(tb_RenamePausePhrase.Text))
+            {
+                this.CurrentPausePhrase = tb_RenamePausePhrase.Text;
+                LoadVoiceToggle();
+            }
+        }
+
+        private void bttn_AddUnpausePhrase_Click(object sender, EventArgs e)
+        {
+            if (tb_AddUnpausePhrase.Text != string.Empty)
+            {
+                if (!this.currentProfile.UnpauseRecognitionPhrases.Contains(tb_AddUnpausePhrase.Text))
+                {
+                    this.currentProfile.UnpauseRecognitionPhrases.Add(tb_AddUnpausePhrase.Text);
+                    LoadVoiceToggle();
+                }
+            }
+        }
+
+        private void bttn_RemoveUnpausePhrase_Click(object sender, EventArgs e)
+        {
+            if (this.CurrentUnpausePhrase != null)
+            {
+                this.currentProfile.UnpauseRecognitionPhrases.Remove(this.CurrentUnpausePhrase);
+                LoadVoiceToggle();
+            }
+        }
+
+        private void tb_AddUnpausePhrase_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bttn_AddUnpausePhrase_Click(sender, e);
+            }
+        }
+
+        private void tb_RenameUnpausePhrase_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bttn_RenameUnpausePhrase_Click(sender, e);
+            }
+        }
+
+        private void bttn_RenameUnpausePhrase_Click(object sender, EventArgs e)
+        {
+            if (this.CurrentUnpausePhrase != null && tb_RenameUnpausePhrase.Text != string.Empty && !this.currentProfile.UnpauseRecognitionPhrases.Contains(tb_RenameUnpausePhrase.Text))
+            {
+                this.CurrentUnpausePhrase = tb_RenameUnpausePhrase.Text;
+                LoadVoiceToggle();
+            }
+        }
+
+        private void lb_UnpausePhrases_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadVoiceToggle();
+        }
+
+        private void lb_PausePhrases_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadVoiceToggle();
+        }
     }
 }

@@ -73,11 +73,19 @@ namespace SpeechCommander
             Profile openedProfile = serializer.ReadObject(stream) as Profile;
             this.ProfileName = openedProfile.ProfileName;
             this.Actions = openedProfile.Actions;
+            if (this.Actions == null)
+                this.Actions = new List<Action>();
             this.Dialogue = openedProfile.Dialogue;
+            if (this.Dialogue == null)
+                this.Dialogue = new DialogueProfile();
             this.EndTimeout = openedProfile.EndTimeout;
             this.RequiredConfidence = openedProfile.RequiredConfidence;
             this.PauseRecognitionPhrases = openedProfile.PauseRecognitionPhrases;
+            if (this.PauseRecognitionPhrases == null)
+                this.PauseRecognitionPhrases = new List<string>();
             this.UnpauseRecognitionPhrases = openedProfile.UnpauseRecognitionPhrases;
+            if (this.UnpauseRecognitionPhrases == null)
+                this.UnpauseRecognitionPhrases = new List<string>();
             this.EnableVoicePausing = openedProfile.EnableVoicePausing;
         }
 

@@ -15,6 +15,16 @@ namespace SpeechCommander
         private int dialoguePosition;
 
         public DialogueRecognitionEngine()
+            : base()
+        {
+            dialogueWatcher = new System.IO.FileSystemWatcher();
+            dialogueWatcher.NotifyFilter = System.IO.NotifyFilters.LastWrite;
+            dialogueWatcher.Changed += dialogueWatcher_Changed;
+            this.dialogueWatcher.Filter = "*.diag";
+        }
+
+        public DialogueRecognitionEngine(Profile profile)
+            : base(profile)
         {
             dialogueWatcher = new System.IO.FileSystemWatcher();
             dialogueWatcher.NotifyFilter = System.IO.NotifyFilters.LastWrite;
@@ -26,10 +36,11 @@ namespace SpeechCommander
         {
             try
             {
-                this.dialogueWatcher.Path = System.IO.Path.GetDirectoryName(this.currentProfile.Dialogue.FilePath);
+                this.dialogueWatcher.Path = this.currentProfile.Dialogue.FilePath;
             }
             catch (ArgumentException)
             {
+                Console.WriteLine("Failed to watch for dialogue changes!");
                 // this.dialogueWatcher.Path = null;
                 //this.tb_DialogueFilePath.Text = string.Empty;
             }
@@ -60,7 +71,7 @@ namespace SpeechCommander
 
         private void UpdateDialoguePosition()
         {
-            string filename = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(this.currentProfile.Dialogue.FilePath), FILE_DIALOGUESTATE);
+            string filename = System.IO.Path.Combine(this.currentProfile.Dialogue.FilePath, FILE_DIALOGUESTATE);
 
             int position = 0;
             bool readSuccess = true;
@@ -89,25 +100,28 @@ namespace SpeechCommander
             {
                 this.dialoguePosition = position;
                 Console.WriteLine("Modified Position! " + this.dialoguePosition);
-                for (int index = 0; index < this.dialogueProfile.Actions.Count - 1; index++) // -1 to ignore goodbye
+                if (this.dialogueProfile != null)
                 {
-                    lock (this.dialogueProfile.Actions[index].Commands)
+                    for (int index = 0; index < this.dialogueProfile.Actions.Count - 1; index++) // -1 to ignore goodbye
                     {
-                        Command move = this.dialogueProfile.Actions[index].Commands[0];
-                        Command tmp;
+                        lock (this.dialogueProfile.Actions[index].Commands)
+                        {
+                            Command move = this.dialogueProfile.Actions[index].Commands[0];
+                            Command tmp;
 
-                        if (this.dialoguePosition > index)
-                            tmp = this.currentProfile.Dialogue.CommandPrevious;
-                        else
-                            tmp = this.currentProfile.Dialogue.CommandNext;
+                            if (this.dialoguePosition > index)
+                                tmp = this.currentProfile.Dialogue.CommandPrevious;
+                            else
+                                tmp = this.currentProfile.Dialogue.CommandNext;
 
-                        move.Repeat = Math.Abs(this.dialoguePosition - index);
+                            move.Repeat = Math.Abs(this.dialoguePosition - index);
 
-                        move.CommandName = String.Format("Go Down {0}", index);
-                        move.Key = tmp.Key;
-                        move.ModifierKey = tmp.ModifierKey;
-                        move.HeldDuration = tmp.HeldDuration;
-                        move.PausedDuration = tmp.PausedDuration;
+                            move.CommandName = String.Format("Go Down {0}", index);
+                            move.Key = tmp.Key;
+                            move.ModifierKey = tmp.ModifierKey;
+                            move.HeldDuration = tmp.HeldDuration;
+                            move.PausedDuration = tmp.PausedDuration;
+                        }
                     }
                 }
             }
@@ -124,7 +138,7 @@ namespace SpeechCommander
 
                     try
                     {
-                        string filename = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(this.currentProfile.Dialogue.FilePath), FILE_DIALOGUETEXT);
+                        string filename = System.IO.Path.Combine(this.currentProfile.Dialogue.FilePath, FILE_DIALOGUETEXT);
                         using (System.IO.StreamReader rdr = new System.IO.StreamReader(filename))
                         {
                             readSuccess = true;
@@ -132,7 +146,9 @@ namespace SpeechCommander
 
                             while (!rdr.EndOfStream)
                             {
-                                string text = rdr.ReadLine().Split('(')[0].Replace('?', '.');
+                                string text = rdr.ReadLine();
+                                if (text.Split('(')[0].Length > 0)
+                                    text = text.Split('(')[0].Replace('?', '.').Replace('\"',' ');
 
                                 Action action = new Action();
                                 action.ActionName = text;

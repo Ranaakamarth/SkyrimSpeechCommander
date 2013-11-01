@@ -88,6 +88,25 @@
             this.tb_AddAction = new System.Windows.Forms.TextBox();
             this.bttn_AddAction = new System.Windows.Forms.Button();
             this.tp_Profile = new System.Windows.Forms.TabPage();
+            this.gb_VoiceToggle = new System.Windows.Forms.GroupBox();
+            this.gb_UnpausePhrases = new System.Windows.Forms.GroupBox();
+            this.gb_RenameUnpausePhrase = new System.Windows.Forms.GroupBox();
+            this.tb_RenameUnpausePhrase = new System.Windows.Forms.TextBox();
+            this.bttn_RenameUnpausePhrase = new System.Windows.Forms.Button();
+            this.bttn_RemoveUnpausePhrase = new System.Windows.Forms.Button();
+            this.lb_UnpausePhrases = new System.Windows.Forms.ListBox();
+            this.gb_AddUnpausePhrase = new System.Windows.Forms.GroupBox();
+            this.tb_AddUnpausePhrase = new System.Windows.Forms.TextBox();
+            this.bttn_AddUnpausePhrase = new System.Windows.Forms.Button();
+            this.gb_PausePhrases = new System.Windows.Forms.GroupBox();
+            this.gb_RenamePausePhrase = new System.Windows.Forms.GroupBox();
+            this.tb_RenamePausePhrase = new System.Windows.Forms.TextBox();
+            this.bttn_RenamePausePhrase = new System.Windows.Forms.Button();
+            this.bttn_RemovePausePhrase = new System.Windows.Forms.Button();
+            this.lb_PausePhrases = new System.Windows.Forms.ListBox();
+            this.gb_AddPausePhrase = new System.Windows.Forms.GroupBox();
+            this.tb_AddPausePhrase = new System.Windows.Forms.TextBox();
+            this.bttn_AddPausePhrase = new System.Windows.Forms.Button();
             this.gb_Dialogue = new System.Windows.Forms.GroupBox();
             this.gb_DialogueNavigation = new System.Windows.Forms.GroupBox();
             this.gb_DialogueCommandPaused = new System.Windows.Forms.GroupBox();
@@ -123,25 +142,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.gb_ProfileName = new System.Windows.Forms.GroupBox();
             this.tb_ProfileName = new System.Windows.Forms.TextBox();
-            this.gb_PausePhrases = new System.Windows.Forms.GroupBox();
-            this.gb_RenamePausePhrase = new System.Windows.Forms.GroupBox();
-            this.tb_RenamePausePhrase = new System.Windows.Forms.TextBox();
-            this.bttn_RenamePausePhrase = new System.Windows.Forms.Button();
-            this.bttn_RemovePausePhrase = new System.Windows.Forms.Button();
-            this.lb_PausePhrases = new System.Windows.Forms.ListBox();
-            this.gb_AddPausePhrase = new System.Windows.Forms.GroupBox();
-            this.tb_AddPausePhrase = new System.Windows.Forms.TextBox();
-            this.bttn_AddPausePhrase = new System.Windows.Forms.Button();
-            this.gb_VocalToggle = new System.Windows.Forms.GroupBox();
-            this.gb_UnpausePhrases = new System.Windows.Forms.GroupBox();
-            this.gb_RenameUnpausePhrase = new System.Windows.Forms.GroupBox();
-            this.tb_RenameUnpausePhrase = new System.Windows.Forms.TextBox();
-            this.bttn_RenameUnpausePhrase = new System.Windows.Forms.Button();
-            this.bttn_RemoveUnpausePhrase = new System.Windows.Forms.Button();
-            this.lb_UnpausePhrases = new System.Windows.Forms.ListBox();
-            this.gb_AddUnpausePhrase = new System.Windows.Forms.GroupBox();
-            this.tb_AddUnpausePhrase = new System.Windows.Forms.TextBox();
-            this.bttn_AddUnpausePhrase = new System.Windows.Forms.Button();
+            this.cb_VoiceToggle = new System.Windows.Forms.CheckBox();
             this.ms_MainMenuStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tp_Actions.SuspendLayout();
@@ -170,6 +171,13 @@
             this.gb_RenameAction.SuspendLayout();
             this.gb_AddAction.SuspendLayout();
             this.tp_Profile.SuspendLayout();
+            this.gb_VoiceToggle.SuspendLayout();
+            this.gb_UnpausePhrases.SuspendLayout();
+            this.gb_RenameUnpausePhrase.SuspendLayout();
+            this.gb_AddUnpausePhrase.SuspendLayout();
+            this.gb_PausePhrases.SuspendLayout();
+            this.gb_RenamePausePhrase.SuspendLayout();
+            this.gb_AddPausePhrase.SuspendLayout();
             this.gb_Dialogue.SuspendLayout();
             this.gb_DialogueNavigation.SuspendLayout();
             this.gb_DialogueCommandPaused.SuspendLayout();
@@ -191,13 +199,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.gb_ProfileName.SuspendLayout();
-            this.gb_PausePhrases.SuspendLayout();
-            this.gb_RenamePausePhrase.SuspendLayout();
-            this.gb_AddPausePhrase.SuspendLayout();
-            this.gb_VocalToggle.SuspendLayout();
-            this.gb_UnpausePhrases.SuspendLayout();
-            this.gb_RenameUnpausePhrase.SuspendLayout();
-            this.gb_AddUnpausePhrase.SuspendLayout();
             this.SuspendLayout();
             // 
             // ms_MainMenuStrip
@@ -1103,7 +1104,7 @@
             // tp_Profile
             // 
             this.tp_Profile.BackColor = System.Drawing.SystemColors.Control;
-            this.tp_Profile.Controls.Add(this.gb_VocalToggle);
+            this.tp_Profile.Controls.Add(this.gb_VoiceToggle);
             this.tp_Profile.Controls.Add(this.gb_Dialogue);
             this.tp_Profile.Controls.Add(this.gb_Timeout);
             this.tp_Profile.Controls.Add(this.gb_Confidence);
@@ -1114,6 +1115,232 @@
             this.tp_Profile.Size = new System.Drawing.Size(974, 528);
             this.tp_Profile.TabIndex = 1;
             this.tp_Profile.Text = "Profile";
+            // 
+            // gb_VoiceToggle
+            // 
+            this.gb_VoiceToggle.Controls.Add(this.cb_VoiceToggle);
+            this.gb_VoiceToggle.Controls.Add(this.gb_UnpausePhrases);
+            this.gb_VoiceToggle.Controls.Add(this.gb_PausePhrases);
+            this.gb_VoiceToggle.Location = new System.Drawing.Point(490, 6);
+            this.gb_VoiceToggle.Name = "gb_VoiceToggle";
+            this.gb_VoiceToggle.Size = new System.Drawing.Size(235, 516);
+            this.gb_VoiceToggle.TabIndex = 23;
+            this.gb_VoiceToggle.TabStop = false;
+            this.gb_VoiceToggle.Text = "Voice Command Toggle";
+            // 
+            // gb_UnpausePhrases
+            // 
+            this.gb_UnpausePhrases.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gb_UnpausePhrases.Controls.Add(this.gb_RenameUnpausePhrase);
+            this.gb_UnpausePhrases.Controls.Add(this.bttn_RemoveUnpausePhrase);
+            this.gb_UnpausePhrases.Controls.Add(this.lb_UnpausePhrases);
+            this.gb_UnpausePhrases.Controls.Add(this.gb_AddUnpausePhrase);
+            this.gb_UnpausePhrases.Location = new System.Drawing.Point(6, 286);
+            this.gb_UnpausePhrases.Name = "gb_UnpausePhrases";
+            this.gb_UnpausePhrases.Size = new System.Drawing.Size(223, 224);
+            this.gb_UnpausePhrases.TabIndex = 22;
+            this.gb_UnpausePhrases.TabStop = false;
+            this.gb_UnpausePhrases.Text = "Unpause Phrases:";
+            // 
+            // gb_RenameUnpausePhrase
+            // 
+            this.gb_RenameUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_RenameUnpausePhrase.Controls.Add(this.tb_RenameUnpausePhrase);
+            this.gb_RenameUnpausePhrase.Controls.Add(this.bttn_RenameUnpausePhrase);
+            this.gb_RenameUnpausePhrase.Location = new System.Drawing.Point(6, 172);
+            this.gb_RenameUnpausePhrase.Name = "gb_RenameUnpausePhrase";
+            this.gb_RenameUnpausePhrase.Size = new System.Drawing.Size(211, 46);
+            this.gb_RenameUnpausePhrase.TabIndex = 3;
+            this.gb_RenameUnpausePhrase.TabStop = false;
+            this.gb_RenameUnpausePhrase.Text = "Rename Phrase";
+            // 
+            // tb_RenameUnpausePhrase
+            // 
+            this.tb_RenameUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_RenameUnpausePhrase.Location = new System.Drawing.Point(6, 19);
+            this.tb_RenameUnpausePhrase.Name = "tb_RenameUnpausePhrase";
+            this.tb_RenameUnpausePhrase.Size = new System.Drawing.Size(135, 20);
+            this.tb_RenameUnpausePhrase.TabIndex = 0;
+            this.tb_RenameUnpausePhrase.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_RenameUnpausePhrase_KeyDown);
+            // 
+            // bttn_RenameUnpausePhrase
+            // 
+            this.bttn_RenameUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_RenameUnpausePhrase.Location = new System.Drawing.Point(147, 17);
+            this.bttn_RenameUnpausePhrase.Name = "bttn_RenameUnpausePhrase";
+            this.bttn_RenameUnpausePhrase.Size = new System.Drawing.Size(58, 23);
+            this.bttn_RenameUnpausePhrase.TabIndex = 1;
+            this.bttn_RenameUnpausePhrase.Text = "Rename";
+            this.bttn_RenameUnpausePhrase.UseVisualStyleBackColor = true;
+            this.bttn_RenameUnpausePhrase.Click += new System.EventHandler(this.bttn_RenameUnpausePhrase_Click);
+            // 
+            // bttn_RemoveUnpausePhrase
+            // 
+            this.bttn_RemoveUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_RemoveUnpausePhrase.Location = new System.Drawing.Point(153, 149);
+            this.bttn_RemoveUnpausePhrase.Name = "bttn_RemoveUnpausePhrase";
+            this.bttn_RemoveUnpausePhrase.Size = new System.Drawing.Size(58, 23);
+            this.bttn_RemoveUnpausePhrase.TabIndex = 2;
+            this.bttn_RemoveUnpausePhrase.Text = "Remove";
+            this.bttn_RemoveUnpausePhrase.UseVisualStyleBackColor = true;
+            this.bttn_RemoveUnpausePhrase.Click += new System.EventHandler(this.bttn_RemoveUnpausePhrase_Click);
+            // 
+            // lb_UnpausePhrases
+            // 
+            this.lb_UnpausePhrases.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_UnpausePhrases.FormattingEnabled = true;
+            this.lb_UnpausePhrases.IntegralHeight = false;
+            this.lb_UnpausePhrases.Location = new System.Drawing.Point(6, 19);
+            this.lb_UnpausePhrases.Name = "lb_UnpausePhrases";
+            this.lb_UnpausePhrases.Size = new System.Drawing.Size(211, 72);
+            this.lb_UnpausePhrases.TabIndex = 0;
+            this.lb_UnpausePhrases.SelectedIndexChanged += new System.EventHandler(this.lb_UnpausePhrases_SelectedIndexChanged);
+            // 
+            // gb_AddUnpausePhrase
+            // 
+            this.gb_AddUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_AddUnpausePhrase.Controls.Add(this.tb_AddUnpausePhrase);
+            this.gb_AddUnpausePhrase.Controls.Add(this.bttn_AddUnpausePhrase);
+            this.gb_AddUnpausePhrase.Location = new System.Drawing.Point(6, 97);
+            this.gb_AddUnpausePhrase.Name = "gb_AddUnpausePhrase";
+            this.gb_AddUnpausePhrase.Size = new System.Drawing.Size(211, 46);
+            this.gb_AddUnpausePhrase.TabIndex = 1;
+            this.gb_AddUnpausePhrase.TabStop = false;
+            this.gb_AddUnpausePhrase.Text = "Add Phrase";
+            // 
+            // tb_AddUnpausePhrase
+            // 
+            this.tb_AddUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_AddUnpausePhrase.Location = new System.Drawing.Point(6, 19);
+            this.tb_AddUnpausePhrase.Name = "tb_AddUnpausePhrase";
+            this.tb_AddUnpausePhrase.Size = new System.Drawing.Size(135, 20);
+            this.tb_AddUnpausePhrase.TabIndex = 0;
+            this.tb_AddUnpausePhrase.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_AddUnpausePhrase_KeyDown);
+            // 
+            // bttn_AddUnpausePhrase
+            // 
+            this.bttn_AddUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_AddUnpausePhrase.Location = new System.Drawing.Point(147, 17);
+            this.bttn_AddUnpausePhrase.Name = "bttn_AddUnpausePhrase";
+            this.bttn_AddUnpausePhrase.Size = new System.Drawing.Size(58, 23);
+            this.bttn_AddUnpausePhrase.TabIndex = 1;
+            this.bttn_AddUnpausePhrase.Text = "Add";
+            this.bttn_AddUnpausePhrase.UseVisualStyleBackColor = true;
+            this.bttn_AddUnpausePhrase.Click += new System.EventHandler(this.bttn_AddUnpausePhrase_Click);
+            // 
+            // gb_PausePhrases
+            // 
+            this.gb_PausePhrases.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gb_PausePhrases.Controls.Add(this.gb_RenamePausePhrase);
+            this.gb_PausePhrases.Controls.Add(this.bttn_RemovePausePhrase);
+            this.gb_PausePhrases.Controls.Add(this.lb_PausePhrases);
+            this.gb_PausePhrases.Controls.Add(this.gb_AddPausePhrase);
+            this.gb_PausePhrases.Location = new System.Drawing.Point(6, 56);
+            this.gb_PausePhrases.Name = "gb_PausePhrases";
+            this.gb_PausePhrases.Size = new System.Drawing.Size(223, 224);
+            this.gb_PausePhrases.TabIndex = 22;
+            this.gb_PausePhrases.TabStop = false;
+            this.gb_PausePhrases.Text = "Pause Phrases:";
+            // 
+            // gb_RenamePausePhrase
+            // 
+            this.gb_RenamePausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_RenamePausePhrase.Controls.Add(this.tb_RenamePausePhrase);
+            this.gb_RenamePausePhrase.Controls.Add(this.bttn_RenamePausePhrase);
+            this.gb_RenamePausePhrase.Location = new System.Drawing.Point(6, 172);
+            this.gb_RenamePausePhrase.Name = "gb_RenamePausePhrase";
+            this.gb_RenamePausePhrase.Size = new System.Drawing.Size(211, 46);
+            this.gb_RenamePausePhrase.TabIndex = 3;
+            this.gb_RenamePausePhrase.TabStop = false;
+            this.gb_RenamePausePhrase.Text = "Rename Phrase";
+            // 
+            // tb_RenamePausePhrase
+            // 
+            this.tb_RenamePausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_RenamePausePhrase.Location = new System.Drawing.Point(6, 19);
+            this.tb_RenamePausePhrase.Name = "tb_RenamePausePhrase";
+            this.tb_RenamePausePhrase.Size = new System.Drawing.Size(135, 20);
+            this.tb_RenamePausePhrase.TabIndex = 0;
+            this.tb_RenamePausePhrase.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_RenamePausePhrase_KeyDown);
+            // 
+            // bttn_RenamePausePhrase
+            // 
+            this.bttn_RenamePausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_RenamePausePhrase.Location = new System.Drawing.Point(147, 17);
+            this.bttn_RenamePausePhrase.Name = "bttn_RenamePausePhrase";
+            this.bttn_RenamePausePhrase.Size = new System.Drawing.Size(58, 23);
+            this.bttn_RenamePausePhrase.TabIndex = 1;
+            this.bttn_RenamePausePhrase.Text = "Rename";
+            this.bttn_RenamePausePhrase.UseVisualStyleBackColor = true;
+            this.bttn_RenamePausePhrase.Click += new System.EventHandler(this.bttn_RenamePausePhrase_Click);
+            // 
+            // bttn_RemovePausePhrase
+            // 
+            this.bttn_RemovePausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_RemovePausePhrase.Location = new System.Drawing.Point(153, 149);
+            this.bttn_RemovePausePhrase.Name = "bttn_RemovePausePhrase";
+            this.bttn_RemovePausePhrase.Size = new System.Drawing.Size(58, 23);
+            this.bttn_RemovePausePhrase.TabIndex = 2;
+            this.bttn_RemovePausePhrase.Text = "Remove";
+            this.bttn_RemovePausePhrase.UseVisualStyleBackColor = true;
+            this.bttn_RemovePausePhrase.Click += new System.EventHandler(this.bttn_RemovePausePhrase_Click);
+            // 
+            // lb_PausePhrases
+            // 
+            this.lb_PausePhrases.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_PausePhrases.FormattingEnabled = true;
+            this.lb_PausePhrases.IntegralHeight = false;
+            this.lb_PausePhrases.Location = new System.Drawing.Point(6, 19);
+            this.lb_PausePhrases.Name = "lb_PausePhrases";
+            this.lb_PausePhrases.Size = new System.Drawing.Size(211, 72);
+            this.lb_PausePhrases.TabIndex = 0;
+            this.lb_PausePhrases.SelectedIndexChanged += new System.EventHandler(this.lb_PausePhrases_SelectedIndexChanged);
+            // 
+            // gb_AddPausePhrase
+            // 
+            this.gb_AddPausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_AddPausePhrase.Controls.Add(this.tb_AddPausePhrase);
+            this.gb_AddPausePhrase.Controls.Add(this.bttn_AddPausePhrase);
+            this.gb_AddPausePhrase.Location = new System.Drawing.Point(6, 97);
+            this.gb_AddPausePhrase.Name = "gb_AddPausePhrase";
+            this.gb_AddPausePhrase.Size = new System.Drawing.Size(211, 46);
+            this.gb_AddPausePhrase.TabIndex = 1;
+            this.gb_AddPausePhrase.TabStop = false;
+            this.gb_AddPausePhrase.Text = "Add Phrase";
+            // 
+            // tb_AddPausePhrase
+            // 
+            this.tb_AddPausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_AddPausePhrase.Location = new System.Drawing.Point(6, 19);
+            this.tb_AddPausePhrase.Name = "tb_AddPausePhrase";
+            this.tb_AddPausePhrase.Size = new System.Drawing.Size(135, 20);
+            this.tb_AddPausePhrase.TabIndex = 0;
+            this.tb_AddPausePhrase.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_AddPausePhrase_KeyDown);
+            // 
+            // bttn_AddPausePhrase
+            // 
+            this.bttn_AddPausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bttn_AddPausePhrase.Location = new System.Drawing.Point(147, 17);
+            this.bttn_AddPausePhrase.Name = "bttn_AddPausePhrase";
+            this.bttn_AddPausePhrase.Size = new System.Drawing.Size(58, 23);
+            this.bttn_AddPausePhrase.TabIndex = 1;
+            this.bttn_AddPausePhrase.Text = "Add";
+            this.bttn_AddPausePhrase.UseVisualStyleBackColor = true;
+            this.bttn_AddPausePhrase.Click += new System.EventHandler(this.bttn_AddPausePhrase_Click);
             // 
             // gb_Dialogue
             // 
@@ -1763,229 +1990,16 @@
             this.tb_ProfileName.TabIndex = 0;
             this.tb_ProfileName.TextChanged += new System.EventHandler(this.tb_ProfileName_TextChanged);
             // 
-            // gb_PausePhrases
+            // cb_VoiceToggle
             // 
-            this.gb_PausePhrases.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.gb_PausePhrases.Controls.Add(this.gb_RenamePausePhrase);
-            this.gb_PausePhrases.Controls.Add(this.bttn_RemovePausePhrase);
-            this.gb_PausePhrases.Controls.Add(this.lb_PausePhrases);
-            this.gb_PausePhrases.Controls.Add(this.gb_AddPausePhrase);
-            this.gb_PausePhrases.Location = new System.Drawing.Point(6, 19);
-            this.gb_PausePhrases.Name = "gb_PausePhrases";
-            this.gb_PausePhrases.Size = new System.Drawing.Size(223, 224);
-            this.gb_PausePhrases.TabIndex = 22;
-            this.gb_PausePhrases.TabStop = false;
-            this.gb_PausePhrases.Text = "Pause Phrases:";
-            // 
-            // gb_RenamePausePhrase
-            // 
-            this.gb_RenamePausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gb_RenamePausePhrase.Controls.Add(this.tb_RenamePausePhrase);
-            this.gb_RenamePausePhrase.Controls.Add(this.bttn_RenamePausePhrase);
-            this.gb_RenamePausePhrase.Location = new System.Drawing.Point(6, 172);
-            this.gb_RenamePausePhrase.Name = "gb_RenamePausePhrase";
-            this.gb_RenamePausePhrase.Size = new System.Drawing.Size(211, 46);
-            this.gb_RenamePausePhrase.TabIndex = 3;
-            this.gb_RenamePausePhrase.TabStop = false;
-            this.gb_RenamePausePhrase.Text = "Rename Phrase";
-            // 
-            // tb_RenamePausePhrase
-            // 
-            this.tb_RenamePausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_RenamePausePhrase.Location = new System.Drawing.Point(6, 19);
-            this.tb_RenamePausePhrase.Name = "tb_RenamePausePhrase";
-            this.tb_RenamePausePhrase.Size = new System.Drawing.Size(135, 20);
-            this.tb_RenamePausePhrase.TabIndex = 0;
-            this.tb_RenamePausePhrase.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_DialogueGoodbyeRename_KeyDown);
-            // 
-            // bttn_RenamePausePhrase
-            // 
-            this.bttn_RenamePausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bttn_RenamePausePhrase.Location = new System.Drawing.Point(147, 17);
-            this.bttn_RenamePausePhrase.Name = "bttn_RenamePausePhrase";
-            this.bttn_RenamePausePhrase.Size = new System.Drawing.Size(58, 23);
-            this.bttn_RenamePausePhrase.TabIndex = 1;
-            this.bttn_RenamePausePhrase.Text = "Rename";
-            this.bttn_RenamePausePhrase.UseVisualStyleBackColor = true;
-            this.bttn_RenamePausePhrase.Click += new System.EventHandler(this.bttn_DialogueGoodbyeRename_Click);
-            // 
-            // bttn_RemovePausePhrase
-            // 
-            this.bttn_RemovePausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bttn_RemovePausePhrase.Location = new System.Drawing.Point(153, 149);
-            this.bttn_RemovePausePhrase.Name = "bttn_RemovePausePhrase";
-            this.bttn_RemovePausePhrase.Size = new System.Drawing.Size(58, 23);
-            this.bttn_RemovePausePhrase.TabIndex = 2;
-            this.bttn_RemovePausePhrase.Text = "Remove";
-            this.bttn_RemovePausePhrase.UseVisualStyleBackColor = true;
-            this.bttn_RemovePausePhrase.Click += new System.EventHandler(this.bttn_DialogueGoodbyeRemove_Click);
-            // 
-            // lb_PausePhrases
-            // 
-            this.lb_PausePhrases.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_PausePhrases.FormattingEnabled = true;
-            this.lb_PausePhrases.IntegralHeight = false;
-            this.lb_PausePhrases.Location = new System.Drawing.Point(6, 19);
-            this.lb_PausePhrases.Name = "lb_PausePhrases";
-            this.lb_PausePhrases.Size = new System.Drawing.Size(211, 72);
-            this.lb_PausePhrases.TabIndex = 0;
-            // 
-            // gb_AddPausePhrase
-            // 
-            this.gb_AddPausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gb_AddPausePhrase.Controls.Add(this.tb_AddPausePhrase);
-            this.gb_AddPausePhrase.Controls.Add(this.bttn_AddPausePhrase);
-            this.gb_AddPausePhrase.Location = new System.Drawing.Point(6, 97);
-            this.gb_AddPausePhrase.Name = "gb_AddPausePhrase";
-            this.gb_AddPausePhrase.Size = new System.Drawing.Size(211, 46);
-            this.gb_AddPausePhrase.TabIndex = 1;
-            this.gb_AddPausePhrase.TabStop = false;
-            this.gb_AddPausePhrase.Text = "Add Phrase";
-            // 
-            // tb_AddPausePhrase
-            // 
-            this.tb_AddPausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_AddPausePhrase.Location = new System.Drawing.Point(6, 19);
-            this.tb_AddPausePhrase.Name = "tb_AddPausePhrase";
-            this.tb_AddPausePhrase.Size = new System.Drawing.Size(135, 20);
-            this.tb_AddPausePhrase.TabIndex = 0;
-            this.tb_AddPausePhrase.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_DialogueGoodbyeAdd_KeyDown);
-            // 
-            // bttn_AddPausePhrase
-            // 
-            this.bttn_AddPausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bttn_AddPausePhrase.Location = new System.Drawing.Point(147, 17);
-            this.bttn_AddPausePhrase.Name = "bttn_AddPausePhrase";
-            this.bttn_AddPausePhrase.Size = new System.Drawing.Size(58, 23);
-            this.bttn_AddPausePhrase.TabIndex = 1;
-            this.bttn_AddPausePhrase.Text = "Add";
-            this.bttn_AddPausePhrase.UseVisualStyleBackColor = true;
-            this.bttn_AddPausePhrase.Click += new System.EventHandler(this.bttn_DialogueGoodbyeAdd_Click);
-            // 
-            // gb_VocalToggle
-            // 
-            this.gb_VocalToggle.Controls.Add(this.gb_UnpausePhrases);
-            this.gb_VocalToggle.Controls.Add(this.gb_PausePhrases);
-            this.gb_VocalToggle.Location = new System.Drawing.Point(490, 6);
-            this.gb_VocalToggle.Name = "gb_VocalToggle";
-            this.gb_VocalToggle.Size = new System.Drawing.Size(235, 516);
-            this.gb_VocalToggle.TabIndex = 23;
-            this.gb_VocalToggle.TabStop = false;
-            this.gb_VocalToggle.Text = "Vocal Toggle";
-            // 
-            // gb_UnpausePhrases
-            // 
-            this.gb_UnpausePhrases.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.gb_UnpausePhrases.Controls.Add(this.gb_RenameUnpausePhrase);
-            this.gb_UnpausePhrases.Controls.Add(this.bttn_RemoveUnpausePhrase);
-            this.gb_UnpausePhrases.Controls.Add(this.lb_UnpausePhrases);
-            this.gb_UnpausePhrases.Controls.Add(this.gb_AddUnpausePhrase);
-            this.gb_UnpausePhrases.Location = new System.Drawing.Point(6, 286);
-            this.gb_UnpausePhrases.Name = "gb_UnpausePhrases";
-            this.gb_UnpausePhrases.Size = new System.Drawing.Size(223, 224);
-            this.gb_UnpausePhrases.TabIndex = 22;
-            this.gb_UnpausePhrases.TabStop = false;
-            this.gb_UnpausePhrases.Text = "Unpause Phrases:";
-            // 
-            // gb_RenameUnpausePhrase
-            // 
-            this.gb_RenameUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gb_RenameUnpausePhrase.Controls.Add(this.tb_RenameUnpausePhrase);
-            this.gb_RenameUnpausePhrase.Controls.Add(this.bttn_RenameUnpausePhrase);
-            this.gb_RenameUnpausePhrase.Location = new System.Drawing.Point(6, 172);
-            this.gb_RenameUnpausePhrase.Name = "gb_RenameUnpausePhrase";
-            this.gb_RenameUnpausePhrase.Size = new System.Drawing.Size(211, 46);
-            this.gb_RenameUnpausePhrase.TabIndex = 3;
-            this.gb_RenameUnpausePhrase.TabStop = false;
-            this.gb_RenameUnpausePhrase.Text = "Rename Phrase";
-            // 
-            // tb_RenameUnpausePhrase
-            // 
-            this.tb_RenameUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_RenameUnpausePhrase.Location = new System.Drawing.Point(6, 19);
-            this.tb_RenameUnpausePhrase.Name = "tb_RenameUnpausePhrase";
-            this.tb_RenameUnpausePhrase.Size = new System.Drawing.Size(135, 20);
-            this.tb_RenameUnpausePhrase.TabIndex = 0;
-            this.tb_RenameUnpausePhrase.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_DialogueGoodbyeRename_KeyDown);
-            // 
-            // bttn_RenameUnpausePhrase
-            // 
-            this.bttn_RenameUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bttn_RenameUnpausePhrase.Location = new System.Drawing.Point(147, 17);
-            this.bttn_RenameUnpausePhrase.Name = "bttn_RenameUnpausePhrase";
-            this.bttn_RenameUnpausePhrase.Size = new System.Drawing.Size(58, 23);
-            this.bttn_RenameUnpausePhrase.TabIndex = 1;
-            this.bttn_RenameUnpausePhrase.Text = "Rename";
-            this.bttn_RenameUnpausePhrase.UseVisualStyleBackColor = true;
-            this.bttn_RenameUnpausePhrase.Click += new System.EventHandler(this.bttn_DialogueGoodbyeRename_Click);
-            // 
-            // bttn_RemoveUnpausePhrase
-            // 
-            this.bttn_RemoveUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bttn_RemoveUnpausePhrase.Location = new System.Drawing.Point(153, 149);
-            this.bttn_RemoveUnpausePhrase.Name = "bttn_RemoveUnpausePhrase";
-            this.bttn_RemoveUnpausePhrase.Size = new System.Drawing.Size(58, 23);
-            this.bttn_RemoveUnpausePhrase.TabIndex = 2;
-            this.bttn_RemoveUnpausePhrase.Text = "Remove";
-            this.bttn_RemoveUnpausePhrase.UseVisualStyleBackColor = true;
-            this.bttn_RemoveUnpausePhrase.Click += new System.EventHandler(this.bttn_DialogueGoodbyeRemove_Click);
-            // 
-            // lb_UnpausePhrases
-            // 
-            this.lb_UnpausePhrases.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_UnpausePhrases.FormattingEnabled = true;
-            this.lb_UnpausePhrases.IntegralHeight = false;
-            this.lb_UnpausePhrases.Location = new System.Drawing.Point(6, 19);
-            this.lb_UnpausePhrases.Name = "lb_UnpausePhrases";
-            this.lb_UnpausePhrases.Size = new System.Drawing.Size(211, 72);
-            this.lb_UnpausePhrases.TabIndex = 0;
-            this.lb_UnpausePhrases.SelectedIndexChanged += new System.EventHandler(this.lb_DialogueGoodbyeList_SelectedIndexChanged);
-            // 
-            // gb_AddUnpausePhrase
-            // 
-            this.gb_AddUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gb_AddUnpausePhrase.Controls.Add(this.tb_AddUnpausePhrase);
-            this.gb_AddUnpausePhrase.Controls.Add(this.bttn_AddUnpausePhrase);
-            this.gb_AddUnpausePhrase.Location = new System.Drawing.Point(6, 97);
-            this.gb_AddUnpausePhrase.Name = "gb_AddUnpausePhrase";
-            this.gb_AddUnpausePhrase.Size = new System.Drawing.Size(211, 46);
-            this.gb_AddUnpausePhrase.TabIndex = 1;
-            this.gb_AddUnpausePhrase.TabStop = false;
-            this.gb_AddUnpausePhrase.Text = "Add Phrase";
-            // 
-            // tb_AddUnpausePhrase
-            // 
-            this.tb_AddUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_AddUnpausePhrase.Location = new System.Drawing.Point(6, 19);
-            this.tb_AddUnpausePhrase.Name = "tb_AddUnpausePhrase";
-            this.tb_AddUnpausePhrase.Size = new System.Drawing.Size(135, 20);
-            this.tb_AddUnpausePhrase.TabIndex = 0;
-            this.tb_AddUnpausePhrase.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_DialogueGoodbyeAdd_KeyDown);
-            // 
-            // bttn_AddUnpausePhrase
-            // 
-            this.bttn_AddUnpausePhrase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bttn_AddUnpausePhrase.Location = new System.Drawing.Point(147, 17);
-            this.bttn_AddUnpausePhrase.Name = "bttn_AddUnpausePhrase";
-            this.bttn_AddUnpausePhrase.Size = new System.Drawing.Size(58, 23);
-            this.bttn_AddUnpausePhrase.TabIndex = 1;
-            this.bttn_AddUnpausePhrase.Text = "Add";
-            this.bttn_AddUnpausePhrase.UseVisualStyleBackColor = true;
-            this.bttn_AddUnpausePhrase.Click += new System.EventHandler(this.bttn_DialogueGoodbyeAdd_Click);
+            this.cb_VoiceToggle.AutoSize = true;
+            this.cb_VoiceToggle.Location = new System.Drawing.Point(12, 19);
+            this.cb_VoiceToggle.Name = "cb_VoiceToggle";
+            this.cb_VoiceToggle.Size = new System.Drawing.Size(194, 17);
+            this.cb_VoiceToggle.TabIndex = 23;
+            this.cb_VoiceToggle.Text = "Voice commands pause recognition";
+            this.cb_VoiceToggle.UseVisualStyleBackColor = true;
+            this.cb_VoiceToggle.CheckedChanged += new System.EventHandler(this.cb_VoiceToggle_CheckedChanged);
             // 
             // CommandBuilder
             // 
@@ -2035,6 +2049,18 @@
             this.gb_AddAction.ResumeLayout(false);
             this.gb_AddAction.PerformLayout();
             this.tp_Profile.ResumeLayout(false);
+            this.gb_VoiceToggle.ResumeLayout(false);
+            this.gb_VoiceToggle.PerformLayout();
+            this.gb_UnpausePhrases.ResumeLayout(false);
+            this.gb_RenameUnpausePhrase.ResumeLayout(false);
+            this.gb_RenameUnpausePhrase.PerformLayout();
+            this.gb_AddUnpausePhrase.ResumeLayout(false);
+            this.gb_AddUnpausePhrase.PerformLayout();
+            this.gb_PausePhrases.ResumeLayout(false);
+            this.gb_RenamePausePhrase.ResumeLayout(false);
+            this.gb_RenamePausePhrase.PerformLayout();
+            this.gb_AddPausePhrase.ResumeLayout(false);
+            this.gb_AddPausePhrase.PerformLayout();
             this.gb_Dialogue.ResumeLayout(false);
             this.gb_Dialogue.PerformLayout();
             this.gb_DialogueNavigation.ResumeLayout(false);
@@ -2062,17 +2088,6 @@
             this.groupBox4.PerformLayout();
             this.gb_ProfileName.ResumeLayout(false);
             this.gb_ProfileName.PerformLayout();
-            this.gb_PausePhrases.ResumeLayout(false);
-            this.gb_RenamePausePhrase.ResumeLayout(false);
-            this.gb_RenamePausePhrase.PerformLayout();
-            this.gb_AddPausePhrase.ResumeLayout(false);
-            this.gb_AddPausePhrase.PerformLayout();
-            this.gb_VocalToggle.ResumeLayout(false);
-            this.gb_UnpausePhrases.ResumeLayout(false);
-            this.gb_RenameUnpausePhrase.ResumeLayout(false);
-            this.gb_RenameUnpausePhrase.PerformLayout();
-            this.gb_AddUnpausePhrase.ResumeLayout(false);
-            this.gb_AddUnpausePhrase.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2175,7 +2190,7 @@
         private System.Windows.Forms.ComboBox cb_DialogueCommandModifierKey;
         private System.Windows.Forms.GroupBox gb_DialogueCommandHeld;
         private System.Windows.Forms.NumericUpDown nud_DialogueCommandHeld;
-        private System.Windows.Forms.GroupBox gb_VocalToggle;
+        private System.Windows.Forms.GroupBox gb_VoiceToggle;
         private System.Windows.Forms.GroupBox gb_UnpausePhrases;
         private System.Windows.Forms.GroupBox gb_RenameUnpausePhrase;
         private System.Windows.Forms.TextBox tb_RenameUnpausePhrase;
@@ -2194,5 +2209,6 @@
         private System.Windows.Forms.GroupBox gb_AddPausePhrase;
         private System.Windows.Forms.TextBox tb_AddPausePhrase;
         private System.Windows.Forms.Button bttn_AddPausePhrase;
+        private System.Windows.Forms.CheckBox cb_VoiceToggle;
     }
 }

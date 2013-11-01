@@ -145,7 +145,6 @@ namespace SpeechCommander
             if (this.actions != null)
                 this.actions.Clear();
 
-            //engine.EndSilenceTimeout = new TimeSpan(0, 0, 0, 0, profile.EndTimeout);
             this.currentProfile.UpdateGrammar();
 
             List<UpdateOperation> ops = new List<UpdateOperation>();
@@ -160,7 +159,8 @@ namespace SpeechCommander
             ops.Add(new UpdateOperation()
             {
                 UpdateType = UpdateOperationType.AddGrammar,
-                Grammar = this.currentProfile.Grammar
+                Grammar = this.currentProfile.Grammar,
+                AssociatedActions = this.currentProfile.Actions
             });
 
             this.pauseGrammar = null;
@@ -229,14 +229,43 @@ namespace SpeechCommander
 
         public void ExecuteGrammarChanges(List<UpdateOperation> changes)
         {
-            this.engine.RequestRecognizerUpdate(changes);
+            if (this.Running)
+                this.engine.RequestRecognizerUpdate(changes);
+            else
+            {
+                foreach (var change in changes)
+                {
+                    switch (change.UpdateType)
+                    {
+                        case UpdateOperationType.AddGrammar:
+                            if (change.Grammar != null)
+                                this.engine.LoadGrammar(change.Grammar);
+                            break;
+                        case UpdateOperationType.RemoveGrammar:
+                            if (this.engine.Grammars.Contains(change.Grammar))
+                                this.engine.UnloadGrammar(change.Grammar);
+                            break;
+                        case UpdateOperationType.EnableGrammar:
+                            if (change.Grammar != null)
+                                change.Grammar.Enabled = true;
+                            break;
+                        case UpdateOperationType.DisableGrammar:
+                            if (change.Grammar != null)
+                                change.Grammar.Enabled = false;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
 
             foreach (var change in changes)
             {
                 switch (change.UpdateType)
                 {
                     case UpdateOperationType.AddGrammar:
-                        this.actions.AddRange(change.AssociatedActions);
+                        if (change.AssociatedActions != null)
+                            this.actions.AddRange(change.AssociatedActions);
                         break;
                     case UpdateOperationType.RemoveGrammar:
                         foreach (Action action in change.AssociatedActions)
@@ -274,17 +303,20 @@ namespace SpeechCommander
             switch (changeOp.UpdateType)
             {
                 case UpdateOperationType.AddGrammar:
-                    this.engine.LoadGrammar(changeOp.Grammar);
+                    if (changeOp.Grammar != null)
+                        this.engine.LoadGrammar(changeOp.Grammar);
                     break;
                 case UpdateOperationType.RemoveGrammar:
                     if (this.engine.Grammars.Contains(changeOp.Grammar))
                         this.engine.UnloadGrammar(changeOp.Grammar);
                     break;
                 case UpdateOperationType.EnableGrammar:
-                    changeOp.Grammar.Enabled = true;
+                    if (changeOp.Grammar != null)
+                        changeOp.Grammar.Enabled = true;
                     break;
                 case UpdateOperationType.DisableGrammar:
-                    changeOp.Grammar.Enabled = false;
+                    if (changeOp.Grammar != null)
+                        changeOp.Grammar.Enabled = false;
                     break;
                 default:
                     break;
