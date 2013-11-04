@@ -1,0 +1,53 @@
+﻿<Controls:MetroWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="SpeechCommander.View.MainWindow"
+        xmlns:View="clr-namespace:SpeechCommander.View" 
+        xmlns:Model="clr-namespace:SpeechCommander.Model"
+        xmlns:ViewModel="clr-namespace:SpeechCommander.ViewModel"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="MainWindow" Height="475" Width="800"
+        ShowTitleBar="False">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary  Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.DataContext>
+        <ViewModel:MainViewModel/>
+    </Window.DataContext>
+        <Controls:MetroContentControl>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TabControl TabStripPlacement="Left" Grid.Row="1" Grid.Column="0">
+                <TabItem Header="Profile">
+                    <Grid>
+                        <ListBox SelectedItem="{Binding Test}"
+                                 ItemsSource="{Binding Profile.Actions}">
+                        </ListBox>
+                        <!--<View:ProfileTab/>-->
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Action">
+                    <Grid>
+                        <ContentControl Content="{Binding ActionViewModel}"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Controls:MetroContentControl>
+</Controls:MetroWindow>
