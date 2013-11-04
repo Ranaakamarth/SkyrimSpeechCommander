@@ -4,11 +4,16 @@
              xmlns:Model="clr-namespace:SpeechCommander.Model"
              xmlns:ViewModel="clr-namespace:SpeechCommander.ViewModel"
              xmlns:View="clr-namespace:SpeechCommander.View"
+             xmlns:local="clr-namespace:SpeechCommander"
              StartupUri="View/MainWindow.xaml"
 >
     <Application.Resources>
         <DataTemplate DataType="{x:Type ViewModel:ActionTabViewModel}">
             <View:ActionTab/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type ViewModel:CommandsViewModel}">
+            <View:CommandsView/>
+        </DataTemplate>
+        <local:BooleanToInverseVisibilityConverter x:Key="boolToInvVis"/>
     </Application.Resources>
 </Application>

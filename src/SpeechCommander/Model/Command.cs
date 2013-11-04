@@ -8,49 +8,147 @@ using WindowsInput;
 namespace SpeechCommander.Model
 {
     [DataContract(Name = "Command", Namespace = "")]
-    public class Command
+    public class Command : System.ComponentModel.INotifyPropertyChanged
     {
         [DataMember()]
-        public string CommandName { get; set; }
+        public string CommandName
+        {
+            get
+            {
+                return commandName;
+            }
+            set
+            {
+                if (commandName != value)
+                {
+                    commandName = value;
+                    RaisePropertyChanged("CommandName");
+                }
+            }
+        }
+        private string commandName;
         [DataMember()]
-        public int Repeat { get; set; }
+        public int Repeat
+        {
+            get
+            {
+                return repeat;
+            }
+            set
+            {
+                if (repeat != value)
+                {
+                    repeat = value;
+                    RaisePropertyChanged("Repeat");
+                }
+            }
+        }
+        private int repeat;
         [DataMember()]
-        public int HeldDuration { get; set; }
+        public int HeldDuration
+        {
+            get
+            {
+                return heldDuration;
+            }
+            set
+            {
+                if (heldDuration != value)
+                {
+                    heldDuration = value;
+                    RaisePropertyChanged("HeldDuration");
+                }
+            }
+        }
+        private int heldDuration;
         [DataMember()]
-        public int PausedDuration { get; set; }
+        public int PausedDuration
+        {
+            get
+            {
+                return pausedDuration;
+            }
+            set
+            {
+                if (pausedDuration != value)
+                {
+                    pausedDuration = value;
+                    RaisePropertyChanged("PausedDuration");
+                }
+            }
+        }
+        private int pausedDuration;
         [DataMember()]
-        public bool ToggleKeypress { get; set; }
+        public bool ToggleKeypress
+        {
+            get
+            {
+                return toggleKeypress;
+            }
+            set
+            {
+                if (toggleKeypress != value)
+                {
+                    toggleKeypress = value;
+                    RaisePropertyChanged("ToggleKeypress");
+                }
+            }
+        }
+        private bool toggleKeypress;
         [DataMember()]
-        public string TextInput { get; set; }
+        public string TextInput
+        {
+            get
+            {
+                return textInput;
+            }
+            set
+            {
+                if (textInput != value)
+                {
+                    textInput = value;
+                    RaisePropertyChanged("TextInput");
+                }
+            }
+        }
+        private string textInput;
 
         private bool keyDown;
 
+        [DataMember()]//, EnumMember()]
         public Nullable<VirtualKeyCode> Key
         {
             get
             {
-                return this.key;
+                return key;
             }
             set
             {
-                this.key = value;
+                if (key != value)
+                {
+                    key = value;
+                    RaisePropertyChanged("Key");
+                }
             }
         }
-        [DataMember(), EnumMember()]
         private Nullable<VirtualKeyCode> key;
 
+        [DataMember()]//, EnumMember()]
         public Nullable<VirtualKeyCode> ModifierKey
         {
             get
             {
-                return this.modifierKey;
+                return modifierKey;
             }
             set
             {
-                this.modifierKey = value;
+                if (modifierKey != value)
+                {
+                    modifierKey = value;
+                    RaisePropertyChanged("ModifierKey");
+                }
             }
         }
-        [DataMember(), EnumMember()]
         private Nullable<VirtualKeyCode> modifierKey;
 
         public Command()
@@ -61,8 +159,8 @@ namespace SpeechCommander.Model
             this.PausedDuration = 25;
             this.ToggleKeypress = false;
             this.keyDown = false;
-            this.key = null;
-            this.modifierKey = null;
+            this.Key = null;
+            this.ModifierKey = null;
             this.TextInput = string.Empty;
         }
 
@@ -70,33 +168,33 @@ namespace SpeechCommander.Model
         {
             for (int i = 0; i < this.Repeat; ++i)
             {
-                if (ToggleKeypress && this.key != null)
+                if (ToggleKeypress && this.Key != null)
                 {
                     keyDown = !keyDown;
                     if (keyDown)
                     {
-                        if (this.modifierKey != null)
-                            InputSimulator.AsyncHoldKey((VirtualKeyCode)this.modifierKey);
-                        InputSimulator.AsyncHoldKey((VirtualKeyCode)this.key);
+                        if (this.ModifierKey != null)
+                            InputSimulator.AsyncHoldKey((VirtualKeyCode)this.ModifierKey);
+                        InputSimulator.AsyncHoldKey((VirtualKeyCode)this.Key);
                     }
                     else
                     {
-                        InputSimulator.AsyncReleaseKey((VirtualKeyCode)this.key);
-                        if (this.modifierKey != null)
-                            InputSimulator.AsyncReleaseKey((VirtualKeyCode)this.modifierKey);
+                        InputSimulator.AsyncReleaseKey((VirtualKeyCode)this.Key);
+                        if (this.ModifierKey != null)
+                            InputSimulator.AsyncReleaseKey((VirtualKeyCode)this.ModifierKey);
                     }
                 }
-                else if (TextInput != null && TextInput.Length > 0)
+                else if (this.TextInput != null && this.TextInput.Length > 0)
                 {
                     // Doesn't work yet!
                     InputSimulator.SimulateTextEntry(this.TextInput);
                 }
-                else if (this.key != null)
+                else if (this.Key != null)
                 {
-                    if (this.modifierKey != null)
-                        InputSimulator.SimulateModifiedKeyStroke((VirtualKeyCode)this.modifierKey, (VirtualKeyCode)this.key, this.HeldDuration);
+                    if (this.ModifierKey != null)
+                        InputSimulator.SimulateModifiedKeyStroke((VirtualKeyCode)this.ModifierKey, (VirtualKeyCode)this.Key, this.HeldDuration);
                     else
-                        InputSimulator.SimulateKeyPress((VirtualKeyCode)this.key, this.HeldDuration);
+                        InputSimulator.SimulateKeyPress((VirtualKeyCode)this.Key, this.HeldDuration);
                 }
                 System.Threading.Thread.Sleep(this.PausedDuration);
             }
@@ -106,5 +204,16 @@ namespace SpeechCommander.Model
         {
             return this.CommandName;
         }
+
+        public void RaisePropertyChanged(string name)
+        {
+            if (this.PropertyChanged != null)
+            {
+                this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(name));
+            }
+        }
+
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     }
 }

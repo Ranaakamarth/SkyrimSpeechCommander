@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections.ObjectModel;
 
 namespace SpeechCommander.Model
 {
@@ -73,7 +74,7 @@ namespace SpeechCommander.Model
             {
                 string filename = System.IO.Path.Combine(this.currentProfile.Dialogue.FilePath, FILE_DIALOGUETEXT);
 
-                List<Action> actionList = new List<Action>();
+                ObservableCollection<Action> actionList = new ObservableCollection<Action>();
                 bool readSuccess = true;
                 do
                 {

@@ -64,6 +64,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ActionCommand.cs" />
+    <Compile Include="BooleanToInverseVisibilityConverter.cs" />
     <Compile Include="Model\Action.cs" />
     <Compile Include="Model\Command.cs" />
     <Compile Include="Model\DialogueProfile.cs" />
@@ -82,17 +83,22 @@
     <Compile Include="Model\Profile.cs" />
     <Compile Include="Model\RecognitionEngine.cs" />
     <Compile Include="ViewModel\ActionTabViewModel.cs" />
+    <Compile Include="ViewModel\CommandsViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="View\ActionTab.xaml.cs">
       <DependentUpon>ActionTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\CommandsView.xaml.cs">
+      <DependentUpon>CommandsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProfileTab.xaml.cs">
       <DependentUpon>ProfileTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\TestControl.xaml.cs">
-      <DependentUpon>TestControl.xaml</DependentUpon>
-    </Compile>
     <Page Include="View\ActionTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CommandsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,10 +122,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\ProfileTab.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\TestControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

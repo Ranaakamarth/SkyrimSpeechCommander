@@ -4,26 +4,102 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
+using System.Collections.ObjectModel;
 
 namespace SpeechCommander.Model
 {
     [DataContract(Name="Action", Namespace="")]
-    public class Action
+    public class Action : System.ComponentModel.INotifyPropertyChanged
     {
         [DataMember()]
-        public string ActionName { get; set; }
+        public string ActionName
+        {
+            get
+            {
+                return actionName;
+            }
+            set
+            {
+                if (actionName != value)
+                {
+                    actionName = value;
+                    RaisePropertyChanged("ActionName");
+                }
+            }
+        }
+        private string actionName;
         [DataMember()]
-        public List<string> Phrases { get; set; }
+        public List<string> Phrases
+        {
+            get
+            {
+                return phrases;
+            }
+            set
+            {
+                if (phrases != value)
+                {
+                    phrases = value;
+                    RaisePropertyChanged("Phrases");
+                }
+            }
+        }
+        private List<string> phrases;
         [DataMember()]
-        public int Repeat { get; set; }
+        public int Repeat
+        {
+            get
+            {
+                return repeat;
+            }
+            set
+            {
+                if (repeat != value)
+                {
+                    repeat = value;
+                    RaisePropertyChanged("Repeat");
+                }
+            }
+        }
+        private int repeat;
         [DataMember()]
-        public int PausedDuration { get; set; }
+        public int PausedDuration
+        {
+            get
+            {
+                return pausedDuration;
+            }
+            set
+            {
+                if (pausedDuration != value)
+                {
+                    pausedDuration = value;
+                    RaisePropertyChanged("PausedDuration");
+                }
+            }
+        }
+        private int pausedDuration;
         [DataMember()]
-        public List<Command> Commands { get; set; }
+        public ObservableCollection<Command> Commands
+        {
+            get
+            {
+                return commands;
+            }
+            set
+            {
+                if (commands != value)
+                {
+                    commands = value;
+                    RaisePropertyChanged("Commands");
+                }
+            }
+        }
+        private ObservableCollection<Command> commands;
 
         public Action()
         {
-            this.Commands = new List<Command>();
+            this.Commands = new ObservableCollection<Command>();
             this.Phrases = new List<string>();
             this.Repeat = 1;
             this.PausedDuration = 25;
@@ -48,5 +124,15 @@ namespace SpeechCommander.Model
         {
             return this.ActionName;
         }
+
+        public void RaisePropertyChanged(string name)
+        {
+            if (this.PropertyChanged != null)
+            {
+                this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(name));
+            }
+        }
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     }
 }

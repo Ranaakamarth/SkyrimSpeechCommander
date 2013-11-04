@@ -52,8 +52,7 @@ namespace SpeechCommander.View
             }
         }
         // Using a DependencyProperty as the backing store for CurrentItem.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty SelectedItemProperty =
-            DependencyProperty.Register("SelectedItem", typeof(object), typeof(ListControl));
+        public static readonly DependencyProperty SelectedItemProperty = DependencyProperty.Register("SelectedItem", typeof(object), typeof(ListControl));
 
         public DataTemplate ItemTemplate
         {
@@ -70,8 +69,6 @@ namespace SpeechCommander.View
         }
         // Using a DependencyProperty as the backing store for ItemName.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ItemNameProperty = DependencyProperty.Register("ItemName", typeof(string), typeof(ListControl));
-
-
         #endregion
 
         #region Commands

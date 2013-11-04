@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SpeechCommander.ViewModel
 {
-    public class MainViewModel : System.ComponentModel.INotifyPropertyChanged
+    public class MainViewModel //: System.ComponentModel.INotifyPropertyChanged
     {
         private Model.Profile profile;
         public Model.Profile Profile
@@ -20,7 +20,7 @@ namespace SpeechCommander.ViewModel
                 if (this.profile != value)
                 {
                     this.profile = value;
-                    RaisePropertyChanged("Profile");
+                    //RaisePropertyChanged("Profile");
                     //this.ActionViewModel = new ActionTabViewModel() { Actions = this.Profile.Actions };
                 }
             }
@@ -38,7 +38,7 @@ namespace SpeechCommander.ViewModel
                 if (actionViewModel != value)
                 {
                     actionViewModel = value;
-                    RaisePropertyChanged("ActionViewModel");
+                    //RaisePropertyChanged("ActionViewModel");
                 }
             }
         }
@@ -46,23 +46,19 @@ namespace SpeechCommander.ViewModel
         public MainViewModel()
         {
             this.Profile = new Model.Profile();
-            this.Profile.Actions.Add(new Model.Action() { ActionName = "Action1", Repeat = 10 });
-            this.Profile.Actions.Add(new Model.Action() { ActionName = "Action2!", Repeat = 12 });
             this.ActionViewModel = new ActionTabViewModel() { Actions = Profile.Actions };
             //this.ActionTabViewModel = new ViewModel.ActionTabViewModel() { Actions = this.Profile.Actions };
             Console.WriteLine("Created View Model");
         }
 
-        
+        //public void RaisePropertyChanged(string name)
+        //{
+        //    if (this.PropertyChanged != null)
+        //    {
+        //        this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(name));
+        //    }
+        //}
 
-        public void RaisePropertyChanged(string name)
-        {
-            if (this.PropertyChanged != null)
-            {
-                this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(name));
-            }
-        }
-
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        //public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -28,26 +28,39 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <View:ListControl Margin="4" Grid.Column="0" Grid.Row="0" ListName="Actions"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="47"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <View:ListControl Margin="4" Grid.Column="0" Grid.Row="1" ListName="Actions"
                           List="{Binding Path=Actions}"
                           AddItemCommand="{Binding AddActionCommand}"
                           RemoveItemCommand="{Binding RemoveActionCommand}"
                           RenameItemCommand="{Binding RenameActionCommand}"
-                          SelectedItem="{Binding CurrentAction, Mode=TwoWay}">
+                          SelectedItem="{Binding CurrentAction, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          ItemName="{Binding ActionName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             <View:ListControl.ItemTemplate>
                 <DataTemplate DataType="{x:Type Model:Action}">
                     <TextBlock Text="{Binding ActionName}"/>
                 </DataTemplate>
             </View:ListControl.ItemTemplate>
         </View:ListControl>
-        <TabControl Grid.Column="1" TabStripPlacement="Top">
+        <TabControl Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" TabStripPlacement="Top">
             <TabItem Header="Phrases">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <View:ListControl Grid.Column="0" Grid.Row="0" ListName="Phrases"/>
+                    <View:ListControl Grid.Column="0" Grid.Row="0" 
+                                      List="{Binding Path=CurrentAction.Phrases}"
+                                      ItemName="{Binding Path=PhraseName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      SelectedItem="{Binding Path=CurrentPhrase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      ListName="Phrases"
+                                      AddItemCommand="{Binding AddPhraseCommand}"
+                                      RenameItemCommand="{Binding RenamePhraseCommand}"
+                                      RemoveItemCommand="{Binding RemovePhraseCommand}">
+                    </View:ListControl>
                    
              </Grid>
             </TabItem>
@@ -57,24 +70,24 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <View:ListControl Grid.Column="0" Grid.Row="0" ListName="Commands">
+                    <View:ListControl Grid.Column="0" Grid.Row="0" 
+                                      ItemName="{Binding CommandName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      SelectedItem="{Binding Path=CurrentCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      List="{Binding Path=CurrentAction.Commands}"
+                                      ListName="Commands"
+                                      AddItemCommand="{Binding AddCommandCommand}"
+                                      RenameItemCommand="{Binding RenameCommandCommand}"
+                                      RemoveItemCommand="{Binding RemoveCommandCommand}"
+                                      >
+                        <View:ListControl.ItemTemplate>
+                            <DataTemplate DataType="{x:Type Model:Command}">
+                                <TextBlock Text="{Binding CommandName}"/>
+                            </DataTemplate>
+                        </View:ListControl.ItemTemplate>
                     </View:ListControl>
-                    <ScrollViewer  Grid.Column="1" Grid.Row="0">
-                        <StackPanel Margin="20,0,0,0">
-                            <TextBlock Margin="5,10,5,0">Key</TextBlock>
-                            <ComboBox Margin="5"></ComboBox>
-                            <TextBlock Margin="5,10,5,0">Modifier Key</TextBlock>
-                            <ComboBox Margin="5" ></ComboBox>
-                            <TextBlock Margin="5,10,5,0">Toggle Key</TextBlock>
-                            <Controls:ToggleSwitch Margin="5,0,20,0"></Controls:ToggleSwitch>
-                            <TextBlock Margin="5,10,5,0">Held Duration</TextBlock>
-                            <Slider  Margin="5,10,5,5"/>
-                            <TextBlock Margin="5,10,5,0">Paused Duration</TextBlock>
-                            <Slider Margin="5,10,5,5"/>
-                            <TextBlock Margin="5,10,5,0">Repeat</TextBlock>
-                            <Slider Margin="5,10,5,5"/>
-                        </StackPanel>
-                    </ScrollViewer>
+                    <Controls:TransitioningContentControl Grid.Column="1" Grid.Row="0" 
+                           Transition="LeftTransition" Content="{Binding CommandsVM}">
+                    </Controls:TransitioningContentControl>
                 </Grid>
             </TabItem>
         </TabControl>

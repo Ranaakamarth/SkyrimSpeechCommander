@@ -36,9 +36,6 @@
             <TabControl TabStripPlacement="Left" Grid.Row="1" Grid.Column="0">
                 <TabItem Header="Profile">
                     <Grid>
-                        <ListBox SelectedItem="{Binding Test}"
-                                 ItemsSource="{Binding Profile.Actions}">
-                        </ListBox>
                         <!--<View:ProfileTab/>-->
                     </Grid>
                 </TabItem>

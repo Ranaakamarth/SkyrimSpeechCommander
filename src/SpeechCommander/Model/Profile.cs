@@ -3,34 +3,141 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.Serialization;
 using sp = System.Speech.Recognition;
+using System.Collections.ObjectModel;
+
 
 namespace SpeechCommander.Model
 {
     [DataContract(Name="Profile", Namespace="")]
-    public class Profile
+    public class Profile : System.ComponentModel.INotifyPropertyChanged
     {
         [DataMember()]
-        public List<Action> Actions { get; set; }
+        public ObservableCollection<Action> Actions
+        {
+            get
+            {
+                return actions;
+            }
+            set
+            {
+                if (actions != value)
+                {
+                    actions = value;
+                    RaisePropertyChanged("Actions");
+                }
+            }
+        }
+        private ObservableCollection<Action> actions;
         [DataMember()]
-        public string ProfileName { get; set; }
+        public string ProfileName
+        {
+            get
+            {
+                return profileName;
+            }
+            set
+            {
+                if (profileName != value)
+                {
+                    profileName = value;
+                    RaisePropertyChanged("ProfileName");
+                }
+            }
+        }
+        private string profileName;
         [DataMember()]
-        public double RequiredConfidence { get; set; }
+        public double RequiredConfidence
+        {
+            get
+            {
+                return requiredConfidence;
+            }
+            set
+            {
+                if (requiredConfidence != value)
+                {
+                    requiredConfidence = value;
+                    RaisePropertyChanged("RequiredConfidence");
+                }
+            }
+        }
+        private double requiredConfidence;
         [DataMember()]
-        public bool EnableVoicePausing { get; set; }
+        public bool EnableVoicePausing
+        {
+            get
+            {
+                return enableVoicePausing;
+            }
+            set
+            {
+                if (enableVoicePausing != value)
+                {
+                    enableVoicePausing = value;
+                    RaisePropertyChanged("EnableVoicePausing");
+                }
+            }
+        }
+        private bool enableVoicePausing;
         [DataMember()]
-        public List<string> PauseRecognitionPhrases { get; set; }
+        public ObservableCollection<string> PauseRecognitionPhrases
+        {
+            get
+            {
+                return pauseRecognitionPhrases;
+            }
+            set
+            {
+                if (pauseRecognitionPhrases != value)
+                {
+                    pauseRecognitionPhrases = value;
+                    RaisePropertyChanged("PauseRecognitionPhrases");
+                }
+            }
+        }
+        private ObservableCollection<string> pauseRecognitionPhrases;
         [DataMember()]
-        public List<string> UnpauseRecognitionPhrases { get; set; }
+        public ObservableCollection<string> UnpauseRecognitionPhrases
+        {
+            get
+            {
+                return unpauseRecognitionPhrases;
+            }
+            set
+            {
+                if (unpauseRecognitionPhrases != value)
+                {
+                    unpauseRecognitionPhrases = value;
+                    RaisePropertyChanged("UnpauseRecognitionPhrases");
+                }
+            }
+        }
+        private ObservableCollection<string> unpauseRecognitionPhrases;
         [DataMember()]
-        public DialogueProfile Dialogue { get; set; }
+        public DialogueProfile Dialogue
+        {
+            get
+            {
+                return dialogue;
+            }
+            set
+            {
+                if (dialogue != value)
+                {
+                    dialogue = value;
+                    RaisePropertyChanged("Dialogue");
+                }
+            }
+        }
+        private DialogueProfile dialogue;
 
         public sp.Grammar Grammar { get; set; }
 
         public Profile()
         {
-            this.Actions = new List<Action>();
-            this.PauseRecognitionPhrases = new List<string>();
-            this.UnpauseRecognitionPhrases = new List<string>();
+            this.Actions = new ObservableCollection<Action>();
+            this.PauseRecognitionPhrases = new ObservableCollection<string>();
+            this.UnpauseRecognitionPhrases = new ObservableCollection<string>();
             this.Dialogue = new DialogueProfile();
         }
 
@@ -71,11 +178,11 @@ namespace SpeechCommander.Model
 
 
             if (this.Actions == null)
-                this.Actions = new List<Action>();
+                this.Actions = new ObservableCollection<Action>();
             if (this.PauseRecognitionPhrases == null)
-                this.PauseRecognitionPhrases = new List<string>();
+                this.PauseRecognitionPhrases = new ObservableCollection<string>();
             if (this.UnpauseRecognitionPhrases == null)
-                this.UnpauseRecognitionPhrases = new List<string>();
+                this.UnpauseRecognitionPhrases = new ObservableCollection<string>();
             if (this.Dialogue == null)
                 this.Dialogue = new DialogueProfile();
         }
@@ -99,5 +206,15 @@ namespace SpeechCommander.Model
             this.Grammar.Name = this.ProfileName;
             return this.Grammar;
         }
+
+        public void RaisePropertyChanged(string name)
+        {
+            if (this.PropertyChanged != null)
+            {
+                this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(name));
+            }
+        }
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     }
 }
