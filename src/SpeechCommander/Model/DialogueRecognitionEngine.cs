@@ -89,7 +89,10 @@ namespace SpeechCommander.Model
                             {
                                 string text = rdr.ReadLine();
                                 if (text.Split('(')[0].Length > 0)
-                                    text = text.Split('(')[0].Replace('?', '.').Replace('\"', ' ');
+                                    text = text.Split('(')[0];
+                                text = System.Text.RegularExpressions.Regex.Replace(text, "[?\"!\\.]", "");
+
+                                //.Replace('?', '.').Replace('\"', ' ');
 
                                 Action action = new Action();
                                 action.ActionName = text;
