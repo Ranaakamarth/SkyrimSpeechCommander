@@ -6,21 +6,8 @@
         xmlns:Model="clr-namespace:SpeechCommander.Model"
         xmlns:ViewModel="clr-namespace:SpeechCommander.ViewModel"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        Title="MainWindow" Height="475" Width="Auto"
+        Title="SpeechCommander Builder" Height="500" Width="900"
         ShowTitleBar="False">
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
-                <ResourceDictionary  Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
     <Window.DataContext>
         <ViewModel:MainViewModel/>
     </Window.DataContext>
@@ -32,6 +19,16 @@
             <RowDefinition Height="40"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Menu IsMainMenu="True" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
+            <MenuItem Header="A">
+                <MenuItem Header="A1"/>
+                <MenuItem Header="A2"/>
+            </MenuItem>
+            <MenuItem Header="B">
+                <MenuItem Header="B1"/>
+                <MenuItem Header="B2"/>
+            </MenuItem>
+        </Menu>
         <TextBox Controls:TextboxHelper.Watermark="Profile Name" Margin="0,2.5,5,2.5" 
                  HorizontalAlignment="Left" VerticalContentAlignment="Center"
                  Grid.Column="0" Grid.Row="0" Width="200"
@@ -45,6 +42,28 @@
             <TabItem Header="Action">
                 <ContentControl Content="{Binding ActionVM}"/>
             </TabItem>
+            <TabItem Header="NewPage">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Controls:FlipView BannerText="Test"  >
+
+                    </Controls:FlipView>
+                </Grid>
+            </TabItem>
         </TabControl>
     </Grid>
+    <Controls:MetroWindow.WindowCommands>
+        <Controls:WindowCommands>
+            <Button>Hello there!</Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.WindowCommands>
 </Controls:MetroWindow>

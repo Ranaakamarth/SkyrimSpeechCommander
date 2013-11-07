@@ -9,20 +9,6 @@
              xmlns:Model="clr-namespace:SpeechCommander.Model"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="700">
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
-                <ResourceDictionary  Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </UserControl.Resources>
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -85,7 +71,7 @@
                         </View:ListControl.ItemTemplate>
                     </View:ListControl>
                     <Controls:TransitioningContentControl Grid.Column="1" Grid.Row="0" Margin="15,0,0,0"
-                           Transition="LeftTransition" Content="{Binding CommandsVM}">
+                            Transition="LeftReplace" Content="{Binding CommandsVM}">
                     </Controls:TransitioningContentControl>
                 </Grid>
             </TabItem>

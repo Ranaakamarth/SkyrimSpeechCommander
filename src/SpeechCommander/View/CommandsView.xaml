@@ -9,19 +9,6 @@
              xmlns:Model="clr-namespace:SpeechCommander.Model"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="300">
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
-                <ResourceDictionary  Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </UserControl.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Visible">
         <StackPanel>
             <TextBlock Margin="5,10,5,0">Key</TextBlock>
@@ -32,11 +19,11 @@
             <Controls:ToggleSwitch Margin="5,0,20,0" IsChecked="{Binding Path=Command.ToggleKeypress}"></Controls:ToggleSwitch>
             <StackPanel Visibility="{Binding Path=Command.ToggleKeypress, Converter={StaticResource ResourceKey=boolToInvVis}}">
                 <TextBlock Margin="5,10,5,0">Held Duration</TextBlock>
-                <Slider  Margin="5,10,5,5" Value="{Binding Path=Command.HeldDuration}" Minimum="1" Maximum="5000"/>
+                <Slider  Margin="5,10,5,5" Value="{Binding Path=Command.HeldDuration}" Minimum="1" Maximum="5000" Style="{StaticResource FlatSlider}" Width="Auto"/>
                 <TextBlock Margin="5,10,5,0">Paused Duration</TextBlock>
-                <Slider Margin="5,10,5,5" Value="{Binding Path=Command.PausedDuration}" Minimum="1" Maximum="5000"/>
+                <Slider Margin="5,10,5,5" Value="{Binding Path=Command.PausedDuration}" Minimum="1" Maximum="5000" Style="{StaticResource FlatSlider}" Width="Auto"/>
                 <TextBlock Margin="5,10,5,0">Repeat</TextBlock>
-                <Slider Margin="5,10,5,5" Value="{Binding Path=Command.Repeat}" Minimum="1" Maximum="20"/>
+                <Slider Margin="5,10,5,5" Value="{Binding Path=Command.Repeat}" Minimum="1" Maximum="20" Style="{StaticResource FlatSlider}" Width="Auto"/>
             </StackPanel>
         </StackPanel>
     </ScrollViewer>
