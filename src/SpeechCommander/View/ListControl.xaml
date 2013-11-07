@@ -9,7 +9,7 @@
              xmlns:ViewModel="clr-namespace:SpeechCommander.ViewModel"
              mc:Ignorable="d" 
              x:Name="ListUserControl"
-             d:DesignHeight="400" d:DesignWidth="250">
+             d:DesignHeight="400" d:DesignWidth="250" Width="250">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

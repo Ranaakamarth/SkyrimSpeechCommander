@@ -16,9 +16,16 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
                 <ResourceDictionary  Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml"/>
-
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ContentControl Content="{Binding VoicePausingVM}" Grid.Column="0"/>
+        <View:DialogueView Grid.Column="1"/>
 
+    </Grid>
 </UserControl>

@@ -92,6 +92,10 @@ namespace SpeechCommander.ViewModel
                 if (currentPhrase != value)
                 {
                     currentPhrase = value;
+                    if (this.currentPhrase != null)
+                        this.PhraseName = currentPhrase;
+                    else
+                        this.PhraseName = string.Empty;
                     RaisePropertyChanged("CurrentPhrase");
                 }
             }
@@ -111,13 +115,18 @@ namespace SpeechCommander.ViewModel
                     currentCommand = value;
                     if (this.currentCommand != null)
                     {
+                        this.CommandName = this.CurrentCommand.CommandName;
+
                         if (this.CommandsVM == null)
                             this.CommandsVM = new ViewModel.CommandsViewModel() { Command = this.CurrentCommand };
                         else
                             this.CommandsVM.Command = this.CurrentCommand;
                     }
                     else
+                    {
+                        this.CommandName = string.Empty;
                         this.CommandsVM = null;
+                    }
                     RaisePropertyChanged("CurrentCommand");
                 }
             }
@@ -158,41 +167,55 @@ namespace SpeechCommander.ViewModel
         }
         private string commandName;
 
-        public ActionTabViewModel()
+        public ActionTabViewModel(System.Collections.ObjectModel.ObservableCollection<Model.Action> actions)
         {
-            //this.CommandsVM = new CommandsViewModel() { Command = this.CurrentCommand };
+            this.Actions = actions;
+
             this.AddActionCommand = new ActionCommand(this.AddAction,
               () => this.ActionName != null &&
-                    !this.Actions.Any(act => act.ActionName == this.ActionName) &&
+                    !this.Actions.Any(act => act.ActionName == this.ActionName.Trim()) &&
                     this.ActionName.Trim().Length > 0);
             this.RemoveActionCommand = new ActionCommand(this.RemoveAction,
               () => this.CurrentAction != null);
             this.RenameActionCommand = new ActionCommand(this.RenameAction,
               () => this.ActionName != null &&
-                    this.CurrentAction != null && !this.Actions.Any(act => act.ActionName == this.ActionName) &&
+                    this.CurrentAction != null && !this.Actions.Any(act => act.ActionName == this.ActionName.Trim()) &&
                     this.ActionName.Trim().Length > 0);
 
             this.AddCommandCommand = new ActionCommand(this.AddCommand,
               () => this.CurrentAction != null &&
                     this.CommandName != null &&
-                    !this.currentAction.Commands.Any(cmd => cmd.CommandName == this.CommandName) &&
+                    !this.CurrentAction.Commands.Any(cmd => cmd.CommandName == this.CommandName.Trim()) &&
                     this.CommandName.Trim().Length > 0);
             this.RemoveCommandCommand = new ActionCommand(this.RemoveCommand,
-              () => this.CurrentAction != null);
+              () => this.CurrentAction != null &&
+                    this.CurrentCommand != null);
             this.RenameCommandCommand = new ActionCommand(this.RenameCommand,
               () => this.CurrentAction != null &&
                     this.CommandName != null &&
-                    !this.currentAction.Commands.Any(cmd => cmd.CommandName == this.CommandName) &&
+                    this.CurrentCommand != null &&
+                    !this.CurrentAction.Commands.Any(cmd => cmd.CommandName == this.CommandName.Trim()) &&
                     this.CommandName.Trim().Length > 0);
 
-            this.AddPhraseCommand = new ActionCommand(this.AddPhrase, () => true);
-            this.RenamePhraseCommand = new ActionCommand(this.RenamePhrase, () => true);
-            this.RemovePhraseCommand = new ActionCommand(this.RemovePhrase, () => true);
+            this.AddPhraseCommand = new ActionCommand(this.AddPhrase, 
+              () => this.CurrentAction != null &&
+                    this.PhraseName != null &&
+                    !this.CurrentAction.Phrases.Any(phr => phr == this.PhraseName.Trim()) &&
+                    this.PhraseName.Trim().Length > 0);
+            this.RemovePhraseCommand = new ActionCommand(this.RemovePhrase, 
+              () => this.CurrentAction != null &&
+            this.CurrentPhrase != null);
+            this.RenamePhraseCommand = new ActionCommand(this.RenamePhrase,               
+              () => this.CurrentAction != null &&
+                    this.PhraseName != null &&
+                    this.CurrentPhrase != null &&
+                    !this.CurrentAction.Phrases.Any(phr => phr == this.PhraseName.Trim()) &&
+                    this.PhraseName.Trim().Length > 0);
         }
 
         private void AddAction()
         {
-            Model.Action action = new Model.Action() { ActionName = this.ActionName };
+            Model.Action action = new Model.Action() { ActionName = this.ActionName.Trim() };
             this.Actions.Add(action);
             this.CurrentAction = action;
             //this.ActionName = string.Empty;
@@ -200,7 +223,7 @@ namespace SpeechCommander.ViewModel
 
         private void RenameAction()
         {
-            this.CurrentAction.ActionName = this.ActionName;
+            this.CurrentAction.ActionName = this.ActionName.Trim();
         }
 
         private void RemoveAction()
@@ -218,7 +241,7 @@ namespace SpeechCommander.ViewModel
 
         private void RenameCommand()
         {
-            this.CurrentCommand.CommandName = this.CommandName;
+            this.CurrentCommand.CommandName = this.CommandName.Trim();
         }
 
         private void RemoveCommand()
@@ -228,18 +251,20 @@ namespace SpeechCommander.ViewModel
 
         private void AddPhrase()
         {
-            this.CurrentAction.Phrases.Add(this.PhraseName);
-            this.CurrentPhrase = this.PhraseName;
+            this.CurrentAction.Phrases.Add(this.PhraseName.Trim());
+            this.CurrentPhrase = this.PhraseName.Trim();
         }
 
         private void RenamePhrase()
         {
-            this.CurrentPhrase = this.PhraseName;
+            int index = this.CurrentAction.Phrases.IndexOf(this.CurrentPhrase);
+            this.CurrentAction.Phrases[index] = this.PhraseName.Trim();
+            this.CurrentPhrase = this.CurrentAction.Phrases[index];
         }
 
         private void RemovePhrase()
         {
-            this.currentAction.Phrases.Remove(this.PhraseName);
+            this.CurrentAction.Phrases.Remove(this.CurrentPhrase);
         }
 
         #region ICommands

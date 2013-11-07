@@ -29,7 +29,7 @@ namespace SpeechCommander.Model
         }
         private string actionName;
         [DataMember()]
-        public List<string> Phrases
+        public ObservableCollection<string> Phrases
         {
             get
             {
@@ -44,7 +44,7 @@ namespace SpeechCommander.Model
                 }
             }
         }
-        private List<string> phrases;
+        private ObservableCollection<string> phrases;
         [DataMember()]
         public int Repeat
         {
@@ -100,7 +100,7 @@ namespace SpeechCommander.Model
         public Action()
         {
             this.Commands = new ObservableCollection<Command>();
-            this.Phrases = new List<string>();
+            this.Phrases = new ObservableCollection<string>();
             this.Repeat = 1;
             this.PausedDuration = 25;
         }

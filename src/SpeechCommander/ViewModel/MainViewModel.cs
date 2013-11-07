@@ -21,24 +21,42 @@ namespace SpeechCommander.ViewModel
                 {
                     this.profile = value;
                     //RaisePropertyChanged("Profile");
-                    //this.ActionViewModel = new ActionTabViewModel() { Actions = this.Profile.Actions };
+                    this.ActionVM = new ActionTabViewModel(this.Profile.Actions);
+                    this.ProfileVM = new ProfileViewModel(this.Profile);
                 }
             }
         }
 
-        private ViewModel.ActionTabViewModel actionViewModel;
-        public ViewModel.ActionTabViewModel ActionViewModel
+        private ViewModel.ActionTabViewModel actionVM;
+        public ViewModel.ActionTabViewModel ActionVM
         {
             get
             {
-                return actionViewModel;
+                return actionVM;
             }
             set
             {
-                if (actionViewModel != value)
+                if (actionVM != value)
                 {
-                    actionViewModel = value;
+                    actionVM = value;
                     //RaisePropertyChanged("ActionViewModel");
+                }
+            }
+        }
+
+        private ViewModel.ProfileViewModel profileVM;
+        public ViewModel.ProfileViewModel ProfileVM
+        {
+            get
+            {
+                return profileVM;
+            }
+            set
+            {
+                if (profileVM != value)
+                {
+                    profileVM = value;
+
                 }
             }
         }
@@ -46,7 +64,8 @@ namespace SpeechCommander.ViewModel
         public MainViewModel()
         {
             this.Profile = new Model.Profile();
-            this.ActionViewModel = new ActionTabViewModel() { Actions = Profile.Actions };
+            this.ActionVM = new ActionTabViewModel(this.Profile.Actions);
+            this.ProfileVM = new ProfileViewModel(this.Profile);
             //this.ActionTabViewModel = new ViewModel.ActionTabViewModel() { Actions = this.Profile.Actions };
             Console.WriteLine("Created View Model");
         }

@@ -6,7 +6,7 @@
         xmlns:Model="clr-namespace:SpeechCommander.Model"
         xmlns:ViewModel="clr-namespace:SpeechCommander.ViewModel"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        Title="MainWindow" Height="475" Width="800"
+        Title="MainWindow" Height="475" Width="Auto"
         ShowTitleBar="False">
     <Window.Resources>
         <ResourceDictionary>
@@ -24,27 +24,27 @@
     <Window.DataContext>
         <ViewModel:MainViewModel/>
     </Window.DataContext>
-        <Controls:MetroContentControl>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <TabControl TabStripPlacement="Left" Grid.Row="1" Grid.Column="0">
-                <TabItem Header="Profile">
-                    <Grid>
-                        <!--<View:ProfileTab/>-->
-                    </Grid>
-                </TabItem>
-                <TabItem Header="Action">
-                    <Grid>
-                        <ContentControl Content="{Binding ActionViewModel}"/>
-                    </Grid>
-                </TabItem>
-            </TabControl>
-        </Grid>
-    </Controls:MetroContentControl>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox Controls:TextboxHelper.Watermark="Profile Name" Margin="0,2.5,5,2.5" 
+                 HorizontalAlignment="Left" VerticalContentAlignment="Center"
+                 Grid.Column="0" Grid.Row="0" Width="200"
+                 BorderBrush="Transparent" FontSize="18"
+                 Text="{Binding Path=Profile.ProfileName}">
+        </TextBox>
+        <TabControl TabStripPlacement="Left" Grid.Row="1" Grid.Column="0">
+            <TabItem Header="Profile">
+                <ContentControl Content="{Binding ProfileVM}"/>
+            </TabItem>
+            <TabItem Header="Action">
+                <ContentControl Content="{Binding ActionVM}"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
 </Controls:MetroWindow>

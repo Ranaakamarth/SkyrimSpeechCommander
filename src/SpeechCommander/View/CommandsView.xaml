@@ -22,13 +22,14 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <StackPanel Margin="20,0,0,0">
-        <TextBlock Margin="5,10,5,0">Key</TextBlock>
-        <ComboBox Margin="5" SelectedItem="{Binding Path=Command.Key}"></ComboBox>
-        <TextBlock Margin="5,10,5,0">Modifier Key</TextBlock>
-        <ComboBox Margin="5" SelectedItem="{Binding Path=Command.ModifierKey}"></ComboBox>
-        <TextBlock Margin="5,10,5,0">Toggle Key</TextBlock>
-        <Controls:ToggleSwitch Margin="5,0,20,0" IsChecked="{Binding Path=Command.ToggleKeypress}"></Controls:ToggleSwitch>
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <StackPanel>
+            <TextBlock Margin="5,10,5,0">Key</TextBlock>
+            <ComboBox Margin="5" SelectedItem="{Binding Path=Command.Key}"></ComboBox>
+            <TextBlock Margin="5,10,5,0">Modifier Key</TextBlock>
+            <ComboBox Margin="5" SelectedItem="{Binding Path=Command.ModifierKey}"></ComboBox>
+            <TextBlock Margin="5,10,5,0">Toggle Key</TextBlock>
+            <Controls:ToggleSwitch Margin="5,0,20,0" IsChecked="{Binding Path=Command.ToggleKeypress}"></Controls:ToggleSwitch>
             <StackPanel Visibility="{Binding Path=Command.ToggleKeypress, Converter={StaticResource ResourceKey=boolToInvVis}}">
                 <TextBlock Margin="5,10,5,0">Held Duration</TextBlock>
                 <Slider  Margin="5,10,5,5" Value="{Binding Path=Command.HeldDuration}" Minimum="1" Maximum="5000"/>
@@ -37,5 +38,6 @@
                 <TextBlock Margin="5,10,5,0">Repeat</TextBlock>
                 <Slider Margin="5,10,5,5" Value="{Binding Path=Command.Repeat}" Minimum="1" Maximum="20"/>
             </StackPanel>
-    </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

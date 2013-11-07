@@ -61,7 +61,6 @@
                                       RenameItemCommand="{Binding RenamePhraseCommand}"
                                       RemoveItemCommand="{Binding RemovePhraseCommand}">
                     </View:ListControl>
-                   
              </Grid>
             </TabItem>
             <TabItem FlowDirection="LeftToRight" Header="Commands">
@@ -85,7 +84,7 @@
                             </DataTemplate>
                         </View:ListControl.ItemTemplate>
                     </View:ListControl>
-                    <Controls:TransitioningContentControl Grid.Column="1" Grid.Row="0" 
+                    <Controls:TransitioningContentControl Grid.Column="1" Grid.Row="0" Margin="15,0,0,0"
                            Transition="LeftTransition" Content="{Binding CommandsVM}">
                     </Controls:TransitioningContentControl>
                 </Grid>

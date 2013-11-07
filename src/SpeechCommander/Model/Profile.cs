@@ -135,6 +135,7 @@ namespace SpeechCommander.Model
 
         public Profile()
         {
+            this.ProfileName = string.Empty;
             this.Actions = new ObservableCollection<Action>();
             this.PauseRecognitionPhrases = new ObservableCollection<string>();
             this.UnpauseRecognitionPhrases = new ObservableCollection<string>();

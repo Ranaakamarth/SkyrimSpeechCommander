@@ -205,7 +205,11 @@ namespace SpeechCommander.Model
             Action action = new Action();
             action.ActionName = "Goodbye";
             action.Commands.Add(this.currentProfile.Dialogue.CommandCancel);
-            action.Phrases.AddRange(this.currentProfile.Dialogue.CancelPhrases);
+            foreach (var phrase in this.currentProfile.Dialogue.CancelPhrases)
+            {
+                action.Phrases.Add(phrase);
+            }
+            //action.Phrases.AddRange(this.currentProfile.Dialogue.CancelPhrases);
 
             return action;
         }

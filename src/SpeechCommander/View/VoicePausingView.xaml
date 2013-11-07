@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="SpeechCommander.View.VoicePausingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:View="clr-namespace:SpeechCommander.View" 
+             xmlns:Model="clr-namespace:SpeechCommander.Model"
+             xmlns:ViewModel="clr-namespace:SpeechCommander.ViewModel"
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="300" Width="250">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+            <Controls:ToggleSwitch Header="Voice Pausing" IsChecked="{Binding Path=Profile.EnableVoicePausing}" Grid.Row="0">
+        </Controls:ToggleSwitch>
+        <Grid Visibility="{Binding Path=Profile.EnableVoicePausing, Converter={StaticResource ResourceKey=boolToVis}}" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <View:ListControl Grid.Row="0" ListName="Pause Phrases"
+                              List="{Binding Path=Profile.PauseRecognitionPhrases}"
+                              ItemName="{Binding PausePhraseName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              SelectedItem="{Binding CurrentPausePhrase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              AddItemCommand="{Binding AddPausePhraseCommand}"
+                              RemoveItemCommand="{Binding RemovePausePhraseCommand}"
+                              RenameItemCommand="{Binding RenamePausePhraseCommand}"/>
+            <View:ListControl Grid.Row="1" ListName="Unpause Phrases"
+                              List="{Binding Path=Profile.UnpauseRecognitionPhrases}"
+                              ItemName="{Binding UnpausePhraseName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              SelectedItem="{Binding CurrentUnpausePhrase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              AddItemCommand="{Binding AddUnpausePhraseCommand}"
+                              RemoveItemCommand="{Binding RemoveUnpausePhraseCommand}"
+                              RenameItemCommand="{Binding RenameUnpausePhraseCommand}"/>
+        </Grid>
+    </Grid>
+</UserControl>
