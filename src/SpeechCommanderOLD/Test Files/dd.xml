@@ -1,1 +1,1045 @@
-<Profile xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><Actions><Action><ActionName>Action Key "E"</ActionName><Commands><Command><CommandName>e</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>VK_E</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Open door</a:string><a:string>Open lock</a:string><a:string>Speak</a:string><a:string>Give</a:string><a:string>Yes</a:string><a:string>Search it</a:string><a:string>Toggle</a:string><a:string>Select</a:string><a:string>Create it</a:string><a:string>Use it</a:string><a:string>My location</a:string><a:string>Mount horse</a:string><a:string>Dismount horse</a:string><a:string>Tell me please</a:string><a:string>Please tell me more</a:string><a:string>Hello there</a:string><a:string>Sit down</a:string><a:string>Close door</a:string><a:string>Take it</a:string><a:string>What's up</a:string><a:string>Drop it</a:string><a:string>wussup</a:string><a:string>How's it going</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Action Key "E" (Held)</ActionName><Commands><Command><CommandName>e (held)</CommandName><HeldDuration>1000</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>VK_E</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Grab it</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Action Key "F"</ActionName><Commands><Command><CommandName>F</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>VK_F</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Rename</a:string><a:string>Change View</a:string><a:string>Tag it</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Action Key "R"</ActionName><Commands><Command><CommandName>R</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>VK_R</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Drop</a:string><a:string>Store</a:string><a:string>Weapons down</a:string><a:string>draw</a:string><a:string>Take it all</a:string><a:string>Craft</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Action Key "Enter"</ActionName><Commands><Command><CommandName>Enter</CommandName><HeldDuration>25</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>RETURN</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Enter</a:string><a:string>Okay</a:string><a:string>Do it</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Action Key "Tab"</ActionName><Commands><Command><CommandName>Tab</CommandName><HeldDuration>25</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>TAB</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Exit Menu</a:string><a:string>Goodbye</a:string><a:string>See yuh</a:string><a:string>Audios</a:string><a:string>Never mind</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Action Key "X" (Delete)</ActionName><Commands><Command><CommandName>X</CommandName><HeldDuration>25</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>VK_X</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Delete it</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Favorites</ActionName><Commands><Command><CommandName>Q</CommandName><HeldDuration>25</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>VK_Q</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Favorites</a:string><a:string>Quick</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Inventory</ActionName><Commands><Command><CommandName>I</CommandName><HeldDuration>25</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>VK_I</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Inventory</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Journal</ActionName><Commands><Command><CommandName>J</CommandName><HeldDuration>25</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>VK_J</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Journal</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Local</ActionName><Commands><Command><CommandName>L</CommandName><HeldDuration>25</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>VK_L</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Local</a:string><a:string>Wide</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Map</ActionName><Commands><Command><CommandName>M</CommandName><HeldDuration>25</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>VK_M</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Show the map</a:string><a:string>Map off</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Skills</ActionName><Commands><Command><CommandName>Forward Slash</CommandName><HeldDuration>25</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>DIVIDE</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Open skills menu</a:string><a:string>Level up now</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Spellbook</ActionName><Commands><Command><CommandName>P</CommandName><HeldDuration>25</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>VK_P</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Spellbook</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Wait</ActionName><Commands><Command><CommandName>T</CommandName><HeldDuration>25</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>VK_T</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Wait</a:string><a:string>Time out</a:string><a:string>Charge weapon</a:string><a:string>Recharge</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Screenshot</ActionName><Commands><Command><CommandName>Printscreen</CommandName><HeldDuration>25</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>SNAPSHOT</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Screenshot</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Quit Game</ActionName><Commands><Command><CommandName>Console (tilde)</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>OEM_3</key><modifierKey i:nil="true"/></Command><Command><CommandName>Quit (q)</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>3</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>VK_Q</key><modifierKey i:nil="true"/></Command><Command><CommandName>Enter</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>RETURN</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Back to reality</a:string><a:string>Terminate</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Autorun</ActionName><Commands><Command><CommandName>C</CommandName><HeldDuration>25</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>VK_C</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Jog on</a:string><a:string>Jog off</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Sneak</ActionName><Commands><Command><CommandName>Left Control</CommandName><HeldDuration>25</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>LCONTROL</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Go sneaky</a:string><a:string>Go noisy</a:string><a:string>Stealth mode on</a:string><a:string>Stealth mode off</a:string><a:string>Stealth mode</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Sprint</ActionName><Commands><Command><CommandName>LShift Toggle</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>true</ToggleKeypress><key>LSHIFT</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Sprint</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Walk</ActionName><Commands><Command><CommandName>Caps lock</CommandName><HeldDuration>25</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>CAPITAL</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Walk</a:string><a:string>Run</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Faas Ru Maar (Dismay)</ActionName><Commands><Command><CommandName>alt f18</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F18</key><modifierKey>RMENU</modifierKey></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Fos Roo Mar</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Feim Zi Gron (Become Ethereal)</ActionName><Commands><Command><CommandName>F15</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F15</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Feem Zee Gron</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Fo Krah Diin (Frost Breath)</ActionName><Commands><Command><CommandName>F17</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F17</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Foe Krah Dean</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Fus Ro Da (Unrelenting Force)</ActionName><Commands><Command><CommandName>F21</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F21</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Foes Row Dah</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Iiz Slen Nus (Ice Form)</ActionName><Commands><Command><CommandName>F18</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F18</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Ease Slen Noose</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Kaan Drem Ov (Kynes Peace)</ActionName><Commands><Command><CommandName>alt f20</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F20</key><modifierKey>RMENU</modifierKey></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Kon Drem Ove</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Krii Lun Aus (Marked for Death)</ActionName><Commands><Command><CommandName>F14</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F14</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Kree Lune Aws</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Lass Ya Nir (Aura Whisper)</ActionName><Commands><Command><CommandName>alt f14</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F14</key><modifierKey>RMENU</modifierKey></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Lass Yah Near</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Lok Vah Koor (Clear Sky)</ActionName><Commands><Command><CommandName>alt f17</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F17</key><modifierKey>RMENU</modifierKey></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Lock Vah Core</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Oh Dah Viing (Call Dragon)</ActionName><Commands><Command><CommandName>alt f15</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F15</key><modifierKey>RMENU</modifierKey></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Oh Dah Ving</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Raan Mir Tah (Animal Allegiance)</ActionName><Commands><Command><CommandName>alt f13</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F13</key><modifierKey>RMENU</modifierKey></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Ron Mear Tah</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Joor Zah Frul (Dragonrend)</ActionName><Commands><Command><CommandName>alt f19</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F19</key><modifierKey>RMENU</modifierKey></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Your Zah Frul</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Strun Bah Qo (Storm Call)</ActionName><Commands><Command><CommandName>alt f21</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F21</key><modifierKey>RMENU</modifierKey></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Strune Bah Quo</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Su Grah Dun (Elemental Fury)</ActionName><Commands><Command><CommandName>F20</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F20</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Sew Grah Dun</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Tiid Klo Ul (Slow Time)</ActionName><Commands><Command><CommandName>F13</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F13</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Teed Kloe Ool</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Hun Kaal Zoor (Call of Valor)</ActionName><Commands><Command><CommandName>alt f16</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F16</key><modifierKey>RMENU</modifierKey></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Hun Call Zore</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Wuld Nah Kest (Whirlwind Sprint)</ActionName><Commands><Command><CommandName>F22</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F22</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Wooled Nah Kest</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Yol Toor Shul (Fire Breath)</ActionName><Commands><Command><CommandName>F16</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F16</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Yol Tore Shool</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Zul Mey Gut (Throw Voice)</ActionName><Commands><Command><CommandName>alt f22</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F22</key><modifierKey>RMENU</modifierKey></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Zul May Gut</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Zun Haal Viik (Disarm)</ActionName><Commands><Command><CommandName>F19</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>F19</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Zun Hall Veek</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Thu'um</ActionName><Commands><Command><CommandName>short z</CommandName><HeldDuration>25</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>VK_Z</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Thoom</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Thu'um Grah</ActionName><Commands><Command><CommandName>medium z</CommandName><HeldDuration>200</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>VK_Z</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Thoom Grah</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Thu'um Grah Mul</ActionName><Commands><Command><CommandName>long z</CommandName><HeldDuration>900</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput i:nil="true"/><ToggleKeypress>false</ToggleKeypress><key>VK_Z</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Thoom Grah Mull</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Equipt Bow</ActionName><Commands><Command><CommandName>2</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>VK_2</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Long Bow</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Equipt Fire</ActionName><Commands><Command><CommandName>3</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>VK_3</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Flames</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Equipt Healing</ActionName><Commands><Command><CommandName>4</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>VK_4</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Healing</a:string></Phrases><Repeat>1</Repeat></Action><Action><ActionName>Equipt Soul Trap</ActionName><Commands><Command><CommandName>5</CommandName><HeldDuration>50</HeldDuration><PausedDuration>25</PausedDuration><Repeat>1</Repeat><TextInput/><ToggleKeypress>false</ToggleKeypress><key>VK_5</key><modifierKey i:nil="true"/></Command></Commands><PausedDuration>25</PausedDuration><Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"><a:string>Soul Trap</a:string></Phrases><Repeat>1</Repeat></Action></Actions><Dialogue xmlns:a="http://schemas.datacontract.org/2004/07/SpeechCommander"><a:CancelPhrases i:nil="true" xmlns:b="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/><a:CommandAccept i:nil="true"/><a:CommandCancel i:nil="true"/><a:CommandNext i:nil="true"/><a:CommandPrevious i:nil="true"/><a:Enabled>false</a:Enabled><a:FilePath i:nil="true"/></Dialogue><EndTimeout>0</EndTimeout><ProfileName>Skyrim Commands</ProfileName><RequiredConfidence>0.75</RequiredConfidence></Profile>
+<Profile xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <Actions>
+    <Action>
+      <ActionName>Action Key "E"</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>e</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_E</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Open door</a:string>
+        <a:string>Open lock</a:string>
+        <a:string>Speak</a:string>
+        <a:string>Give</a:string>
+        <a:string>Yes</a:string>
+        <a:string>Search it</a:string>
+        <a:string>Toggle</a:string>
+        <a:string>Select</a:string>
+        <a:string>Create it</a:string>
+        <a:string>Use it</a:string>
+        <a:string>My location</a:string>
+        <a:string>Mount horse</a:string>
+        <a:string>Dismount horse</a:string>
+        <a:string>Tell me please</a:string>
+        <a:string>Please tell me more</a:string>
+        <a:string>Hello there</a:string>
+        <a:string>Sit down</a:string>
+        <a:string>Close door</a:string>
+        <a:string>Take it</a:string>
+        <a:string>What's up</a:string>
+        <a:string>Drop it</a:string>
+        <a:string>wussup</a:string>
+        <a:string>How's it going</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Action Key "E" (Held)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>e (held)</CommandName>
+          <HeldDuration>1000</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_E</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Grab it</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Action Key "F"</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>F</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_F</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Rename</a:string>
+        <a:string>Change View</a:string>
+        <a:string>Tag it</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Action Key "R"</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>R</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_R</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Drop</a:string>
+        <a:string>Store</a:string>
+        <a:string>Weapons down</a:string>
+        <a:string>draw</a:string>
+        <a:string>Take it all</a:string>
+        <a:string>Craft</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Action Key "Enter"</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>Enter</CommandName>
+          <HeldDuration>25</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>RETURN</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Enter</a:string>
+        <a:string>Okay</a:string>
+        <a:string>Do it</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Action Key "Tab"</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>Tab</CommandName>
+          <HeldDuration>25</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>TAB</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Exit Menu</a:string>
+        <a:string>Goodbye</a:string>
+        <a:string>See yuh</a:string>
+        <a:string>Audios</a:string>
+        <a:string>Never mind</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Action Key "X" (Delete)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>X</CommandName>
+          <HeldDuration>25</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_X</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Delete it</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Favorites</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>Q</CommandName>
+          <HeldDuration>25</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_Q</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Favorites</a:string>
+        <a:string>Quick</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Inventory</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>I</CommandName>
+          <HeldDuration>25</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_I</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Inventory</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Journal</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>J</CommandName>
+          <HeldDuration>25</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_J</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Journal</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Local</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>L</CommandName>
+          <HeldDuration>25</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_L</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Local</a:string>
+        <a:string>Wide</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Map</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>M</CommandName>
+          <HeldDuration>25</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_M</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Show the map</a:string>
+        <a:string>Map off</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Skills</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>Forward Slash</CommandName>
+          <HeldDuration>25</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>DIVIDE</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Open skills menu</a:string>
+        <a:string>Level up now</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Spellbook</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>P</CommandName>
+          <HeldDuration>25</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_P</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Spellbook</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Wait</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>T</CommandName>
+          <HeldDuration>25</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_T</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Wait</a:string>
+        <a:string>Time out</a:string>
+        <a:string>Charge weapon</a:string>
+        <a:string>Recharge</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Screenshot</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>Printscreen</CommandName>
+          <HeldDuration>25</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>SNAPSHOT</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Screenshot</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Quit Game</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>Console (tilde)</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>OEM_3</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+        <Command>
+          <CommandName>Quit (q)</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>3</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_Q</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+        <Command>
+          <CommandName>Enter</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>RETURN</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Back to reality</a:string>
+        <a:string>Terminate</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Autorun</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>C</CommandName>
+          <HeldDuration>25</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_C</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Jog on</a:string>
+        <a:string>Jog off</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Sneak</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>Left Control</CommandName>
+          <HeldDuration>25</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>LCONTROL</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Go sneaky</a:string>
+        <a:string>Go noisy</a:string>
+        <a:string>Stealth mode on</a:string>
+        <a:string>Stealth mode off</a:string>
+        <a:string>Stealth mode</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Sprint</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>LShift Toggle</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>true</ToggleKeypress>
+          <key>LSHIFT</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Sprint</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Walk</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>Caps lock</CommandName>
+          <HeldDuration>25</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>CAPITAL</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Walk</a:string>
+        <a:string>Run</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Faas Ru Maar (Dismay)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>alt f18</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F18</key>
+          <modifierKey>RMENU</modifierKey>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Fos Roo Mar</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Feim Zi Gron (Become Ethereal)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>F15</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F15</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Feem Zee Gron</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Fo Krah Diin (Frost Breath)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>F17</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F17</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Foe Krah Dean</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Fus Ro Da (Unrelenting Force)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>F21</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F21</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Foes Row Dah</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Iiz Slen Nus (Ice Form)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>F18</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F18</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Ease Slen Noose</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Kaan Drem Ov (Kynes Peace)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>alt f20</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F20</key>
+          <modifierKey>RMENU</modifierKey>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Kon Drem Ove</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Krii Lun Aus (Marked for Death)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>F14</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F14</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Kree Lune Aws</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Lass Ya Nir (Aura Whisper)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>alt f14</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F14</key>
+          <modifierKey>RMENU</modifierKey>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Lass Yah Near</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Lok Vah Koor (Clear Sky)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>alt f17</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F17</key>
+          <modifierKey>RMENU</modifierKey>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Lock Vah Core</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Oh Dah Viing (Call Dragon)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>alt f15</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F15</key>
+          <modifierKey>RMENU</modifierKey>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Oh Dah Ving</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Raan Mir Tah (Animal Allegiance)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>alt f13</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F13</key>
+          <modifierKey>RMENU</modifierKey>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Ron Mear Tah</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Joor Zah Frul (Dragonrend)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>alt f19</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F19</key>
+          <modifierKey>RMENU</modifierKey>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Your Zah Frul</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Strun Bah Qo (Storm Call)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>alt f21</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F21</key>
+          <modifierKey>RMENU</modifierKey>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Strune Bah Quo</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Su Grah Dun (Elemental Fury)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>F20</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F20</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Sew Grah Dun</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Tiid Klo Ul (Slow Time)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>F13</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F13</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Teed Kloe Ool</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Hun Kaal Zoor (Call of Valor)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>alt f16</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F16</key>
+          <modifierKey>RMENU</modifierKey>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Hun Call Zore</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Wuld Nah Kest (Whirlwind Sprint)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>F22</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F22</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Wooled Nah Kest</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Yol Toor Shul (Fire Breath)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>F16</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F16</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Yol Tore Shool</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Zul Mey Gut (Throw Voice)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>alt f22</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F22</key>
+          <modifierKey>RMENU</modifierKey>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Zul May Gut</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Zun Haal Viik (Disarm)</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>F19</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>F19</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Zun Hall Veek</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Thu'um</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>short z</CommandName>
+          <HeldDuration>25</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_Z</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Thoom</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Thu'um Grah</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>medium z</CommandName>
+          <HeldDuration>200</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_Z</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Thoom Grah</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Thu'um Grah Mul</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>long z</CommandName>
+          <HeldDuration>900</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput i:nil="true"/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_Z</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Thoom Grah Mull</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Equipt Bow</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>2</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_2</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Long Bow</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Equipt Fire</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>3</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_3</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Flames</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Equipt Healing</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>4</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_4</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Healing</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+    <Action>
+      <ActionName>Equipt Soul Trap</ActionName>
+      <Commands>
+        <Command>
+          <CommandName>5</CommandName>
+          <HeldDuration>50</HeldDuration>
+          <PausedDuration>25</PausedDuration>
+          <Repeat>1</Repeat>
+          <TextInput/>
+          <ToggleKeypress>false</ToggleKeypress>
+          <key>VK_5</key>
+          <modifierKey i:nil="true"/>
+        </Command>
+      </Commands>
+      <PausedDuration>25</PausedDuration>
+      <Phrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+        <a:string>Soul Trap</a:string>
+      </Phrases>
+      <Repeat>1</Repeat>
+    </Action>
+  </Actions>
+  <Dialogue xmlns:a="http://schemas.datacontract.org/2004/07/SpeechCommander">
+    <a:CancelPhrases i:nil="true" xmlns:b="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+    <a:CommandAccept i:nil="true"/>
+    <a:CommandCancel i:nil="true"/>
+    <a:CommandNext i:nil="true"/>
+    <a:CommandPrevious i:nil="true"/>
+    <a:Enabled>false</a:Enabled>
+    <a:FilePath i:nil="true"/>
+  </Dialogue>
+  <EndTimeout>0</EndTimeout>
+  <ProfileName>Skyrim Commandss</ProfileName>
+  <RequiredConfidence>0.75</RequiredConfidence>
+</Profile>

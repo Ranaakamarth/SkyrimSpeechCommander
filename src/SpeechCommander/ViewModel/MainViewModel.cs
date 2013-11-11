@@ -86,18 +86,29 @@ namespace SpeechCommander.ViewModel
             this.ProfileVM = new ProfileViewModel(this.Profile);
             this.Engine = new Model.DialogueRecognitionEngine();
 
-            this.NewProfileCommand  = new ActionCommand( NewProfile, () => true);
-            this.OpenProfileCommand = new ActionCommand( OpenProfile, () => true);
-            this.SaveProfileCommand = new ActionCommand( SaveProfile, () => true);
+            this.NewProfileCommand = new ActionCommand(NewProfile, () => true);
+            this.OpenProfileCommand = new ActionCommand(OpenProfile, () => true);
+            this.SaveProfileCommand = new ActionCommand(SaveProfile, () => true);
 
-            this.StartRecognitionCommand = new ActionCommand(StartRecognition, () => this.Profile.Actions.Count > 0 && !Engine.Running);
+            this.StartRecognitionCommand = new ActionCommand(StartRecognition, () =>
+                {
+                    bool atleastOnePhrase = false;
+                    foreach (Model.Action act in this.Profile.Actions)
+                    {
+                        if (act.Phrases.Count > 0)
+                        {
+                            atleastOnePhrase = true;
+                            break;
+                        }
+                    }
+                    return this.Profile.Actions.Count > 0 && !this.Engine.Running && atleastOnePhrase;
+                });
             this.StopRecognitionCommand = new ActionCommand(StopRecognition, () => Engine.Running);
         }
 
         private void StartRecognition()
         {
             Engine.LoadProfile(this.Profile);
-            //Engine = new Model.DialogueRecognitionEngine(this.Profile);
             Engine.StartAsync(System.Speech.Recognition.RecognizeMode.Multiple);
         }
 

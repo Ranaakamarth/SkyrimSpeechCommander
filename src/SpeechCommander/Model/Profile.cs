@@ -183,6 +183,7 @@ namespace SpeechCommander.Model
 
         public sp.Grammar UpdateGrammar()
         {
+            bool atLeastOnePhrase = false;
             sp.Choices choices = new sp.Choices();
             foreach (Action action in this.Actions)
             {
@@ -191,14 +192,19 @@ namespace SpeechCommander.Model
                     sp.SemanticResultValue temp = new sp.SemanticResultValue(phrase, action.ActionName);
 
                     choices.Add(temp);
+                    atLeastOnePhrase = true;
                 }
             }
-
-            sp.GrammarBuilder builder = new sp.GrammarBuilder();
-            builder.Append(new sp.SemanticResultKey("command", choices));
-            this.Grammar = new sp.Grammar(builder);
-            this.Grammar.Name = this.ProfileName;
-            return this.Grammar;
+            if (atLeastOnePhrase)
+            {
+                sp.GrammarBuilder builder = new sp.GrammarBuilder();
+                builder.Append(new sp.SemanticResultKey("command", choices));
+                this.Grammar = new sp.Grammar(builder);
+                this.Grammar.Name = this.ProfileName;
+                return this.Grammar;
+            }
+            else
+                return null;
         }
 
         public void RaisePropertyChanged(string name)
