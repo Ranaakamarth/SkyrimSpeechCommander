@@ -6,11 +6,39 @@
         xmlns:Model="clr-namespace:SpeechCommander.Model"
         xmlns:ViewModel="clr-namespace:SpeechCommander.ViewModel"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        Title="SpeechCommander Builder" Height="500" Width="900"
+        xmlns:winput="clr-namespace:WindowsInput"
+        Title="SpeechCommander Builder" Height="525" Width="900" 
         ShowTitleBar="False">
+    <Window.Resources>
+    </Window.Resources>
     <Window.DataContext>
         <ViewModel:MainViewModel/>
     </Window.DataContext>
+    <Window.Style>
+        <Style TargetType="Controls:MetroWindow">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Engine.Running}" Value="True">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation To="10" Storyboard.TargetProperty="(Window.Effect).(BlurEffect.Radius)" Duration="0:0:0.5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.EnterActions>
+                    <DataTrigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation From="10" Storyboard.TargetProperty="(Window.Effect).(BlurEffect.Radius)"  Duration="0:0:0.5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </DataTrigger.ExitActions>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Style>
+    <Window.Effect>
+        <BlurEffect x:Name="blurEffect" Radius="0"/>
+    </Window.Effect>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -19,51 +47,126 @@
             <RowDefinition Height="40"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Menu IsMainMenu="True" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
-            <MenuItem Header="A">
-                <MenuItem Header="A1"/>
-                <MenuItem Header="A2"/>
-            </MenuItem>
-            <MenuItem Header="B">
-                <MenuItem Header="B1"/>
-                <MenuItem Header="B2"/>
-            </MenuItem>
-        </Menu>
         <TextBox Controls:TextboxHelper.Watermark="Profile Name" Margin="0,2.5,5,2.5" 
                  HorizontalAlignment="Left" VerticalContentAlignment="Center"
                  Grid.Column="0" Grid.Row="0" Width="200"
                  BorderBrush="Transparent" FontSize="18"
                  Text="{Binding Path=Profile.ProfileName}">
         </TextBox>
-        <TabControl TabStripPlacement="Left" Grid.Row="1" Grid.Column="0">
+        <TabControl Grid.Row="1" Grid.Column="0">
             <TabItem Header="Profile">
                 <ContentControl Content="{Binding ProfileVM}"/>
             </TabItem>
             <TabItem Header="Action">
                 <ContentControl Content="{Binding ActionVM}"/>
             </TabItem>
-            <TabItem Header="NewPage">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Controls:FlipView BannerText="Test"  >
-
-                    </Controls:FlipView>
-                </Grid>
-            </TabItem>
         </TabControl>
     </Grid>
     <Controls:MetroWindow.WindowCommands>
         <Controls:WindowCommands>
-            <Button>Hello there!</Button>
+            <Button Click="ToggleFileMenuFlyout">File</Button>
+            <Button>
+                <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                        <Setter Property="ToolTip" Value="Start Recognition"/>
+                        <Setter Property="Command" Value="{Binding StartRecognitionCommand}"/>
+                        <Setter Property="Content">
+                            <Setter.Value>
+                                <Rectangle Width="20" Height="20">
+                                    <Rectangle.Fill>
+                                        <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_play}" />
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Background"
+                                        Value="{DynamicResource TransparentWhiteBrush}" />
+                    <Setter Property="HorizontalContentAlignment"
+                                        Value="Center" />
+                    <Setter Property="VerticalContentAlignment"
+                                        Value="Center" />
+                    <Setter Property="Padding"
+                                        Value="1" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Grid Background="{TemplateBinding Background}">
+                                    <ContentPresenter x:Name="contentPresenter"
+                                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                                  RecognizesAccessKey="True"
+                                                                  Opacity="0.75"
+                                                                  Margin="11,1,11,1" />
+
+                                    <Rectangle x:Name="border"
+                                                           SnapsToDevicePixels="True"
+                                                           IsHitTestVisible="False"
+                                                           Opacity="0.25"
+                                                           Width="1"
+                                                           Height="15"
+                                                           VerticalAlignment="Stretch"
+                                                           HorizontalAlignment="Right"
+                                                           Fill="{TemplateBinding Foreground}"
+                                                           Margin="10,0,0,0" />
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver"
+                                                         Value="True">
+                                        <Setter TargetName="contentPresenter"
+                                                            Property="Opacity"
+                                                            Value="1" />
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver"
+                                                         Value="False">
+                                        <Setter TargetName="contentPresenter"
+                                                            Property="Opacity"
+                                                            Value=".5" />
+                                    </Trigger>
+                                    <Trigger Property="IsEnabled"
+                                                         Value="false">
+                                        <Setter Property="Foreground"
+                                                            Value="#ADADAD" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ShowTitleBar, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:MetroWindow}}}"
+                                                 Value="True">
+                            <Setter Property="Foreground"
+                                                Value="White" />
+                        </DataTrigger>
+                            <DataTrigger Binding="{Binding Path=Engine.Running}" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Rectangle Width="20" Height="20">
+                                            <Rectangle.Fill>
+                                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_pause}" />
+                                            </Rectangle.Fill>
+                                        </Rectangle>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Command" Value="{Binding StopRecognitionCommand}"/>
+                                <Setter Property="ToolTip" Value="Stop Recognition"/>
+                            </DataTrigger>
+
+                        </Style.Triggers>
+                </Style>
+                </Button.Style>
+            </Button>
         </Controls:WindowCommands>
     </Controls:MetroWindow.WindowCommands>
+    <Controls:MetroWindow.Flyouts>
+        <Controls:FlyoutsControl HorizontalAlignment="Right">
+            <Controls:Flyout x:Name="FileFlyout" Width="250" Header="File" Position="Top">
+                <StackPanel Margin="0,40,0,0">
+                    <Button Content="New Profile" Click="ToggleFileMenuFlyout" Command="{Binding NewProfileCommand}"/>
+                    <Button Content="Open Profile" Click="ToggleFileMenuFlyout" Command="{Binding OpenProfileCommand}"/>
+                    <Button Content="Save Profile" Click="ToggleFileMenuFlyout" Command="{Binding SaveProfileCommand}"/>
+                </StackPanel>
+            </Controls:Flyout>
+        </Controls:FlyoutsControl>
+    </Controls:MetroWindow.Flyouts>
 </Controls:MetroWindow>

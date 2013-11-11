@@ -156,36 +156,29 @@ namespace SpeechCommander.Model
             serializer.WriteObject(stream, this);
         }
 
-        public void Open(string filename)
+        public static Profile Open(string filename)
         {
             using (System.IO.FileStream stream = System.IO.File.OpenRead(filename))
             {
-                this.Open(stream);
+                return Profile.Open(stream);
             }
         }
 
-        public void Open(System.IO.Stream stream)
+        public static Profile Open(System.IO.Stream stream)
         {
             DataContractSerializer serializer = new DataContractSerializer(typeof(Profile));
             Profile openedProfile = serializer.ReadObject(stream) as Profile;
 
-            this.ProfileName = openedProfile.ProfileName;
-            this.Actions = openedProfile.Actions;
-            this.RequiredConfidence = openedProfile.RequiredConfidence;
-            this.PauseRecognitionPhrases = openedProfile.PauseRecognitionPhrases;
-            this.UnpauseRecognitionPhrases = openedProfile.UnpauseRecognitionPhrases;
-            this.EnableVoicePausing = openedProfile.EnableVoicePausing;
-            this.Dialogue = openedProfile.Dialogue;
+            if (openedProfile.Actions == null)
+                openedProfile.Actions = new ObservableCollection<Action>();
+            if (openedProfile.PauseRecognitionPhrases == null)
+                openedProfile.PauseRecognitionPhrases = new ObservableCollection<string>();
+            if (openedProfile.UnpauseRecognitionPhrases == null)
+                openedProfile.UnpauseRecognitionPhrases = new ObservableCollection<string>();
+            if (openedProfile.Dialogue == null)
+                openedProfile.Dialogue = new DialogueProfile();
 
-
-            if (this.Actions == null)
-                this.Actions = new ObservableCollection<Action>();
-            if (this.PauseRecognitionPhrases == null)
-                this.PauseRecognitionPhrases = new ObservableCollection<string>();
-            if (this.UnpauseRecognitionPhrases == null)
-                this.UnpauseRecognitionPhrases = new ObservableCollection<string>();
-            if (this.Dialogue == null)
-                this.Dialogue = new DialogueProfile();
+            return openedProfile;
         }
 
         public sp.Grammar UpdateGrammar()

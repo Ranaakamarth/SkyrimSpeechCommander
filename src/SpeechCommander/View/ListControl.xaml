@@ -18,7 +18,6 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
         <ListBox x:Name="Testlist" Grid.Column="0" Grid.Row="0" Margin="5"
             SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
             ItemsSource="{Binding List}"
@@ -35,22 +34,36 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Grid.Resources>
-                <ResourceDictionary>
-                    <ResourceDictionary.MergedDictionaries>
-                        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
-                    </ResourceDictionary.MergedDictionaries>
-                </ResourceDictionary>
-            </Grid.Resources>
             <TextBox VerticalContentAlignment="Center" 
                      Controls:TextboxHelper.Watermark="{Binding ListName}" Controls:TextboxHelper.ClearTextButton="True" 
                      Margin="2.5,5,2.5,5" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0"
-                     Text="{Binding ItemName, UpdateSourceTrigger=PropertyChanged}">
+                     Text="{Binding ItemName, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding ListName}">
             </TextBox>
             <!--Text="{Binding ItemName, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"-->
-            <Button Grid.Column="0" Grid.Row="1" Background="Transparent" Command="{Binding AddItemCommand}">Add</Button>
-            <Button Grid.Column="1" Grid.Row="1" Background="Transparent" Command="{Binding RemoveItemCommand}">Remove</Button>
-            <Button Grid.Column="2" Grid.Row="1" Background="Transparent" Command="{Binding RenameItemCommand}">Rename</Button>
+            <Button Grid.Column="0" Grid.Row="1" Command="{Binding AddItemCommand}" 
+                    Style="{DynamicResource CircleButton}" Width="50" Height="50" ToolTip="Add">
+                <Rectangle Width="20" Height="20">
+                    <Rectangle.Fill>
+                        <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_add}" />
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Button>
+            <Button Grid.Column="1" Grid.Row="1" Command="{Binding RemoveItemCommand}"
+                    Style="{DynamicResource CircleButton}" Width="50" Height="50" ToolTip="Remove">
+                <Rectangle Width="20" Height="20">
+                    <Rectangle.Fill>
+                        <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_close}" />
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Button>
+            <Button Grid.Column="2" Grid.Row="1"  Command="{Binding RenameItemCommand}"
+                    Style="{DynamicResource CircleButton}" Width="50" Height="50" ToolTip="Rename">
+                <Rectangle Width="20" Height="20">
+                    <Rectangle.Fill>
+                        <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_refresh}" />
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Button>
         </Grid>
     </Grid>
 </UserControl>

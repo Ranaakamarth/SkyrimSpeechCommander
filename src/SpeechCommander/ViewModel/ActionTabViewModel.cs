@@ -37,10 +37,26 @@ namespace SpeechCommander.ViewModel
                 if (currentAction != value)
                 {
                     currentAction = value;
-                    if (this.currentAction != null && this.currentAction.ActionName != null)
-                        this.ActionName = currentAction.ActionName;
+                    if (this.currentAction != null)
+                    {
+                        if (this.ActionVM == null)
+                            this.ActionVM = new ActionViewModel(this.CurrentAction);
+                        else
+                            this.ActionVM.Action = this.CurrentAction;
+
+                        if (this.CurrentAction.Commands.Count == 1)
+                        {
+                            this.ActionVM.CurrentCommand = this.CurrentAction.Commands[0];
+                        }
+
+                        if (this.currentAction.ActionName != null)
+                            this.ActionName = currentAction.ActionName;
+                        else
+                            this.ActionName = string.Empty;
+                    }
                     else
-                        this.ActionName = string.Empty;
+                        this.ActionVM = null;
+
                     RaisePropertyChanged("CurrentAction");
                 }
             }
@@ -64,108 +80,22 @@ namespace SpeechCommander.ViewModel
         }
         private string actionName;
 
-        public string PhraseName
+        public ActionViewModel ActionVM
         {
             get
             {
-                return phraseName;
+                return actionVM;
             }
             set
             {
-                if (phraseName != value)
+                if (actionVM != value)
                 {
-                    phraseName = value;
-                    RaisePropertyChanged("PhraseName");
+                    actionVM = value;
+                    RaisePropertyChanged("ActionVM");
                 }
             }
         }
-        private string phraseName;
-
-        public string CurrentPhrase
-        {
-            get
-            {
-                return currentPhrase;
-            }
-            set
-            {
-                if (currentPhrase != value)
-                {
-                    currentPhrase = value;
-                    if (this.currentPhrase != null)
-                        this.PhraseName = currentPhrase;
-                    else
-                        this.PhraseName = string.Empty;
-                    RaisePropertyChanged("CurrentPhrase");
-                }
-            }
-        }
-        private string currentPhrase;
-
-        public Model.Command CurrentCommand
-        {
-            get
-            {
-                return currentCommand;
-            }
-            set
-            {
-                if (currentCommand != value)
-                {
-                    currentCommand = value;
-                    if (this.currentCommand != null)
-                    {
-                        this.CommandName = this.CurrentCommand.CommandName;
-
-                        if (this.CommandsVM == null)
-                            this.CommandsVM = new ViewModel.CommandsViewModel() { Command = this.CurrentCommand };
-                        else
-                            this.CommandsVM.Command = this.CurrentCommand;
-                    }
-                    else
-                    {
-                        this.CommandName = string.Empty;
-                        this.CommandsVM = null;
-                    }
-                    RaisePropertyChanged("CurrentCommand");
-                }
-            }
-        }
-        private Model.Command currentCommand;
-
-        public ViewModel.CommandsViewModel CommandsVM
-        {
-            get
-            {
-                return this.commandVM;
-            }
-            set
-            {
-                if (commandVM != value)
-                {
-                    commandVM = value;
-                    RaisePropertyChanged("CommandsVM");
-                }
-            }
-        }
-        private ViewModel.CommandsViewModel commandVM;
-
-        public string CommandName
-        {
-            get
-            {
-                return commandName;
-            }
-            set
-            {
-                if (commandName != value)
-                {
-                    commandName = value;
-                    RaisePropertyChanged("CommandName");
-                }
-            }
-        }
-        private string commandName;
+        private ActionViewModel actionVM;
 
         public ActionTabViewModel(System.Collections.ObjectModel.ObservableCollection<Model.Action> actions)
         {
@@ -181,36 +111,6 @@ namespace SpeechCommander.ViewModel
               () => this.ActionName != null &&
                     this.CurrentAction != null && !this.Actions.Any(act => act.ActionName == this.ActionName.Trim()) &&
                     this.ActionName.Trim().Length > 0);
-
-            this.AddCommandCommand = new ActionCommand(this.AddCommand,
-              () => this.CurrentAction != null &&
-                    this.CommandName != null &&
-                    !this.CurrentAction.Commands.Any(cmd => cmd.CommandName == this.CommandName.Trim()) &&
-                    this.CommandName.Trim().Length > 0);
-            this.RemoveCommandCommand = new ActionCommand(this.RemoveCommand,
-              () => this.CurrentAction != null &&
-                    this.CurrentCommand != null);
-            this.RenameCommandCommand = new ActionCommand(this.RenameCommand,
-              () => this.CurrentAction != null &&
-                    this.CommandName != null &&
-                    this.CurrentCommand != null &&
-                    !this.CurrentAction.Commands.Any(cmd => cmd.CommandName == this.CommandName.Trim()) &&
-                    this.CommandName.Trim().Length > 0);
-
-            this.AddPhraseCommand = new ActionCommand(this.AddPhrase, 
-              () => this.CurrentAction != null &&
-                    this.PhraseName != null &&
-                    !this.CurrentAction.Phrases.Any(phr => phr == this.PhraseName.Trim()) &&
-                    this.PhraseName.Trim().Length > 0);
-            this.RemovePhraseCommand = new ActionCommand(this.RemovePhrase, 
-              () => this.CurrentAction != null &&
-            this.CurrentPhrase != null);
-            this.RenamePhraseCommand = new ActionCommand(this.RenamePhrase,               
-              () => this.CurrentAction != null &&
-                    this.PhraseName != null &&
-                    this.CurrentPhrase != null &&
-                    !this.CurrentAction.Phrases.Any(phr => phr == this.PhraseName.Trim()) &&
-                    this.PhraseName.Trim().Length > 0);
         }
 
         private void AddAction()
@@ -232,41 +132,6 @@ namespace SpeechCommander.ViewModel
             //this.CurrentAction = null;
         }
 
-        private void AddCommand()
-        {
-            Model.Command cmd = new Model.Command() { CommandName = this.CommandName };
-            this.CurrentAction.Commands.Add(cmd);
-            this.CurrentCommand = cmd;
-        }
-
-        private void RenameCommand()
-        {
-            this.CurrentCommand.CommandName = this.CommandName.Trim();
-        }
-
-        private void RemoveCommand()
-        {
-            this.CurrentAction.Commands.Remove(this.CurrentCommand);
-        }
-
-        private void AddPhrase()
-        {
-            this.CurrentAction.Phrases.Add(this.PhraseName.Trim());
-            this.CurrentPhrase = this.PhraseName.Trim();
-        }
-
-        private void RenamePhrase()
-        {
-            int index = this.CurrentAction.Phrases.IndexOf(this.CurrentPhrase);
-            this.CurrentAction.Phrases[index] = this.PhraseName.Trim();
-            this.CurrentPhrase = this.CurrentAction.Phrases[index];
-        }
-
-        private void RemovePhrase()
-        {
-            this.CurrentAction.Phrases.Remove(this.CurrentPhrase);
-        }
-
         #region ICommands
         public ICommand AddActionCommand
         {
@@ -281,42 +146,6 @@ namespace SpeechCommander.ViewModel
         }
 
         public ICommand RenameActionCommand
-        {
-            get;
-            private set;
-        }
-
-        public ICommand AddCommandCommand
-        {
-            get;
-            private set;
-        }
-
-        public ICommand RemoveCommandCommand
-        {
-            get;
-            private set;
-        }
-
-        public ICommand RenameCommandCommand
-        {
-            get;
-            private set;
-        }
-
-        public ICommand AddPhraseCommand
-        {
-            get;
-            private set;
-        }
-
-        public ICommand RemovePhraseCommand
-        {
-            get;
-            private set;
-        }
-
-        public ICommand RenamePhraseCommand
         {
             get;
             private set;

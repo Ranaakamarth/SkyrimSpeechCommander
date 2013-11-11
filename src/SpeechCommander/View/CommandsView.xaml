@@ -6,24 +6,46 @@
              xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              xmlns:View="clr-namespace:SpeechCommander.View"
              xmlns:ViewModel="clr-namespace:SpeechCommander.ViewModel"
+             xmlns:winput="clr-namespace:WindowsInput"
              xmlns:Model="clr-namespace:SpeechCommander.Model"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="300">
+             d:DesignHeight="500" d:DesignWidth="300" MinWidth="250">
     <ScrollViewer VerticalScrollBarVisibility="Visible">
         <StackPanel>
             <TextBlock Margin="5,10,5,0">Key</TextBlock>
-            <ComboBox Margin="5" SelectedItem="{Binding Path=Command.Key}"></ComboBox>
+            <ComboBox Margin="5" SelectedValue="{Binding Path=Command.Key}" SelectedValuePath="Tag" ItemsSource="{StaticResource VirtualKeys}">
+            </ComboBox>
             <TextBlock Margin="5,10,5,0">Modifier Key</TextBlock>
-            <ComboBox Margin="5" SelectedItem="{Binding Path=Command.ModifierKey}"></ComboBox>
+            <ComboBox Margin="5" SelectedItem="{Binding Path=Command.ModifierKey}"  SelectedValuePath="Tag" ItemsSource="{StaticResource VirtualModifierKeys}"></ComboBox>
             <TextBlock Margin="5,10,5,0">Toggle Key</TextBlock>
             <Controls:ToggleSwitch Margin="5,0,20,0" IsChecked="{Binding Path=Command.ToggleKeypress}"></Controls:ToggleSwitch>
             <StackPanel Visibility="{Binding Path=Command.ToggleKeypress, Converter={StaticResource ResourceKey=boolToInvVis}}">
-                <TextBlock Margin="5,10,5,0">Held Duration</TextBlock>
-                <Slider  Margin="5,10,5,5" Value="{Binding Path=Command.HeldDuration}" Minimum="1" Maximum="5000" Style="{StaticResource FlatSlider}" Width="Auto"/>
-                <TextBlock Margin="5,10,5,0">Paused Duration</TextBlock>
-                <Slider Margin="5,10,5,5" Value="{Binding Path=Command.PausedDuration}" Minimum="1" Maximum="5000" Style="{StaticResource FlatSlider}" Width="Auto"/>
-                <TextBlock Margin="5,10,5,0">Repeat</TextBlock>
-                <Slider Margin="5,10,5,5" Value="{Binding Path=Command.Repeat}" Minimum="1" Maximum="20" Style="{StaticResource FlatSlider}" Width="Auto"/>
+                <StackPanel.Resources>
+                    <Style TargetType="TextBox">
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                    </Style>
+                </StackPanel.Resources>
+                <StackPanel Orientation="Horizontal" Margin="5,10,5,5">
+                    <TextBlock VerticalAlignment="Center" Text="Held Duration: "/>
+                    <TextBox MinWidth="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=Command.HeldDuration}"/>
+                    <TextBlock VerticalAlignment="Center" Text=" ms"/>
+                </StackPanel>               
+                <Slider  Margin="5,10,5,5" Style="{StaticResource FlatSlider}" Width="Auto" 
+                         Value="{Binding Path=Command.HeldDuration}" Minimum="0" Maximum="2000"/>
+
+                <StackPanel Orientation="Horizontal" Margin="5,10,5,5">
+                    <TextBlock VerticalAlignment="Center" Text="Paused Duration: "/>
+                    <TextBox MinWidth="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  VerticalAlignment="Center" Text="{Binding Path=Command.PausedDuration}"/>
+                    <TextBlock VerticalAlignment="Center" Text=" ms"/>
+                </StackPanel>
+                <Slider Margin="5,10,5,5"  Style="{StaticResource FlatSlider}" Width="Auto"
+                        Value="{Binding Path=Command.PausedDuration}" Minimum="0" Maximum="2000"/>
+                <StackPanel Orientation="Horizontal" Margin="5,10,5,5">
+                    <TextBlock VerticalAlignment="Center" Text="Repeat: "/>
+                    <TextBox MinWidth="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=Command.Repeat}"/>
+                </StackPanel>                
+                <Slider Margin="5,10,5,5" Style="{StaticResource FlatSlider}" Width="Auto"
+                        Value="{Binding Path=Command.Repeat}" Minimum="1" Maximum="20"/>
             </StackPanel>
         </StackPanel>
     </ScrollViewer>

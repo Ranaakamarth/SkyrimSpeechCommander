@@ -43,8 +43,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Speech" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.0.11.2.17-ALPHA\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -84,12 +86,17 @@
     <Compile Include="Model\Profile.cs" />
     <Compile Include="Model\RecognitionEngine.cs" />
     <Compile Include="ViewModel\ActionTabViewModel.cs" />
+    <Compile Include="ViewModel\ActionViewModel.cs" />
     <Compile Include="ViewModel\CommandsViewModel.cs" />
+    <Compile Include="ViewModel\DialogueViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ProfileViewModel.cs" />
     <Compile Include="ViewModel\VoicePausingViewModel.cs" />
     <Compile Include="View\ActionTab.xaml.cs">
       <DependentUpon>ActionTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ActionView.xaml.cs">
+      <DependentUpon>ActionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CommandsView.xaml.cs">
       <DependentUpon>CommandsView.xaml</DependentUpon>
@@ -103,7 +110,15 @@
     <Compile Include="View\VoicePausingView.xaml.cs">
       <DependentUpon>VoicePausingView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Resources\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\ActionTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ActionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -168,12 +183,15 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Resource Include="Resources\Entypo.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Model\InputSimulator\InputSimulator.csproj" />
+    <Resource Include="Resources\Entypo-license.txt" />
+    <Resource Include="TextFile1.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

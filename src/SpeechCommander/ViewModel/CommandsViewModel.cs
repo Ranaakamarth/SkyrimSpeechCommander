@@ -25,8 +25,9 @@ namespace SpeechCommander.ViewModel
         }
         private Model.Command command;
 
-        public CommandsViewModel()
+        public CommandsViewModel(Model.Command command)
         {
+            this.Command = command;
         }
 
         public void RaisePropertyChanged(string name)

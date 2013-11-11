@@ -43,6 +43,10 @@ namespace SpeechCommander.Model
             {
                 Console.WriteLine("Failed to watch for dialogue changes!");
             }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("Failed to watch for dialogue changes!");
+            }
 
             base.StartAsync(mode);
         }

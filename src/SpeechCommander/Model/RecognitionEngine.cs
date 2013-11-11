@@ -9,7 +9,7 @@ namespace SpeechCommander.Model
 {
     public delegate void RecognizedWordEvent(sp.SpeechRecognizedEventArgs e);
 
-    public class RecognitionEngine : IDisposable
+    public class RecognitionEngine : IDisposable, System.ComponentModel.INotifyPropertyChanged
     {
         protected sp.SpeechRecognitionEngine engine;
 
@@ -28,14 +28,27 @@ namespace SpeechCommander.Model
         }
         public bool Running
         {
+            //get
+            //{
+            //    //if (engine.AudioState != sp.AudioState.Stopped)
+            //    //    return true;
+            //    //else
+            //    //    return false;
+            //}
             get
             {
-                if (engine.AudioState != sp.AudioState.Stopped)
-                    return true;
-                else
-                    return false;
+                return running;
+            }
+            private set
+            {
+                if (running != value)
+                {
+                    running = value;
+                    RaisePropertyChanged("Running");
+                }
             }
         }
+        private bool running;
 
         public RecognizedWordEvent RecognizedWord;
 
@@ -61,7 +74,7 @@ namespace SpeechCommander.Model
             LoadProfile(profile);
         }
 
-        private void LoadProfile(Profile profile)
+        public void LoadProfile(Profile profile)
         {
             this.currentProfile = profile;
             if (this.actions != null)
@@ -120,9 +133,12 @@ namespace SpeechCommander.Model
                             this.actions.AddRange(change.AssociatedActions);
                         break;
                     case UpdateOperationType.RemoveGrammar:
-                        foreach (var action in change.AssociatedActions)
+                        if (change.AssociatedActions != null)
                         {
-                            this.actions.Remove(action);
+                            foreach (var action in change.AssociatedActions)
+                            {
+                                this.actions.Remove(action);
+                            }
                         }
                         break;
                     default:
@@ -252,13 +268,14 @@ namespace SpeechCommander.Model
 
         public virtual void StartAsync(sp.RecognizeMode mode)
         {
+            Running = true;
             this.engine.RecognizeAsync(mode);
         }
 
         public virtual void Stop()
         {
+            Running = false;
             this.engine.RecognizeAsyncCancel();
-
             WindowsInput.InputSimulator.AsyncReleaseAllKeys();
         }
 
@@ -271,6 +288,17 @@ namespace SpeechCommander.Model
         {
             this.engine.Dispose();
         }
+
+        public void RaisePropertyChanged(string name)
+        {
+            if (this.PropertyChanged != null)
+            {
+                this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(name));
+            }
+        }
+
+
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     }
 
     public enum UpdateOperationType

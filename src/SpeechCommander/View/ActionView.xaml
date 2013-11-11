@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="SpeechCommander.View.ActionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:View="clr-namespace:SpeechCommander.View"
+             xmlns:ViewModel="clr-namespace:SpeechCommander.ViewModel"
+             xmlns:Model="clr-namespace:SpeechCommander.Model"
+             mc:Ignorable="d" 
+             d:DesignHeight="382.962" d:DesignWidth="521.918">
+    <TabControl TabStripPlacement="Top" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+        <TabItem Header="Phrases">
+            <!--<TabItem.Header>
+                    <TextBlock>Phrases</TextBlock>
+                </TabItem.Header>-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <View:ListControl Grid.Column="0" Grid.Row="0" 
+                                      List="{Binding Path=Action.Phrases}"
+                                      ItemName="{Binding Path=PhraseName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      SelectedItem="{Binding Path=CurrentPhrase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      ListName="Phrases"
+                                      AddItemCommand="{Binding AddPhraseCommand}"
+                                      RenameItemCommand="{Binding RenamePhraseCommand}"
+                                      RemoveItemCommand="{Binding RemovePhraseCommand}">
+                </View:ListControl>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Commands">
+            <!-- <TabItem.Header>
+                    <TextBlock>Commands</TextBlock>
+                </TabItem.Header>-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <View:ListControl Grid.Column="0" Grid.Row="0" 
+                                      ItemName="{Binding CommandName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      SelectedItem="{Binding Path=CurrentCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      List="{Binding Path=Action.Commands}"
+                                      ListName="Commands"
+                                      AddItemCommand="{Binding AddCommandCommand}"
+                                      RenameItemCommand="{Binding RenameCommandCommand}"
+                                      RemoveItemCommand="{Binding RemoveCommandCommand}"
+                                      >
+                    <View:ListControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type Model:Command}">
+                            <TextBlock Text="{Binding CommandName}"/>
+                        </DataTemplate>
+                    </View:ListControl.ItemTemplate>
+                </View:ListControl>
+                <Controls:TransitioningContentControl Grid.Column="1" Grid.Row="0" Margin="15,0,0,0"
+                            Transition="LeftReplace" Content="{Binding CommandsVM}">
+                </Controls:TransitioningContentControl>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</UserControl>

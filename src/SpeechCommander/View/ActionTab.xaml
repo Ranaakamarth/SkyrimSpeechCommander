@@ -15,7 +15,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="47"/>
+            <RowDefinition Height="45"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <View:ListControl Margin="4" Grid.Column="0" Grid.Row="1" ListName="Actions"
@@ -31,51 +31,6 @@
                 </DataTemplate>
             </View:ListControl.ItemTemplate>
         </View:ListControl>
-        <TabControl Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" TabStripPlacement="Top">
-            <TabItem Header="Phrases">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <View:ListControl Grid.Column="0" Grid.Row="0" 
-                                      List="{Binding Path=CurrentAction.Phrases}"
-                                      ItemName="{Binding Path=PhraseName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                      SelectedItem="{Binding Path=CurrentPhrase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                      ListName="Phrases"
-                                      AddItemCommand="{Binding AddPhraseCommand}"
-                                      RenameItemCommand="{Binding RenamePhraseCommand}"
-                                      RemoveItemCommand="{Binding RemovePhraseCommand}">
-                    </View:ListControl>
-             </Grid>
-            </TabItem>
-            <TabItem FlowDirection="LeftToRight" Header="Commands">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <View:ListControl Grid.Column="0" Grid.Row="0" 
-                                      ItemName="{Binding CommandName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                      SelectedItem="{Binding Path=CurrentCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                      List="{Binding Path=CurrentAction.Commands}"
-                                      ListName="Commands"
-                                      AddItemCommand="{Binding AddCommandCommand}"
-                                      RenameItemCommand="{Binding RenameCommandCommand}"
-                                      RemoveItemCommand="{Binding RemoveCommandCommand}"
-                                      >
-                        <View:ListControl.ItemTemplate>
-                            <DataTemplate DataType="{x:Type Model:Command}">
-                                <TextBlock Text="{Binding CommandName}"/>
-                            </DataTemplate>
-                        </View:ListControl.ItemTemplate>
-                    </View:ListControl>
-                    <Controls:TransitioningContentControl Grid.Column="1" Grid.Row="0" Margin="15,0,0,0"
-                            Transition="LeftReplace" Content="{Binding CommandsVM}">
-                    </Controls:TransitioningContentControl>
-                </Grid>
-            </TabItem>
-        </TabControl>
-
+        <Controls:TransitioningContentControl Content="{Binding ActionVM}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"/>
     </Grid>
 </UserControl>

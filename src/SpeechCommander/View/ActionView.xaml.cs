@@ -12,23 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Controls = MahApps.Metro.Controls;
 
 namespace SpeechCommander.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ActionView.xaml
     /// </summary>
-    public partial class MainWindow : Controls.MetroWindow
+    public partial class ActionView : UserControl
     {
-        public MainWindow()
+        public ActionView()
         {
             InitializeComponent();
-        }
-
-        private void ToggleFileMenuFlyout(object sender, RoutedEventArgs e)
-        {
-            FileFlyout.IsOpen = !FileFlyout.IsOpen;
         }
     }
 }

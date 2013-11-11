@@ -37,6 +37,7 @@ namespace SpeechCommander
             try
             {
                 this.dialogueWatcher.Path = this.currentProfile.Dialogue.FilePath;
+                this.dialogueWatcher.EnableRaisingEvents = true;
             }
             catch (ArgumentException)
             {
@@ -44,7 +45,6 @@ namespace SpeechCommander
                 // this.dialogueWatcher.Path = null;
                 //this.tb_DialogueFilePath.Text = string.Empty;
             }
-            this.dialogueWatcher.EnableRaisingEvents = true;
 
             base.StartAsync(mode);
         }
