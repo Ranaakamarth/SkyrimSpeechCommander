@@ -15,76 +15,80 @@
     <Window.Resources>
     </Window.Resources>
     <Grid>
-    <Grid>
-        <Grid.Effect>
-            <BlurEffect Radius="0"/>
-        </Grid.Effect>
-        <Grid.Style>
-            <Style TargetType="Grid">
-                <Style.Triggers>
-                    <DataTrigger Binding="{Binding Engine.Running}" Value="True">
-                        <DataTrigger.EnterActions>
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <DoubleAnimation To="20"  Storyboard.TargetProperty="(Effect).(BlurEffect.Radius)" Duration="0:0:.5">
-                                        <DoubleAnimation.EasingFunction>
-                                            <CubicEase EasingMode="EaseInOut"/>
-                                        </DoubleAnimation.EasingFunction>
-                                    </DoubleAnimation>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </DataTrigger.EnterActions>
-                        <DataTrigger.ExitActions>
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <DoubleAnimation From="20" Storyboard.TargetProperty="(Effect).(BlurEffect.Radius)"  Duration="0:0:.5">
-                                        <DoubleAnimation.EasingFunction>
-                                            <CubicEase EasingMode="EaseInOut"/>
-                                        </DoubleAnimation.EasingFunction>
-                                    </DoubleAnimation>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </DataTrigger.ExitActions>
-                    </DataTrigger>
-                </Style.Triggers>
-            </Style>
-        </Grid.Style>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <TextBox Controls:TextboxHelper.Watermark="Profile Name" Margin="0,2.5,5,2.5" 
+        <Grid>
+            <Grid.Effect>
+                <BlurEffect Radius="0"/>
+            </Grid.Effect>
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Engine.Running}" Value="True">
+                            <DataTrigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation To="20"  Storyboard.TargetProperty="(Effect).(BlurEffect.Radius)" Duration="0:0:.5">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseInOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.EnterActions>
+                            <DataTrigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="20" Storyboard.TargetProperty="(Effect).(BlurEffect.Radius)"  Duration="0:0:.5">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CubicEase EasingMode="EaseInOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.ExitActions>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox Controls:TextboxHelper.Watermark="Profile Name" Margin="0,2.5,5,2.5" 
                  HorizontalAlignment="Left" VerticalContentAlignment="Center"
                  Grid.Column="0" Grid.Row="0" Width="200"
                   BorderBrush="Transparent" FontSize="18"
                  Text="{Binding Path=Profile.ProfileName}">
-        </TextBox>
-        <TabControl Grid.Row="1" Grid.Column="0">
-            <TabItem Header="Profile">
-                <ContentControl Content="{Binding ProfileVM}"/>
-            </TabItem>
-            <TabItem Header="Action">
-                <ContentControl Content="{Binding ActionVM}"/>
-            </TabItem>
-        </TabControl>
-    </Grid>
+            </TextBox>
+            <TabControl Grid.Row="1" Grid.Column="0">
+                <TabItem Header="Profile">
+                    <ContentControl Content="{Binding ProfileVM}"/>
+                </TabItem>
+                <TabItem Header="Action">
+                    <ContentControl Content="{Binding ActionVM}"/>
+                </TabItem>
+            </TabControl>
+        </Grid>
         <Grid x:Name="Overlay" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="1">
             <Grid.Style>
                 <Style TargetType="Grid">
                     <Setter Property="Visibility" Value="Hidden"/>
+                    <Setter Property="Opacity" Value="0" />
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding Path=Engine.Running}" Value="True">
                             <DataTrigger.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <DoubleAnimation From="0" To="1" Storyboard.TargetProperty="Opacity" Duration="0:0:.5">
+                                        <DoubleAnimation BeginTime="0:0:0.5"  From="0" To="1" Storyboard.TargetProperty="Opacity" Duration="0:0:.5">
                                             <DoubleAnimation.EasingFunction>
                                                 <CubicEase EasingMode="EaseInOut"/>
                                             </DoubleAnimation.EasingFunction>
                                         </DoubleAnimation>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Duration="0">
+                                            <DiscreteObjectKeyFrame Value="{x:Static Visibility.Visible}"/>
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </DataTrigger.EnterActions>
@@ -96,10 +100,12 @@
                                                 <CubicEase EasingMode="EaseInOut"/>
                                             </DoubleAnimation.EasingFunction>
                                         </DoubleAnimation>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Duration="0" BeginTime="0:0:1">
+                                            <DiscreteObjectKeyFrame Value="{x:Static Visibility.Hidden}"/>
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </DataTrigger.ExitActions>
-                            <Setter Property="Visibility" Value="Visible"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
@@ -109,7 +115,7 @@
                     <SolidColorBrush Color="Transparent"/>
                 </Rectangle.Fill>
             </Rectangle>
-            <Button Grid.Column="0" Grid.Row="0" 
+            <Button Grid.Column="0" Grid.Row="0"
                     Style="{DynamicResource CircleButton}" Command="{Binding StopRecognitionCommand}" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Rectangle Width="100" Height="100">
                     <Rectangle.Fill>
@@ -122,10 +128,20 @@
     </Grid>
     <Controls:MetroWindow.WindowCommands>
         <Controls:WindowCommands>
-            <Button Click="ToggleFileMenuFlyout">File</Button>
+            <Button Click="ToggleFileMenuFlyout" Content="File">
+                <Button.Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource WindowCommandButton}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=Engine.Running}" Value="True">
+                                <Setter Property="IsEnabled" Value="False"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
             <Button>
                 <Button.Style>
-                    <Style TargetType="{x:Type Button}">
+                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource WindowCommandButton}">
                         <Setter Property="ToolTipService.ShowOnDisabled" Value="True"/>
                         <Setter Property="ToolTip" Value="Start Recognition"/>
                         <Setter Property="Command" Value="{Binding StartRecognitionCommand}"/>
@@ -138,65 +154,7 @@
                                 </Rectangle>
                             </Setter.Value>
                         </Setter>
-                        <Setter Property="Background"
-                                        Value="{DynamicResource TransparentWhiteBrush}" />
-                        <Setter Property="HorizontalContentAlignment"
-                                        Value="Center" />
-                        <Setter Property="VerticalContentAlignment"
-                                        Value="Center" />
-                        <Setter Property="Padding"
-                                        Value="1" />
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type Button}">
-                                    <Grid Background="{TemplateBinding Background}">
-                                        <ContentPresenter x:Name="contentPresenter"
-                                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                                                  RecognizesAccessKey="True"
-                                                                  Opacity="0.75"
-                                                                  Margin="11,1,11,1" />
-
-                                        <Rectangle x:Name="border"
-                                                           SnapsToDevicePixels="True"
-                                                           IsHitTestVisible="False"
-                                                           Opacity="0.25"
-                                                           Width="1"
-                                                           Height="15"
-                                                           VerticalAlignment="Stretch"
-                                                           HorizontalAlignment="Right"
-                                                           Fill="{TemplateBinding Foreground}"
-                                                           Margin="10,0,0,0" />
-                                    </Grid>
-                                    <ControlTemplate.Triggers>
-                                        <Trigger Property="IsMouseOver"
-                                                         Value="True">
-                                            <Setter TargetName="contentPresenter"
-                                                            Property="Opacity"
-                                                            Value="1" />
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver"
-                                                         Value="False">
-                                            <Setter TargetName="contentPresenter"
-                                                            Property="Opacity"
-                                                            Value=".5" />
-                                        </Trigger>
-                                        <Trigger Property="IsEnabled"
-                                                         Value="false">
-                                            <Setter Property="Foreground"
-                                                            Value="#ADADAD" />
-                                        </Trigger>
-                                    </ControlTemplate.Triggers>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding ShowTitleBar, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Controls:MetroWindow}}}"
-                                                 Value="True">
-                                <Setter Property="Foreground"
-                                                Value="White" />
-                            </DataTrigger>
                             <DataTrigger Binding="{Binding Path=Engine.Running}" Value="True">
                                 <Setter Property="Content">
                                     <Setter.Value>

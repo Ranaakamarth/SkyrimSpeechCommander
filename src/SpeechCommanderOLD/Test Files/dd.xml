@@ -6,12 +6,12 @@
         <Command>
           <CommandName>e</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_E</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -48,12 +48,12 @@
         <Command>
           <CommandName>e (held)</CommandName>
           <HeldDuration>1000</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_E</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -68,12 +68,12 @@
         <Command>
           <CommandName>F</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_F</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -90,12 +90,12 @@
         <Command>
           <CommandName>R</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_R</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -115,12 +115,12 @@
         <Command>
           <CommandName>Enter</CommandName>
           <HeldDuration>25</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>RETURN</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -137,12 +137,12 @@
         <Command>
           <CommandName>Tab</CommandName>
           <HeldDuration>25</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>TAB</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -161,12 +161,12 @@
         <Command>
           <CommandName>X</CommandName>
           <HeldDuration>25</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_X</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -181,12 +181,12 @@
         <Command>
           <CommandName>Q</CommandName>
           <HeldDuration>25</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_Q</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -202,12 +202,12 @@
         <Command>
           <CommandName>I</CommandName>
           <HeldDuration>25</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_I</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -222,12 +222,12 @@
         <Command>
           <CommandName>J</CommandName>
           <HeldDuration>25</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_J</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -242,12 +242,12 @@
         <Command>
           <CommandName>L</CommandName>
           <HeldDuration>25</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_L</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -263,12 +263,12 @@
         <Command>
           <CommandName>M</CommandName>
           <HeldDuration>25</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_M</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -284,12 +284,12 @@
         <Command>
           <CommandName>Forward Slash</CommandName>
           <HeldDuration>25</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>DIVIDE</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -305,12 +305,12 @@
         <Command>
           <CommandName>P</CommandName>
           <HeldDuration>25</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_P</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -325,12 +325,12 @@
         <Command>
           <CommandName>T</CommandName>
           <HeldDuration>25</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_T</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -348,12 +348,12 @@
         <Command>
           <CommandName>Printscreen</CommandName>
           <HeldDuration>25</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>SNAPSHOT</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -368,32 +368,32 @@
         <Command>
           <CommandName>Console (tilde)</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>OEM_3</key>
-          <modifierKey i:nil="true"/>
         </Command>
         <Command>
           <CommandName>Quit (q)</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>3</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_Q</key>
-          <modifierKey i:nil="true"/>
         </Command>
         <Command>
           <CommandName>Enter</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>RETURN</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -409,12 +409,12 @@
         <Command>
           <CommandName>C</CommandName>
           <HeldDuration>25</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_C</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -430,12 +430,12 @@
         <Command>
           <CommandName>Left Control</CommandName>
           <HeldDuration>25</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>LCONTROL</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -454,12 +454,12 @@
         <Command>
           <CommandName>LShift Toggle</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>true</ToggleKeypress>
-          <key>LSHIFT</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -474,12 +474,12 @@
         <Command>
           <CommandName>Caps lock</CommandName>
           <HeldDuration>25</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>CAPITAL</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -495,12 +495,12 @@
         <Command>
           <CommandName>alt f18</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F18</key>
-          <modifierKey>RMENU</modifierKey>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -515,12 +515,12 @@
         <Command>
           <CommandName>F15</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F15</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -535,12 +535,12 @@
         <Command>
           <CommandName>F17</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F17</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -555,12 +555,12 @@
         <Command>
           <CommandName>F21</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F21</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -575,12 +575,12 @@
         <Command>
           <CommandName>F18</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F18</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -595,12 +595,12 @@
         <Command>
           <CommandName>alt f20</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F20</key>
-          <modifierKey>RMENU</modifierKey>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -615,12 +615,12 @@
         <Command>
           <CommandName>F14</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F14</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -635,12 +635,12 @@
         <Command>
           <CommandName>alt f14</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F14</key>
-          <modifierKey>RMENU</modifierKey>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -655,12 +655,12 @@
         <Command>
           <CommandName>alt f17</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F17</key>
-          <modifierKey>RMENU</modifierKey>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -675,12 +675,12 @@
         <Command>
           <CommandName>alt f15</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F15</key>
-          <modifierKey>RMENU</modifierKey>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -695,12 +695,12 @@
         <Command>
           <CommandName>alt f13</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F13</key>
-          <modifierKey>RMENU</modifierKey>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -715,12 +715,12 @@
         <Command>
           <CommandName>alt f19</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F19</key>
-          <modifierKey>RMENU</modifierKey>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -735,12 +735,12 @@
         <Command>
           <CommandName>alt f21</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F21</key>
-          <modifierKey>RMENU</modifierKey>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -755,12 +755,12 @@
         <Command>
           <CommandName>F20</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F20</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -775,12 +775,12 @@
         <Command>
           <CommandName>F13</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F13</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -795,12 +795,12 @@
         <Command>
           <CommandName>alt f16</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F16</key>
-          <modifierKey>RMENU</modifierKey>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -815,12 +815,12 @@
         <Command>
           <CommandName>F22</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F22</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -835,12 +835,12 @@
         <Command>
           <CommandName>F16</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F16</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -855,12 +855,12 @@
         <Command>
           <CommandName>alt f22</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F22</key>
-          <modifierKey>RMENU</modifierKey>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -875,12 +875,12 @@
         <Command>
           <CommandName>F19</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>F19</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -895,12 +895,12 @@
         <Command>
           <CommandName>short z</CommandName>
           <HeldDuration>25</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_Z</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -915,12 +915,12 @@
         <Command>
           <CommandName>medium z</CommandName>
           <HeldDuration>200</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_Z</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -935,12 +935,12 @@
         <Command>
           <CommandName>long z</CommandName>
           <HeldDuration>900</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput i:nil="true"/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_Z</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -955,12 +955,12 @@
         <Command>
           <CommandName>2</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_2</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -975,12 +975,12 @@
         <Command>
           <CommandName>3</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_3</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -995,12 +995,12 @@
         <Command>
           <CommandName>4</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_4</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -1015,12 +1015,12 @@
         <Command>
           <CommandName>5</CommandName>
           <HeldDuration>50</HeldDuration>
+          <Key i:nil="true"/>
+          <ModifierKey i:nil="true"/>
           <PausedDuration>25</PausedDuration>
           <Repeat>1</Repeat>
           <TextInput/>
           <ToggleKeypress>false</ToggleKeypress>
-          <key>VK_5</key>
-          <modifierKey i:nil="true"/>
         </Command>
       </Commands>
       <PausedDuration>25</PausedDuration>
@@ -1030,16 +1030,18 @@
       <Repeat>1</Repeat>
     </Action>
   </Actions>
-  <Dialogue xmlns:a="http://schemas.datacontract.org/2004/07/SpeechCommander">
-    <a:CancelPhrases i:nil="true" xmlns:b="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
-    <a:CommandAccept i:nil="true"/>
-    <a:CommandCancel i:nil="true"/>
-    <a:CommandNext i:nil="true"/>
-    <a:CommandPrevious i:nil="true"/>
-    <a:Enabled>false</a:Enabled>
-    <a:FilePath i:nil="true"/>
+  <Dialogue>
+    <CancelPhrases i:nil="true" xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+    <CommandAccept i:nil="true"/>
+    <CommandCancel i:nil="true"/>
+    <CommandNext i:nil="true"/>
+    <CommandPrevious i:nil="true"/>
+    <Enabled>false</Enabled>
+    <FilePath i:nil="true"/>
   </Dialogue>
-  <EndTimeout>0</EndTimeout>
+  <EnableVoicePausing>false</EnableVoicePausing>
+  <PauseRecognitionPhrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
   <ProfileName>Skyrim Commandss</ProfileName>
   <RequiredConfidence>0.75</RequiredConfidence>
+  <UnpauseRecognitionPhrases xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
 </Profile>

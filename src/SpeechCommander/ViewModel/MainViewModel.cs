@@ -95,7 +95,7 @@ namespace SpeechCommander.ViewModel
                     bool atleastOnePhrase = false;
                     foreach (Model.Action act in this.Profile.Actions)
                     {
-                        if (act.Phrases.Count > 0)
+                        if (act.Phrases != null && act.Phrases.Count > 0)
                         {
                             atleastOnePhrase = true;
                             break;

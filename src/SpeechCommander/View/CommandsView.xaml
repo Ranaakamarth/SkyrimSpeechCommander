@@ -16,7 +16,7 @@
             <ComboBox Margin="5" SelectedValue="{Binding Path=Command.Key}" SelectedValuePath="Tag" ItemsSource="{StaticResource VirtualKeys}">
             </ComboBox>
             <TextBlock Margin="5,10,5,0">Modifier Key</TextBlock>
-            <ComboBox Margin="5" SelectedItem="{Binding Path=Command.ModifierKey}"  SelectedValuePath="Tag" ItemsSource="{StaticResource VirtualModifierKeys}"></ComboBox>
+            <ComboBox Margin="5" SelectedValue="{Binding Path=Command.ModifierKey}"  SelectedValuePath="Tag" ItemsSource="{StaticResource VirtualModifierKeys}"></ComboBox>
             <TextBlock Margin="5,10,5,0">Toggle Key</TextBlock>
             <Controls:ToggleSwitch Margin="5,0,20,0" IsChecked="{Binding Path=Command.ToggleKeypress}"></Controls:ToggleSwitch>
             <StackPanel Visibility="{Binding Path=Command.ToggleKeypress, Converter={StaticResource ResourceKey=boolToInvVis}}">
